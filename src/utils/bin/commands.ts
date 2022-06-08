@@ -90,3 +90,7 @@ Type 'sumfetch' to display summary.
 Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
 `;
 };
+
+export const tuan = async (args?: string[]): Promise<string> => {
+   return "Tuan is stupid we hate him ";
+};

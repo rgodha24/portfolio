@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // // List of commands that require API calls
 
 import { url } from "inspector";

@@ -1,7 +1,5 @@
 import axios from "axios";
 import config from "../../config.json";
-import { quote } from "./bin";
-import { joke } from "./bin";
 export const getProjects = async () => {
    const { data } = await axios.get(
       `https://api.github.com/users/${config.social.github}/repos`

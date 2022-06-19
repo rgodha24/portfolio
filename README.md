@@ -1,1 +1,1 @@
-My website based on LiveTerm by @Cveinnt. 
+My website based on LiveTerm by @Cveinnt.  

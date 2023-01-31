@@ -1,0 +1,31 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+type Props = {description?: string, title?: string}; 
+
+const {description = SITE_DESCRIPTION, title=SITE_TITLE} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header title={title} />
+    <main class='prose prose-red text-slate-300 prose-headings:text-gray-300 prose-strong:text-gray-300'>
+      <slot />
+    </main>
+    <Footer />
+    <style>
+      body {
+        @apply bg-gradient-to-r from-blue-800 to-sky-900;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </body>
+</html>

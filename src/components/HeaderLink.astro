@@ -1,5 +1,5 @@
 ---
-export interface Props  {
+export interface Props {
   href: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
 }
@@ -7,9 +7,17 @@ export interface Props  {
 const { href, target } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+const isActive = href === pathname || href === pathname.replace(/\/$/, "") || href === pathname.replace(/(blog)\/.*/, "blog/");
 ---
 
-<a href={href} class={"text-xl text-purple-300 " + isActive ? "text-red-500" : ""} target={target || ""}>
-  <slot />
+<a href={href} class={(isActive ? "text-red-600 " : "text-red-500 ") + " "} target={target || ""}>
+  {
+    isActive ? (
+      <strong>
+        <slot />
+      </strong>
+    ) : (
+      <slot />
+    )
+  }
 </a>

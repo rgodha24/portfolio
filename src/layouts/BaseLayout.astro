@@ -4,9 +4,9 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
-type Props = {description?: string, title?: string}; 
+type Props = { description?: string; title?: string };
 
-const {description = SITE_DESCRIPTION, title=SITE_TITLE} = Astro.props
+const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,17 +14,17 @@ const {description = SITE_DESCRIPTION, title=SITE_TITLE} = Astro.props
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body>
+  <body class="max-w-[65ch] w-full m-auto break-words overflow-auto">
     <Header title={title} />
-    <main class='prose prose-red text-slate-300 prose-headings:text-gray-300 prose-strong:text-gray-300'>
+    <main
+      class='prose prose-red text-slate-300 prose-headings:text-gray-300 prose-strong:text-gray-300'
+    >
       <slot />
     </main>
     <Footer />
     <style>
-      body {
-        @apply bg-gradient-to-r from-blue-800 to-sky-900;
-        width: 100%;
-        height: 100%;
+      :root {
+        @apply bg-gradient-to-tr from-blue-800 to-sky-900 via-sky-800 min-h-[100%] bg-no-repeat bg-cover ;
       }
     </style>
   </body>

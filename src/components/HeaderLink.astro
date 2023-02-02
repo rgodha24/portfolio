@@ -7,17 +7,10 @@ export interface Props {
 const { href, target } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, "") || href === pathname.replace(/(blog)\/.*/, "blog/");
+const isActive =
+  href === pathname || href === pathname.replace(/\/$/, "") || href === pathname.replace(/(blog)\/.*/, "blog/");
 ---
 
-<a href={href} class={(isActive ? "text-red-600 " : "text-red-500 ") + " "} target={target || ""}>
-  {
-    isActive ? (
-      <strong>
-        <slot />
-      </strong>
-    ) : (
-      <slot />
-    )
-  }
+<a href={href} class={(isActive ? "text-red-600 bold" : "text-red-500 ") + " "} target={target || ""}>
+  <slot />
 </a>

@@ -4,9 +4,18 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class='pb-4'>
-  <h2 class='text-3xl text-white py-2'>
-    {SITE_TITLE}
-  </h2>
+  <div class='flex flex-row'>
+    <img
+      src='/pfp.jpeg'
+      alt='my pfp, a star wars clone trooper'
+      class='w-auto h-[2.5rem] my-auto object-cover rounded-full'
+      width='32px'
+      height='32px'
+    />
+    <h2 class='text-4xl text-white py-2 ml-5'>
+      {SITE_TITLE}
+    </h2>
+  </div>
   <nav class='flex flex-row flex-1 justify-between text-2xl'>
     <HeaderLink href='/'>Home</HeaderLink>
     <HeaderLink href='/blog'>Blog</HeaderLink>

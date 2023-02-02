@@ -24,6 +24,7 @@ const projects = defineCollection({
     repo: z.string().url(),
     website: z.string().url().optional(),
   }),
+  
 });
 
 export const collections = { blog, projects };

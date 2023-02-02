@@ -1,7 +1,9 @@
 ---
-const today = new Date();
+import Icon from "../icons/Icon.astro";
+import { siInstagram, siGithub } from "simple-icons";
 ---
 
-<footer>
-
+<footer class='my-10 flex flex-row justify-between min-w-[200px] w-[20%] m-auto'>
+  <Icon href='https://instagram.com/rohangodha' icon={siInstagram} />
+  <Icon href='https://github.com/rgodha24' icon={siGithub} />
 </footer>

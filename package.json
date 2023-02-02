@@ -17,6 +17,7 @@
     "@astrojs/solid-js": "^2.0.1",
     "@astrojs/tailwind": "^3.0.1",
     "astro": "^2.0.4",
+    "simple-icons": "^8.4.0",
     "solid-js": "^1.4.3",
     "tailwindcss": "^3.0.24"
   },

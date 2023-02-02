@@ -1,0 +1,16 @@
+---
+import type { SimpleIcon } from "simple-icons";
+
+type Props =
+  | {
+      href: string;
+      icon: SimpleIcon;
+    }
+  | { href: string; svg: string };
+
+const { href, icon, svg } = Astro.props;
+---
+
+<div class='w-8 h-8 object-cover'>
+  <a href={href} class='w-full h-full'><Fragment set:html={icon?.svg || svg} /></a>
+</div>

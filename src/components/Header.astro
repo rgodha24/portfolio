@@ -3,14 +3,13 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class="pb-4">
+<header class='pb-4'>
   <h2 class='text-3xl text-white py-2'>
     {SITE_TITLE}
   </h2>
   <nav class='flex flex-row flex-1 justify-between text-2xl'>
     <HeaderLink href='/'>Home</HeaderLink>
     <HeaderLink href='/blog'>Blog</HeaderLink>
-    <HeaderLink href='https://instagram.com/rohangodha' target='_blank'>Instagram</HeaderLink>
-    <HeaderLink href='https://github.com/rgodha24' target='_blank'>GitHub</HeaderLink>
+    <HeaderLink href='/projects'>Projects</HeaderLink>
   </nav>
 </header>

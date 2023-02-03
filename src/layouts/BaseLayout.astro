@@ -16,13 +16,35 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
   </head>
   <body class='max-w-[calc(65ch+1.25rem)] w-full m-auto break-words overflow-auto px-10 pt-5'>
     <Header title={title} />
-    <main class='prose prose-red prose-a:text-[#f00707] text-slate-300 prose-headings:text-gray-300 prose-strong:text-gray-300 prose-code:text-white prose-code:bg-[#14161f] prose-code:p-[2px] prose-p:text-xl'>
+    <main class='prose bbg text-slate-300 text-xl'>
       <slot />
     </main>
     <Footer />
     <style>
       :root {
         @apply bg-gradient-to-bl to-slate-900 from-sky-700 min-h-[100%] bg-no-repeat bg-cover;
+      }
+      .bbg {
+        --un-prose-body: #ffc1cc;
+        --un-prose-headings: #881337;
+        --un-prose-links:#fc5a78;
+        --un-prose-lists: #cd6f6f;
+        --un-prose-hr: #fecdd3;
+        --un-prose-captions: #f43f5e;
+        --un-prose-code: #ff859c;
+        --un-prose-borders: #fecdd3;
+        --un-prose-bg-soft: #ffe4e6;
+        --un-prose-invert-body: #fecdd3;
+        --un-prose-invert-headings: #ffe4e6;
+        --un-prose-invert-links: #ffe4e6;
+        --un-prose-invert-lists: #f43f5e;
+        --un-prose-invert-hr: #be123c;
+        --un-prose-invert-captions: #fb7185;
+        --un-prose-invert-code: #ffe4e6;
+        --un-prose-invert-borders: #be123c;
+        --un-prose-invert-bg-soft: #9f1239;
+        --un-prose-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+          monospace;
       }
     </style>
   </body>

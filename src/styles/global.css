@@ -1,10 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;0,900;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
+
+@font-face {
+  font-family: "Norwester";
+  src: url("/fonts/Norwester.woff") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
+  font-family: "Norwester", sans-serif;
+  font-weight: 400;
 }
 
 .bold {
-    font-weight:800; 
+  font-weight: 800;
 }

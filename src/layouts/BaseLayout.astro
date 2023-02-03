@@ -14,17 +14,15 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body class="max-w-[65ch] w-full m-auto break-words overflow-auto">
+  <body class='max-w-[calc(65ch+1.25rem)] w-full m-auto break-words overflow-auto px-10 pt-5'>
     <Header title={title} />
-    <main
-      class='prose prose-red text-slate-300 prose-headings:text-gray-300 prose-strong:text-gray-300'
-    >
+    <main class='prose prose-red prose-a:text-[#f00707] text-slate-300 prose-headings:text-gray-300 prose-strong:text-gray-300 prose-code:text-white prose-code:bg-[#14161f] prose-code:p-[2px] prose-p:text-xl'>
       <slot />
     </main>
     <Footer />
     <style>
       :root {
-        @apply bg-gradient-to-tr from-blue-800 to-sky-900 via-sky-800 min-h-[100%] bg-no-repeat bg-cover ;
+        @apply bg-gradient-to-bl to-slate-900 from-sky-700 min-h-[100%] bg-no-repeat bg-cover;
       }
     </style>
   </body>

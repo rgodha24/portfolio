@@ -1,16 +1,14 @@
 ---
-import type { SimpleIcon } from "simple-icons";
-
 type Props = {
   href: string;
   title: string;
 };
 
-const { href, icon, svg, title } = Astro.props;
+const { href, title } = Astro.props;
 ---
 
 <div class='w-8 h-8 object-cover'>
-  <a href={href} class='w-full h-full'>
+  <a href={href} class='w-full h-full fill-slate-200'>
     <slot />
     <span class='sr-only'>{title}</span>
   </a>

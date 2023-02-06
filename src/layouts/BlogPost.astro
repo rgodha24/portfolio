@@ -1,8 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import BaseLayout from "./BaseLayout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
@@ -13,11 +10,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <BaseLayout title={`Rohan's blog - ${title}`} description={description}>
   <article class='h-full'>
     {heroImage && <img width={720} height={360} src={heroImage} alt='' />}
-    <h1 class=''>{title}</h1>
-    {pubDate && <time>{pubDate}</time>}
+    <h1>{title}</h1>
+    {
+      pubDate && (
+        <div class='mt-4 text-center -mb-2'>
+          <time class=''>{pubDate.toLocaleString()}</time>
+        </div>
+      )
+    }
     {
       updatedDate && (
-        <div>
+        <div class='mt-4 text-center'>
           Last updated on <time>{updatedDate}</time>
         </div>
       )

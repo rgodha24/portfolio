@@ -9,7 +9,5 @@ import unocss from "unocss/astro";
 // https://astro.build/config
 export default defineConfig({
   site: "https://rohangodha.me/",
-  integrations: [mdx(), sitemap(), solidJs(), unocss({
-    
-  })],
+  integrations: [mdx(), sitemap(), solidJs(), unocss()],
 });

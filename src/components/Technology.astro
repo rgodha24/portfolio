@@ -1,0 +1,18 @@
+---
+type Props = {
+  href?: string;
+};
+const { href } = Astro.props;
+---
+
+{
+  href === undefined ? (
+    <span class='text-[var(--un-prose-links)] font-bold text-2xl'>
+      <slot />
+    </span>
+  ) : (
+    <a href={href} class='text-[var(--un-prose-links)] font-bold text-2xl'>
+      <slot />
+    </a>
+  )
+}

@@ -1,0 +1,10 @@
+---
+import { getCollection } from "astro:content";
+import Project from "./Project.astro";
+
+const projects = await getCollection("projects");
+---
+
+<section class='grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3'>
+  {projects.map((proj) => <Project {...proj} />)}
+</section>

@@ -1,0 +1,39 @@
+---
+import type { getCollection } from "astro:content";
+import Icon from "../icons/Icon.astro";
+import Link from "../icons/Link.astro";
+import Github from "../icons/Github.astro";
+
+type Project = Awaited<ReturnType<typeof getCollection<"projects">>>[number];
+export type Props = Pick<Project, "body" | "data">;
+
+const {
+  data: { website, repo, title },
+  body,
+} = Astro.props;
+---
+
+<div
+  class='flex flex-col gap-5 bg-gradient-to-tr from-slate-900 to-slate-800 text-heading not-prose border border-1 border-sky-300 rounded-4 p-4'
+>
+  <h3 class='text-center text-3xl'>
+    <a class='hover:underline hover:underline-pink-300 no-underline' href={website} target='_blank'>
+      {title}
+    </a>
+  </h3>
+  <p class='text-sm text-center text-slate-300'>{body}</p>
+  <div class='flex flex-row justify-center gap-10'>
+    <Icon href={website} title={title + " website link"} stroke>
+      <Link />
+    </Icon>
+    <Icon href={repo} title={title + "github repo"}>
+      <Github />
+    </Icon>
+  </div>
+
+  <style>
+    .text-heading {
+      color: var(--headings);
+    }
+  </style>
+</div>

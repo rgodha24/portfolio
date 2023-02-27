@@ -22,9 +22,8 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     repo: z.string().url(),
-    website: z.string().url().optional(),
+    website: z.string().url(),
   }),
-  
 });
 
 export const collections = { blog, projects };

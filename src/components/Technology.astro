@@ -5,4 +5,10 @@ type Props = {
 const { href } = Astro.props;
 ---
 
-<a href={href} class='text-[var(--un-prose-links)] font-bold text-2xl'><slot /></a>
+<a href={href} class='tech font-bold text-2xl hover:text-pink-400'><slot /></a>
+
+<style>
+  .tech {
+    color: var(--un-prose-links);
+  }
+</style>

@@ -20,13 +20,14 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <style>
+    <style is:global>
       :root {
-        --headings: #e32760; 
-        background-color: linear-gradient(#04102d, #060629); 
+        --headings: #e32760;
+        background-color: linear-gradient(#04102d, #060629);
         @apply bg-black;
       }
       .bbg {
+        --link-hover: #ff8ec9; 
         --un-prose-body: #ffc1cc;
         --un-prose-headings: var(--headings);
         --un-prose-links: #fc5a78;
@@ -47,6 +48,10 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
         --un-prose-invert-bg-soft: #9f1239;
         --un-prose-font-mono: "Norwester", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
           "Courier New", monospace;
+      }
+      a {
+        text-decoration: none;
+        @apply hover:underline hover:underline-pink-300 no-underline;
       }
     </style>
   </body>

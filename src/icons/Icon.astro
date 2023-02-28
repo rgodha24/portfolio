@@ -10,7 +10,7 @@ const { href, title, stroke = false } = Astro.props;
 
 <div class='w-8 h-8 object-cover'>
   <a href={href} class:list={["w-full h-full", stroke ? "stroke" : "fill"]} target='_blank'>
-    <slot />
+    <slot id={title} />
     <span class='sr-only'>{title}</span>
   </a>
 </div>

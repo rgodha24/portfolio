@@ -23,6 +23,8 @@ const projects = defineCollection({
     title: z.string(),
     repo: z.string().url(),
     website: z.string().url(),
+    blurb: z.string(),
+    order: z.number().optional().default(100),
   }),
 });
 

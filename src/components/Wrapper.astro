@@ -1,5 +1,5 @@
 <div
-  class='flex flex-col gap-5 gradient from-slate-900 to-slate-800 hover:from-coolgray-900 hover:to-coolgray-800 text-heading not-prose border border-1 border-sky-300 hover:border-sky-500 rounded-4 p-4'
+  class='flex flex-col gap-5 hover:bg-gradient-to-t from-slate-900 to-bluegray-900 text-heading not-prose border border-1 border-sky-300 hover:border-sky-500 rounded-4 p-4'
 >
   <slot />
 </div>
@@ -7,26 +7,5 @@
 <style>
   .text-heading {
     color: var(--headings);
-  }
-  .gradient {
-    --un-gradient-stops: var(--un-gradient-from), var(--un-gradient-to);
-    --un-gradient: var(--un-gradient-shape), var(--un-gradient-stops);
-    background: linear-gradient(var(--un-gradient));
-    background-size: 400% 400%;
-  }
-  .gradient:hover {
-    animation: gradient-animation 3s ease infinite;
-  }
-
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
   }
 </style>

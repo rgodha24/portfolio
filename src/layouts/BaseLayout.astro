@@ -10,7 +10,7 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang='en' class='bg-gradient-to-bl to-slate-900 from-zinc-800 min-h-[100%] bg-no-repeat bg-cover overflow-auto'>
+<html lang='en' class='min-h-[100%] overflow-auto'>
   <head>
     <BaseHead title={title} description={description} />
   </head>
@@ -22,8 +22,8 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
     <Footer />
     <style is:global>
       :root {
-        --headings: rgb(134,236,246);
-        background-color: linear-gradient(#04102d, #060629);
+        --headings: rgb(134, 236, 246);
+        background-image: linear-gradient(45deg, #001135, #000327);
         @apply bg-black;
       }
       .bbg {

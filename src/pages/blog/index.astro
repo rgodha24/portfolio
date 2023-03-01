@@ -1,31 +1,26 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
 
 const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
 <BaseLayout>
-  <section>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <time datetime={post.data.pubDate.toISOString()}>
-              {post.data.pubDate.toLocaleDateString("en-us", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              })}
-            </time>
-            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
+  <section class='not-prose'>
+    <div class='flex flex-col gap-5'>
+      {posts.map((post) => <BlogPost {...post} />)}
+    </div>
   </section>
 </BaseLayout>
+
+<style>
+  .links {
+    color: var(--un-prose-links);
+    @apply text-2xl;
+  }
+  .headings {
+    color: var(--headings);
+    @apply text-2xl;
+  }
+</style>

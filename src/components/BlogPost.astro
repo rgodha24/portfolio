@@ -1,0 +1,25 @@
+---
+import Wrapper from "./Wrapper.astro";
+import type { CollectionEntry } from "astro:content";
+type Props = Pick<CollectionEntry<"blog">, "data" | "slug">;
+const {
+  data: { title, pubDate, description, readingTime },
+  slug,
+} = Astro.props;
+---
+
+<Wrapper>
+  <h3 class='text-center text-3xl hover:text-cyan-400 not-prose'>
+    <a class='' href={`/blog/${slug}`}>
+      {title}
+    </a>
+  </h3>
+  <p class='text-center text-slate-300 -mt-2'>{description}</p>
+  <div class='flex flex-row gap-4 text-slate-300 mx-auto'>
+    <p>
+      {readingTime} min read
+    </p>
+    <p>•</p>
+    <p>{pubDate.toLocaleDateString("en-US")}</p>
+  </div>
+</Wrapper>

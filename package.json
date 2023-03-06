@@ -9,7 +9,7 @@
       "build": "astro build",
       "preview": "astro preview",
       "astro": "astro",
-      "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,json}\" --config \"prettier.cjs\""
+      "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,json}\""
    },
    "dependencies": {
       "@astrojs/mdx": "^0.15.1",

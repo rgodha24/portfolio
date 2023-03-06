@@ -2,14 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Technology from "../components/Technology.astro";
 import Projects from "../components/Projects.astro";
+import HeaderLink from "../components/HeaderLink.astro";
 ---
 
 <BaseLayout>
    <p>
       Hi! My name is Rohan, and I'm a 17 year old junior at
-      <Technology href="https://brophyprep.org/">
-         Brophy College Prep
-      </Technology>.
+      <Technology href="https://brophyprep.org/">Brophy College Prep</Technology>.
    </p>
    <p>
       I love learning about new technology, currently including
@@ -17,14 +16,11 @@ import Projects from "../components/Projects.astro";
       <Technology href="https://tauri.app/">Tauri</Technology>.
    </p>
    <p>
-      Robotics is one of my passions, and I'm currently on the Robotics team at
-      Brophy,
-      <Technology
-         href="https://sites.google.com/brophyprep.org/broncobotics/home"
-      >
+      Robotics is one of my passions, and I'm currently on the Robotics team at Brophy,
+      <Technology href="https://sites.google.com/brophyprep.org/broncobotics/home">
          Broncobots
       </Technology>.
    </p>
-   <h2 class="-mt-1">Projects</h2>
+   <h2 class="-mt-1"><a class="not-prose hover:text-cyan-400" href="/projects">Projects</a></h2>
    <Projects amount={2} />
 </BaseLayout>

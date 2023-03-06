@@ -1,9 +1,4 @@
-import {
-   defineConfig,
-   presetTypography,
-   presetWind,
-   transformerDirectives,
-} from "unocss";
+import { defineConfig, presetTypography, presetWind, transformerDirectives } from "unocss";
 
 export default defineConfig({
    presets: [

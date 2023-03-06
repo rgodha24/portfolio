@@ -25,11 +25,7 @@ const { Content } = await props.render();
    >
       <Content />
       <div class="flex flex-row justify-center gap-35">
-         <Icon
-            href={props.data.website}
-            title={props.data.title + " website link"}
-            stroke
-         >
+         <Icon href={props.data.website} title={props.data.title + " website link"} stroke>
             <Link />
          </Icon>
          <Icon href={props.data.repo} title={props.data.title + "github repo"}>

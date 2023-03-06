@@ -1,25 +1,29 @@
 ---
 type Props = {
-  href: string;
-  title: string;
-  stroke?: boolean;
+   href: string;
+   title: string;
+   stroke?: boolean;
 };
 
 const { href, title, stroke = false } = Astro.props;
 ---
 
-<div class='w-8 h-8 object-cover'>
-  <a href={href} class:list={["w-full h-full", stroke ? "stroke" : "fill"]} target='_blank'>
-    <slot id={title} />
-    <span class='sr-only'>{title}</span>
-  </a>
+<div class="w-8 h-8 object-cover">
+   <a
+      href={href}
+      class:list={["w-full h-full", stroke ? "stroke" : "fill"]}
+      target="_blank"
+   >
+      <slot id={title} />
+      <span class="sr-only">{title}</span>
+   </a>
 </div>
 
 <style>
-  .stroke {
-    @apply stroke-slate-200 hover:stroke-bluegray-300;
-  }
-  .fill {
-    @apply fill-slate-200 hover:fill-bluegray-300;
-  }
+   .stroke {
+      @apply stroke-slate-200 hover:stroke-bluegray-300;
+   }
+   .fill {
+      @apply fill-slate-200 hover:fill-bluegray-300;
+   }
 </style>

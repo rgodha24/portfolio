@@ -3,24 +3,26 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
-const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
 <BaseLayout>
-  <section class='not-prose'>
-    <div class='flex flex-col gap-5'>
-      {posts.map((post) => <BlogPost {...post} />)}
-    </div>
-  </section>
+   <section class="not-prose">
+      <div class="flex flex-col gap-5">
+         {posts.map((post) => <BlogPost {...post} />)}
+      </div>
+   </section>
 </BaseLayout>
 
 <style>
-  .links {
-    color: var(--un-prose-links);
-    @apply text-2xl;
-  }
-  .headings {
-    color: var(--headings);
-    @apply text-2xl;
-  }
+   .links {
+      color: var(--un-prose-links);
+      @apply text-2xl;
+   }
+   .headings {
+      color: var(--headings);
+      @apply text-2xl;
+   }
 </style>

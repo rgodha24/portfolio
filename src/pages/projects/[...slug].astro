@@ -7,11 +7,11 @@ import Link from "../../icons/Link.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
-  return projects.map((project) => ({
-    params: { slug: project.slug },
-    props: project,
-  }));
+   const projects = await getCollection("projects");
+   return projects.map((project) => ({
+      params: { slug: project.slug },
+      props: project,
+   }));
 }
 type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]["props"];
 
@@ -20,41 +20,45 @@ const { Content } = await props.render();
 ---
 
 <BaseLayout>
-  <div
-    class='border border-1 border-sky-300 rounded-4 p-5 m-4 gradient hover:from-slate-900 hover:to-slate-800 from-coolgray-900 to-coolgray-800'
-  >
-    <Content />
-    <div class='flex flex-row justify-center gap-35'>
-      <Icon href={props.data.website} title={props.data.title + " website link"} stroke>
-        <Link />
-      </Icon>
-      <Icon href={props.data.repo} title={props.data.title + "github repo"}>
-        <Github />
-      </Icon>
-    </div>
-  </div>
+   <div
+      class="border border-1 border-sky-300 rounded-4 p-5 m-4 gradient hover:from-slate-900 hover:to-slate-800 from-coolgray-900 to-coolgray-800"
+   >
+      <Content />
+      <div class="flex flex-row justify-center gap-35">
+         <Icon
+            href={props.data.website}
+            title={props.data.title + " website link"}
+            stroke
+         >
+            <Link />
+         </Icon>
+         <Icon href={props.data.repo} title={props.data.title + "github repo"}>
+            <Github />
+         </Icon>
+      </div>
+   </div>
 </BaseLayout>
 
 <style>
-  .gradient {
-    --un-gradient-stops: var(--un-gradient-from), var(--un-gradient-to);
-    --un-gradient: var(--un-gradient-shape), var(--un-gradient-stops);
-    background: linear-gradient(var(--un-gradient));
-    background-size: 400% 400%;
-  }
-  .gradient:hover {
-    animation: gradient-animation 3s ease infinite;
-  }
+   .gradient {
+      --un-gradient-stops: var(--un-gradient-from), var(--un-gradient-to);
+      --un-gradient: var(--un-gradient-shape), var(--un-gradient-stops);
+      background: linear-gradient(var(--un-gradient));
+      background-size: 400% 400%;
+   }
+   .gradient:hover {
+      animation: gradient-animation 3s ease infinite;
+   }
 
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+   @keyframes gradient-animation {
+      0% {
+         background-position: 0% 50%;
+      }
+      50% {
+         background-position: 100% 50%;
+      }
+      100% {
+         background-position: 0% 50%;
+      }
+   }
 </style>

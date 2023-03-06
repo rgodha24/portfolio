@@ -1,18 +1,22 @@
 ---
 export interface Props {
-  href: string;
-  target?: "_blank" | "_self" | "_parent" | "_top";
+   href: string;
+   target?: "_blank" | "_self" | "_parent" | "_top";
 }
 
 const { href, target } = Astro.props;
 ---
 
-<a href={href} class='text-heading font-bold hover:text-cyan-400' target={target || ""}>
-  <slot />
+<a
+   href={href}
+   class="text-heading font-bold hover:text-cyan-400"
+   target={target || ""}
+>
+   <slot />
 </a>
 
 <style>
-  .text-heading {
-    color: var(--headings);
-  }
+   .text-heading {
+      color: var(--headings);
+   }
 </style>

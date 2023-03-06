@@ -3,23 +3,23 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class='pb-4'>
-  <div class='flex flex-row'>
-    <img
-      src='/pfp-bad-qual.webp'
-      alt='my pfp, a star wars clone trooper'
-      class='my-auto rounded-full w-10 h-10'
-      height='40'
-      width='40'
-      style='object-fit: cover;'
-    />
-    <h2 class='text-3xl sm:text-4xl md:text-5xl text-white py-2 ml-5 my-auto'>
-      {SITE_TITLE}
-    </h2>
-  </div>
-  <nav class='flex flex-row flex-1 justify-between text-2xl md:text-3xl'>
-    <HeaderLink href='/'>Home</HeaderLink>
-    <HeaderLink href='/blog'>Blog</HeaderLink>
-    <HeaderLink href='/projects'>Projects</HeaderLink>
-  </nav>
+<header class="pb-4">
+   <div class="flex flex-row">
+      <img
+         src="/pfp-bad-qual.webp"
+         alt="my pfp, a star wars clone trooper"
+         class="my-auto rounded-full w-10 h-10"
+         height="40"
+         width="40"
+         style="object-fit: cover;"
+      />
+      <h2 class="text-3xl sm:text-4xl md:text-5xl text-white py-2 ml-5 my-auto">
+         {SITE_TITLE}
+      </h2>
+   </div>
+   <nav class="flex flex-row flex-1 justify-between text-2xl md:text-3xl">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/projects">Projects</HeaderLink>
+   </nav>
 </header>

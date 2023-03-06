@@ -10,48 +10,51 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang='en' class='min-h-[100%] overflow-auto'>
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-  <body class='max-w-[calc(75ch+1.25rem)] w-full m-auto break-words overflow-auto px-10 pt-5'>
-    <Header title={title} />
-    <main class='prose bbg text-slate-300 text-xl'>
-      <slot />
-    </main>
-    <Footer />
-    <style is:global>
-      :root {
-        --headings: rgb(134, 236, 246);
-        background-image: linear-gradient(45deg, #001135, #000327);
-        @apply bg-black;
-      }
-      .bbg {
-        --un-prose-body: #ffc1cc;
-        --un-prose-headings: var(--headings);
-        --un-prose-links: #54d2dd;
-        --un-prose-lists: #3ca9be;
-        --un-prose-hr: #bdf1f5;
-        --un-prose-captions: #3fd3f4;
-        --un-prose-code: #1f93e6;
-        --un-prose-borders: #fecdd3;
-        --un-prose-bg-soft: #ffe4e6;
-        --un-prose-invert-body: #fecdd3;
-        --un-prose-invert-headings: #ffe4e6;
-        --un-prose-invert-links: #ffe4e6;
-        --un-prose-invert-lists: #f43f5e;
-        --un-prose-invert-hr: #24b5e1;
-        --un-prose-invert-captions: #fb7185;
-        --un-prose-invert-code: #ffe4e6;
-        --un-prose-invert-borders: #be123c;
-        --un-prose-invert-bg-soft: #9f1239;
-        --un-prose-font-mono: "Norwester", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-          "Courier New", monospace;
-      }
-      a {
-        text-decoration: none;
-        @apply hover:underline hover:underline-cyan-300 no-underline;
-      }
-    </style>
-  </body>
+<html lang="en" class="min-h-[100%] overflow-auto">
+   <head>
+      <BaseHead title={title} description={description} />
+   </head>
+   <body
+      class="max-w-[calc(75ch+1.25rem)] w-full m-auto break-words overflow-auto px-10 pt-5"
+   >
+      <Header title={title} />
+      <main class="prose bbg text-slate-300 text-xl">
+         <slot />
+      </main>
+      <Footer />
+      <style is:global>
+         :root {
+            --headings: rgb(134, 236, 246);
+            background-image: radial-gradient(#001135, #000327);
+            @apply bg-black;
+         }
+         .bbg {
+            --un-prose-body: #ffc1cc;
+            --un-prose-headings: var(--headings);
+            --un-prose-links: #54d2dd;
+            --un-prose-lists: #3ca9be;
+            --un-prose-hr: #bdf1f5;
+            --un-prose-captions: #3fd3f4;
+            --un-prose-code: #1f93e6;
+            --un-prose-borders: #fecdd3;
+            --un-prose-bg-soft: #ffe4e6;
+            --un-prose-invert-body: #fecdd3;
+            --un-prose-invert-headings: #ffe4e6;
+            --un-prose-invert-links: #ffe4e6;
+            --un-prose-invert-lists: #f43f5e;
+            --un-prose-invert-hr: #24b5e1;
+            --un-prose-invert-captions: #fb7185;
+            --un-prose-invert-code: #ffe4e6;
+            --un-prose-invert-borders: #be123c;
+            --un-prose-invert-bg-soft: #9f1239;
+            --un-prose-font-mono: "Norwester", ui-monospace, SFMono-Regular,
+               Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+               monospace;
+         }
+         a {
+            text-decoration: none;
+            @apply hover:underline hover:underline-cyan-300 no-underline;
+         }
+      </style>
+   </body>
 </html>

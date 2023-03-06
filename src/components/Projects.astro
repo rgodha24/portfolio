@@ -3,18 +3,18 @@ import { getCollection } from "astro:content";
 import Project from "./Project.astro";
 
 type Props = {
-  amount?: number;
+   amount?: number;
 };
 const { amount = 1209413 } = Astro.props;
 
 const projects = await getCollection("projects");
 ---
 
-<section class='grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3'>
-  {
-    projects
-      .sort((a, b) => -a.data.order + b.data.order)
-      .slice(0, Math.min(amount, projects.length))
-      .map((proj) => <Project {...proj} />)
-  }
+<section class="grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3">
+   {
+      projects
+         .sort((a, b) => -a.data.order + b.data.order)
+         .slice(0, Math.min(amount, projects.length))
+         .map((proj) => <Project {...proj} />)
+   }
 </section>

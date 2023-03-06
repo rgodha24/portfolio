@@ -8,30 +8,30 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <BaseLayout title={`Rohan's blog - ${title}`} description={description}>
-  <article class='h-full'>
-    {heroImage && <img width={720} height={360} src={heroImage} alt='' />}
-    <h1>{title}</h1>
-    {
-      pubDate && (
-        <div class='mt-4 text-center -mb-2'>
-          <time class=''>{pubDate.toLocaleString()}</time>
-        </div>
-      )
-    }
-    {
-      updatedDate && (
-        <div class='mt-4 text-center'>
-          Last updated on <time>{updatedDate}</time>
-        </div>
-      )
-    }
-    <hr />
-    <slot />
-  </article>
+   <article class="h-full">
+      {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+      <h1>{title}</h1>
+      {
+         pubDate && (
+            <div class="mt-4 text-center -mb-2">
+               <time class="">{pubDate.toLocaleString()}</time>
+            </div>
+         )
+      }
+      {
+         updatedDate && (
+            <div class="mt-4 text-center">
+               Last updated on <time>{updatedDate}</time>
+            </div>
+         )
+      }
+      <hr />
+      <slot />
+   </article>
 </BaseLayout>
 
 <style>
-  sup {
-    @apply ml-50;
-  }
+   sup {
+      @apply ml-50;
+   }
 </style>

@@ -1,0 +1,17 @@
+---
+import { type Technologies, techLinks, techIcons } from "./technologies";
+
+export type Props = {
+   technology: Technologies;
+};
+
+const { technology } = Astro.props;
+const link = techLinks[technology];
+const icon = techIcons[technology];
+const alt = `${technology} icon` as const;
+---
+
+<a href={link}>
+   <span class="sr-only">Icon for {technology}</span>
+   <img class="w-8 h-8" width="2rem" height="2rem" alt={alt} src={icon} />
+</a>

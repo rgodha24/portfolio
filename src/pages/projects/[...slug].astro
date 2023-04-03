@@ -5,7 +5,7 @@ import Github from "../../icons/Github.astro";
 import Icon from "../../icons/Icon.astro";
 import Link from "../../icons/Link.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import TechnologyCard from "../../technology/TechnologyCard.astro"
+import TechnologyCard from "../../technology/TechnologyCard.astro";
 
 export async function getStaticPaths() {
    const projects = await getCollection("projects");
@@ -25,9 +25,10 @@ const { Content } = await props.render();
       class="border border-1 border-sky-300 rounded-4 p-5 m-4 gradient hover:from-slate-900 hover:to-slate-800 from-coolgray-900 to-coolgray-800"
    >
       <Content />
-         <div class="flex flex-row justify-center">
-            {props.data.technologies.map((a) => <TechnologyCard technology={a} /> )}
-          </div>
+      <h3 class="text-4xl text-center -mt-2">Technologies used</h3>
+      <div class="flex flex-row justify-center">
+         {props.data.technologies.map((a) => <TechnologyCard technology={a} />)}
+      </div>
       <div class="flex flex-row justify-center gap-35">
          <Icon href={props.data.website} title={props.data.title + " website link"} stroke>
             <Link />

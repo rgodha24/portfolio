@@ -11,7 +11,7 @@ const icon = techIcons[technology];
 const alt = `${technology} icon` as const;
 ---
 
-<a href={link}>
+<a class="mx-7 mb-6" href={link}>
    <span class="sr-only">Icon for {technology}</span>
-   <img class="w-8 h-8" width="2rem" height="2rem" alt={alt} src={icon} />
+   <img class="w-12 h-12" width="2rem" height="2rem" alt={alt} src={icon} />
 </a>

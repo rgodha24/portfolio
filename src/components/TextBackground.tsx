@@ -17,12 +17,13 @@ export default function TextBackground() {
    onCleanup(() => window.removeEventListener("resize", handleResize));
 
    return (
-     <div
-       class="font-mono max-w-full overflow-hidden text-slate-800"
+      <div
+         class="font-mono max-w-full overflow-hidden gradient-text bg-gradient-to-t bg-gradient-from-coolgray-900 bg-gradient-to-slate-700"
          style={{
             "line-height": "20px",
             "font-size": "16px",
          }}
+         aria-hidden={true}
       >
          <For each={new Array(lines())}>
             {() => (

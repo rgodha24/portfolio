@@ -2,11 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Technology from "../components/Technology.astro";
 import Projects from "../components/Projects.astro";
-import HeaderLink from "../components/HeaderLink.astro";
+import TextBackground from "../components/TextBackground.tsx"
 ---
 
-<BaseLayout>
-   <p>
+<BaseLayout >
+   <section class="h-100vh w-100%"><TextBackground  client:only /></section>
+<section class="prose text-slate-300 text-xl max-w-[calc(75ch+1.25rem)] w-full m-auto px-10 py-5">   <p>
       Hi! My name is Rohan, and I'm a 17 year old junior at
       <Technology href="https://brophyprep.org/">Brophy College Prep</Technology>.
    </p>
@@ -24,6 +25,6 @@ import HeaderLink from "../components/HeaderLink.astro";
    <h2 class="-mt-1 text-bold">
       <a class="not-prose hover:text-cyan-400 font-bold" href="/projects">Projects</a>
    </h2>
-
    <Projects amount={2} />
+</section>
 </BaseLayout>

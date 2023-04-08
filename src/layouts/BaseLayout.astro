@@ -1,7 +1,5 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 type Props = { description?: string; title?: string };
@@ -14,12 +12,8 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE } = Astro.props;
    <head>
       <BaseHead title={title} description={description} />
    </head>
-   <body class="max-w-[calc(75ch+1.25rem)] w-full m-auto break-words overflow-auto px-10 pt-5">
-      <Header title={title} />
-      <main class="prose bbg text-slate-300 text-xl">
-         <slot />
-      </main>
-      <Footer />
+   <body class="bbg text-slate-300 text-xl ">
+   <slot />
       <style is:global>
          :root {
             --headings: rgb(134, 236, 246);

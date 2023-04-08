@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import CombinedLayout from "../../layouts/CombinedLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
 const posts = (await getCollection("blog")).sort(
@@ -8,13 +8,13 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<BaseLayout nav>
+<CombinedLayout nav>
    <section class="not-prose">
       <div class="flex flex-col gap-5">
          {posts.map((post) => <BlogPost {...post} />)}
       </div>
    </section>
-</BaseLayout>
+</CombinedLayout>
 
 <style>
    .links {

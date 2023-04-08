@@ -1,20 +1,46 @@
-import { For, createSignal, onCleanup } from "solid-js";
-import TextLine from "./TextLine";
+import { For, createSignal, from, onCleanup } from "solid-js";
 
 export default function TextBackground() {
    const [height, setHeight] = createSignal(window.innerHeight);
    const [width, setWidth] = createSignal(window.innerWidth);
-
    const letters = () => calculateLetterAmounts(height(), width()).letters;
    const lines = () => calculateLetterAmounts(height(), width()).lines;
 
-   function handleResize() {
-      setHeight(window.innerHeight);
-      setWidth(window.innerWidth);
-   }
+   const text = from<string[]>((set) => {
+      const interval = setInterval(() => {
+         set((prev) => {
+            const newlines = lines() - (prev?.length || 0) + 1;
 
-   window.addEventListener("resize", handleResize);
-   onCleanup(() => window.removeEventListener("resize", handleResize));
+            if (prev === undefined) {
+               prev = [];
+            }
+
+            prev.shift();
+
+            for (let i = 0; i < newlines; i++) {
+               prev?.push(
+                  Array.from({ length: letters() }, () =>
+                     String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+                  ).join("")
+               );
+            }
+
+            return prev;
+         });
+      }, 100);
+      function handleResize() {
+         set(undefined);
+         setHeight(window.innerHeight);
+         setWidth(window.innerWidth);
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+         clearInterval(interval);
+         window.removeEventListener("resize", handleResize);
+      };
+   });
 
    return (
       <div
@@ -25,10 +51,10 @@ export default function TextBackground() {
          }}
          aria-hidden={true}
       >
-         <For each={new Array(lines())}>
-            {() => (
+         <For each={text()}>
+            {(line) => (
                <>
-                  <TextLine letters={letters} />
+                  {line}
                   <br />
                </>
             )}

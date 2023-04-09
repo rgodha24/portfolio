@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Technology from "../components/Technology.astro";
 import Projects from "../components/Projects.astro";
 import TextBackground from "../components/TextBackground";
+import Header from "../components/Header.astro"
 ---
 
 <BaseLayout>
@@ -18,8 +19,10 @@ import TextBackground from "../components/TextBackground";
       </div>
    </section>
    <section
-      class="prose text-slate-300 text-xl max-w-[calc(75ch+1.25rem)] w-full m-auto px-10 py-5 min-h-100vh"
+      class="max-w-[calc(75ch+1.25rem)] w-full m-auto px-10 pt-5 "
    >
+   <div class="min-w-full break-words overflow-auto prose text-slate-300 bbg min-h-100vh text-xl">
+      <Header/>
       <p>
          Hi! My name is Rohan, and I'm a 17 year old junior at
          <Technology href="https://brophyprep.org/">Brophy College Prep</Technology>.
@@ -39,6 +42,7 @@ import TextBackground from "../components/TextBackground";
          <a class="not-prose hover:text-cyan-400 font-bold" href="/projects">Projects</a>
       </h2>
       <Projects amount={2} />
+   </div>
    </section>
 </BaseLayout>
 

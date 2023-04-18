@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "Norwester";
-  src: url("/fonts/Norwester.woff") format("otf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+   font-family: "Norwester";
+   src: url("/fonts/Norwester.woff") format("otf");
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
 }
 
 * {
-  font-family: "Norwester", sans-serif;
-  font-weight: 400;
+   font-family: "Norwester", sans-serif;
+   font-weight: 400;
 }

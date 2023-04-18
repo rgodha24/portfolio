@@ -1,5 +1,4 @@
 export default function NavigateDownBtn() {
-   const title = document.getElementById("title")!; 
    return (
       <div class="absolute left-50% bottom-2% fill-slate-300 transform-center">
          <button

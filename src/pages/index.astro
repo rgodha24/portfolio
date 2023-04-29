@@ -10,15 +10,16 @@ import NavigateDownButton from "../components/NavigateDownBtn";
 <BaseLayout>
    <section class="h-100vh w-100%">
       <TextBackground client:only />
-      <div
-         class="centered transform-center gradient-text bg-gradient-to-r bg-gradient-from-sky-400 bg-gradient-to-cyan-600 font-extrabold text-7xl md:text-8xl lg:text-9xl font-bold text-center"
-         id="ignored"
-      >
-         <span class="font-bold">Rohan</span>
-         <br />
-         <span class="font-bold">Godha</span>
+      <div id="ignored" class="centered transform-center text-7xl md:text-8xl lg:text-9xl">
+         <div
+            class="gradient-text bg-gradient-to-r bg-gradient-from-sky-400 bg-gradient-to-cyan-600 font-extrabold font-bold text-center"
+         >
+            <span class="font-bold">Rohan</span>
+            <br />
+            <span class="font-bold">Godha</span>
+         </div>
       </div>
-      <NavigateDownButton  client:only/>
+      <NavigateDownButton client:only />
    </section>
    <section class="max-w-[calc(75ch+1.25rem)] w-full m-auto px-10 pt-5">
       <div

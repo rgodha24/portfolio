@@ -14,7 +14,5 @@ export default defineConfig({
   site: "https://rgodha.com",
   integrations: [mdx(), sitemap(), solidJs(), unocss()],
   output: "static",
-  adapter: vercel({
-    analytics: true,
-  }),
+  adapter: vercel({}),
 });

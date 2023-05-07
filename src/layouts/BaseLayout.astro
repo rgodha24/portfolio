@@ -11,6 +11,11 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE, ...props } = Astro.p
 <html lang="en" class="min-h-[100%] overflow-auto">
    <head>
       <BaseHead title={title} description={description} />
+      <script
+         async
+         src="https://u.rgodha.com/script.js"
+         data-website-id="7d8f573d-528e-472d-9905-eccc398c64ae"
+      ></script>
    </head>
    <body class={`${props["class"] || ""}`}>
       <slot />

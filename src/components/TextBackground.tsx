@@ -2,7 +2,8 @@ import { For, createSignal, from } from "solid-js";
 import "../styles/ignored.css";
 
 const LINE_HEIGHT = 20;
-let LETTER_WIDTH = 8.898;
+const LETTER_WIDTH = 9;
+const ALL_LETTERS = "abcdefghijklmnopqrstuvwxyz";
 
 export default function TextBackground() {
    const [height, setHeight] = createSignal(window.outerHeight);
@@ -14,20 +15,20 @@ export default function TextBackground() {
    const text = from<string[][]>((set) => {
       const interval = setInterval(() => {
          set((prev) => {
-            const newlines = lines() - (prev?.length || 0) + 1;
-
-            if (prev === undefined) {
-               prev = [];
+            if (prev !== undefined) {
+               const a = prev.shift()!;
+               prev.push(a);
+               return prev;
             }
 
-            prev.shift();
+            prev = [];
 
-            for (let i = 0; i < newlines; i++) {
-               prev?.push(
-                  Array.from({ length: letters() }, () =>
-                     String.fromCharCode(Math.floor(Math.random() * 26) + 97)
-                  )
+            for (let i = 0; i < lines(); i++) {
+               const newPart = Array.from(
+                  { length: letters() },
+                  () => ALL_LETTERS[Math.floor(Math.random() * ALL_LETTERS.length)]
                );
+               prev.push(newPart);
             }
 
             return prev;
@@ -72,7 +73,7 @@ export default function TextBackground() {
 
 function calculateLetterAmounts(height: number, width: number): { lines: number; letters: number } {
    const lines = Math.floor(height / LINE_HEIGHT);
-   const letters = Math.floor(width / LETTER_WIDTH) + 1 - (14 / 1440) * width;
+   const letters = Math.ceil(width / LETTER_WIDTH);
 
    return { lines, letters };
 }

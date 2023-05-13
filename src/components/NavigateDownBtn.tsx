@@ -5,7 +5,7 @@ export default function NavigateDownBtn() {
          <button
             onClick={() => {
                window.scroll({
-                  top: window.innerHeight,
+                  top: window.outerHeight,
                   behavior: "smooth",
                });
             }}

@@ -11,7 +11,7 @@ import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://rgodha.com",
+  site: "https://rohan.zip",
   integrations: [mdx(), sitemap(), solidJs(), unocss()],
   output: "static",
   adapter: vercel({}),

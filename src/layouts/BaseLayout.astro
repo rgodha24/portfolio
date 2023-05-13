@@ -21,7 +21,7 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE, ...props } = Astro.p
          )
       }
    </head>
-   <body class={`${props["class"] || ""}`}>
+   <body class={`${props["class"] || ""} `}>
       <slot />
       <style is:global>
          :root {

@@ -9,13 +9,11 @@ type Props = { description?: string; title?: string; nav?: boolean };
 const { description = SITE_DESCRIPTION, title = SITE_TITLE, nav = false } = Astro.props;
 ---
 
-<BaseLayout
-   description={description}
-   title={title}
-   class="max-w-[calc(75ch+1.25rem)] w-full m-auto px-10 pt-5 break-words overflow-auto"
->
+<BaseLayout description={description} title={title} class="">
    <Header nav={nav} />
-   <main class="prose text-slate-300 min-w-full">
+   <main
+      class="max-w-[calc(75ch+1.25rem)] w-full m-auto px-10 pt-5 break-words overflow-auto prose text-slate-300"
+   >
       <slot />
    </main>
    <Footer />

@@ -10,3 +10,9 @@ const { href, target } = Astro.props;
 <a href={href} class="mt-auto text-sky-600 font-bold hover:text-sky-500" target={target || ""}>
    <slot />
 </a>
+
+<style>
+   a:hover {
+      box-shadow: inset 0 25px 50px -12px rgba(14, 165, 233, var(0.05));
+   }
+</style>

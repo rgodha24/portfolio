@@ -2,20 +2,22 @@
 import HeaderLink from "./HeaderLink.astro";
 ---
 
-<a href="/" class="absolute left-5 p-4">
-   <img
-      src="/pfp-bad-qual.webp"
-      alt="star wars clone trooper"
-      class="my-auto rounded-full w-15 h-15 left-5%"
-      height="60"
-      width="60"
-      style="object-fit: cover;"
-   />
-</a>
-<div
-   class="absolute h-15 right-5% flex flex-row items-center gap-6 md:gap-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl p-4 mt-4 md:3 lg:mt-2.5"
->
-   <HeaderLink href="/resume">Resume</HeaderLink>
-   <HeaderLink href="/projects">Projects</HeaderLink>
-   <HeaderLink href="/blog">Blog</HeaderLink>
+<div class="flex flex-row justify-between">
+   <a href="/" class="p-4">
+      <img
+         src="/pfp-bad-qual.webp"
+         alt="star wars clone trooper"
+         class="my-auto rounded-full w-15 h-15 left-5%"
+         height="60"
+         width="60"
+         style="object-fit: cover;"
+      />
+   </a>
+   <div
+      class="h-15 flex flex-row items-center gap-6 md:gap-12 text-xl md:text-2xl lg:text-3xl xl:text-4xl p-4 mt-4 md:3 lg:mt-2.5"
+   >
+      <HeaderLink href="/resume">Resume</HeaderLink>
+      <HeaderLink href="/projects">Projects</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+   </div>
 </div>

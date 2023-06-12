@@ -11,9 +11,9 @@ export default defineConfig({
       presetWind(),
       presetWebFonts({
          fonts: {
-            mono: ["Space Mono"],
+            mono: ["Intel Mono"],
          },
-         provider: "google",
+         provider: "none",
       }),
       presetTypography({
          cssExtend: {

@@ -8,7 +8,9 @@ import vercel from "@astrojs/vercel/static";
 
 export default defineConfig({
   site: "https://rohan.zip",
-  integrations: [mdx(), sitemap(), solidJs(), unocss()],
+  integrations: [mdx(), sitemap(), solidJs(), unocss({
+    mode: "global"
+  })],
   output: "static",
   adapter: vercel({}),
   experimental: {

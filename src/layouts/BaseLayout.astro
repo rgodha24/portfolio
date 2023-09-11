@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import {ViewTransitions} from "astro:transitions";
 
 type Props = { description?: string; title?: string; class?: string };
 
@@ -20,6 +21,7 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE, ...props } = Astro.p
             />
          )
       }
+      <ViewTransitions />
    </head>
    <body class={`${props["class"] || ""} `}>
       <slot />

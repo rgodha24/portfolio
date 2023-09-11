@@ -12,6 +12,7 @@
       "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,json}\""
    },
    "dependencies": {
+      "@astrojs/prefetch": "^0.4.0",
       "@astrojs/rss": "^2.4.4",
       "@astrojs/sitemap": "^1.4.0",
       "@unocss/preset-web-fonts": "^0.51.13",

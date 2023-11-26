@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content";
-import { technologiesSchema } from "../technology/technologies";
 
 const blog = defineCollection({
    // Type-check frontmatter using a schema
@@ -26,7 +25,6 @@ const projects = defineCollection({
       repo: z.string().url(),
       website: z.string().url(),
       blurb: z.string(),
-      technologies: technologiesSchema.array(),
       order: z.number().optional().default(100),
    }),
 });

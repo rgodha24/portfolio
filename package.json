@@ -1,38 +1,38 @@
 {
-   "name": "rohan.zip",
-   "type": "module",
-   "version": "0.0.1",
-   "private": true,
-   "scripts": {
-      "dev": "astro dev",
-      "start": "astro dev",
-      "build": "astro build",
-      "preview": "astro preview",
-      "astro": "astro",
-      "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,json}\""
-   },
-   "dependencies": {
-      "@astrojs/prefetch": "^0.4.0",
-      "@astrojs/rss": "^2.4.4",
-      "@astrojs/sitemap": "^1.4.0",
-      "@unocss/preset-web-fonts": "^0.51.13",
-      "astro": "^3.0.12",
-      "simple-icons": "^8.15.0",
-      "solid-js": "^1.7.11",
-      "tailwindcss": "^3.3.3",
-      "web-vitals": "^3.4.0"
-   },
-   "devDependencies": {
-      "@astrojs/mdx": "^1.0.3",
-      "@astrojs/solid-js": "^3.0.1",
-      "@astrojs/tailwind": "^5.0.0",
-      "@astrojs/vercel": "^4.0.5",
-      "@tailwindcss/typography": "^0.5.10",
-      "@unocss/preset-typography": "^0.49.8",
-      "@unocss/reset": "^0.49.8",
-      "prettier": "^2.8.8",
-      "prettier-plugin-astro": "^0.8.1",
-      "prettier-plugin-tailwindcss": "^0.2.8",
-      "unocss": "^0.49.8"
-   }
+  "name": "rohan.zip",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,json}\""
+  },
+  "dependencies": {
+    "@astrojs/prefetch": "0.4.1",
+    "@astrojs/rss": "4.0.5",
+    "@astrojs/sitemap": "3.1.4",
+    "@unocss/preset-web-fonts": "^0.51.13",
+    "astro": "4.7.0",
+    "simple-icons": "^8.15.0",
+    "solid-js": "^1.7.11",
+    "tailwindcss": "^3.3.3",
+    "web-vitals": "^3.4.0"
+  },
+  "devDependencies": {
+    "@astrojs/mdx": "2.3.1",
+    "@astrojs/solid-js": "4.1.0",
+    "@astrojs/tailwind": "5.1.0",
+    "@astrojs/vercel": "7.5.4",
+    "@tailwindcss/typography": "^0.5.10",
+    "@unocss/preset-typography": "^0.49.8",
+    "@unocss/reset": "^0.49.8",
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "unocss": "^0.49.8"
+  }
 }

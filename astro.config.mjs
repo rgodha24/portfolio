@@ -10,7 +10,8 @@ import prefetch from "@astrojs/prefetch";
 export default defineConfig({
   site: "https://www.rohangodha.com",
   integrations: [mdx(), sitemap(), solidJs(), unocss({
-    mode: "global"
+    mode: "global",
+    injectReset: true,
   }), prefetch()],
   output: "hybrid",
   adapter: cloudflare({imageService: "compile"})

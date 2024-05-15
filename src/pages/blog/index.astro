@@ -6,6 +6,8 @@ import BlogPost from "../../components/BlogPost.astro";
 const posts = (await getCollection("blog")).sort(
    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
+
+export const prerender = true;
 ---
 
 <CombinedLayout nav>

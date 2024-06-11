@@ -13,7 +13,7 @@ export const prerender = true;
 <BaseLayout>
    <section class="h-100vh w-100%">
       <div class="h-100vh w-100% absolute z--1">
-         <TextBackground client:only />
+         <TextBackground client:only="solid-js" />
       </div>
       <Header />
       <div class="centered transform-center w-full">
@@ -30,7 +30,7 @@ export const prerender = true;
             </div>
          </div>
       </div>
-      <NavigateDownButton client:only />
+      <NavigateDownButton client:only="solid-js" />
    </section>
    <section class="max-w-[calc(75ch+1.25rem)] w-full m-auto px-10 py-5">
       <div

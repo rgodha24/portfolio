@@ -51,7 +51,7 @@ export default function TextBackground() {
 
    return (
       <div
-         class="overflow-hidden max-w-full max-h-full font-mono whitespace-pre bg-gradient-to-t select-none gradient-text bg-gradient-to-indigo-800 bg-gradient-from-sky-800"
+         class="gradient-text bg-gradient-to-indigo-800 bg-gradient-from-sky-800 max-h-full max-w-full select-none overflow-hidden whitespace-pre bg-gradient-to-t font-mono"
          style={{
             "line-height": "20px",
          }}

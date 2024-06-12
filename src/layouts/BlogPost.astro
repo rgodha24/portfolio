@@ -4,16 +4,16 @@ import CombinedLayout from "./CombinedLayout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
 ---
 
-<CombinedLayout nav title={`Rohan's blog - ${title}`} description={description}>
+<CombinedLayout nav title={`blog: ${title}`} description={description} tags={tags}>
    <article class="h-full">
       {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
       <h1>{title}</h1>
       {
          pubDate && (
-            <div class="mt-4 text-center -mb-2">
+            <div class="-mb-2 mt-4 text-center">
                <time class="">{pubDate.toLocaleString()}</time>
             </div>
          )

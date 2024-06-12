@@ -21,12 +21,12 @@ const { Content } = await props.render();
 export const prerender = true;
 ---
 
-<CombinedLayout>
+<CombinedLayout title={`projects: ${props.data.title}`} description={props.data.blurb}>
    <div
-      class="border border-1 border-sky-300 rounded-4 p-5 m-4 gradient hover:from-slate-900 hover:to-slate-800 from-coolgray-900 to-coolgray-800"
+      class="border-1 rounded-4 gradient from-coolgray-900 to-coolgray-800 m-4 border border-sky-300 p-5 hover:from-slate-900 hover:to-slate-800"
    >
       <Content />
-      <div class="flex flex-row justify-center gap-35">
+      <div class="gap-35 flex flex-row justify-center">
          <Icon href={props.data.website} title={props.data.title + " website link"} stroke>
             <Link />
          </Icon>

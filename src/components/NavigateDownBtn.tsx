@@ -1,6 +1,6 @@
 export default function NavigateDownBtn() {
    return (
-      <div class="absolute left-50% bottom-2% ">
+      <div class="left-50% bottom-2% absolute ">
          {/* this is completely stolen from midjourney's website */}
          <button
             onClick={() => {
@@ -9,7 +9,7 @@ export default function NavigateDownBtn() {
                   behavior: "smooth",
                });
             }}
-            class="flex gap-2 justify-center items-center w-fit font-medium basis-1 gap-2 justify-center items-center p-2 px-5 min-w-max bg-opacity-50 text-sm font-bold text-center hover:bg-opacity-100 active:bg-opacity-90 rounded-full backdrop-blur-lg transition-all md:text-base outline-[#09073a]/50 absolute right-1/2 bottom-4 z-10 aspect-square translate-x-1/2 bg-slate-700/20 hover:bg-slate-600/50"
+            class="absolute bottom-4 right-1/2 z-10 flex aspect-square w-fit min-w-max basis-1 translate-x-1/2 items-center items-center justify-center justify-center gap-2 gap-2 rounded-full bg-slate-700/20 bg-opacity-50 p-2 px-5 text-center text-sm font-bold font-medium outline-[#09073a]/50 backdrop-blur-lg transition-all hover:bg-slate-600/50 hover:bg-opacity-100 active:bg-opacity-90 md:text-base"
          >
             <svg
                xmlns="http://www.w3.org/2000/svg"

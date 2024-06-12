@@ -10,7 +10,7 @@ const { amount = 1209413 } = Astro.props;
 const projects = await getCollection("projects");
 ---
 
-<section class="grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3">
+<section class="grid auto-cols-max grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-3">
    {
       projects
          .sort((a, b) => -a.data.order + b.data.order)

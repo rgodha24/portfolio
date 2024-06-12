@@ -7,7 +7,7 @@ export interface Props {
 const { href, target } = Astro.props;
 ---
 
-<a href={href} class="mt-auto text-sky-600 font-bold hover:text-sky-500" target={target || ""}>
+<a href={href} class="mt-auto font-bold text-sky-600 hover:text-sky-500" target={target || ""}>
    <slot />
 </a>
 

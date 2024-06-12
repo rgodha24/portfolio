@@ -3,15 +3,15 @@ import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { ViewTransitions } from "astro:transitions";
 
-type Props = { description?: string; title?: string; class?: string };
+type Props = { description?: string; title: string; class?: string; tags?: string[] };
 
-const { description = SITE_DESCRIPTION, title = SITE_TITLE, ...props } = Astro.props;
+const { description = SITE_DESCRIPTION, title, tags, ...props } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="min-h-[100%] overflow-auto">
    <head>
-      <BaseHead title={title} description={description} />
+      <BaseHead title={title} description={description} tags={tags} />
       {
          import.meta.env.PROD && (
             <script
@@ -28,8 +28,7 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE, ...props } = Astro.p
       <style is:global>
          :root {
             --headings: rgb(134, 236, 246);
-            background-image: radial-gradient(#001135, #000327);
-            @apply bg-black;
+            background-color: #001135;
          }
          .bbg {
             --un-prose-body: #ffc1cc;
@@ -55,7 +54,7 @@ const { description = SITE_DESCRIPTION, title = SITE_TITLE, ...props } = Astro.p
          }
          a {
             text-decoration: none;
-            @apply hover:underline hover:underline-cyan-300 no-underline;
+            @apply hover:underline-cyan-300 no-underline hover:underline;
          }
 
          .gradient-text {

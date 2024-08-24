@@ -14,11 +14,9 @@ const { description = SITE_DESCRIPTION, title, tags, ...props } = Astro.props;
       <BaseHead title={title} description={description} tags={tags} />
       {
          import.meta.env.PROD && (
-            <script
-               async
-               src="https://u.rgodha.com/script.js"
-               data-website-id="7d8f573d-528e-472d-9905-eccc398c64ae"
-            />
+          <!-- 100% privacy-first analytics -->
+          <script data-collect-dnt="true" async defer src="https://api.rohangodha.com/latest.js"></script>
+          <noscript><img src="https://api.rohangodha.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
          )
       }
       <ViewTransitions />

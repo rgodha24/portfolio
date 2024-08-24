@@ -20,5 +20,5 @@ export default defineConfig({
       prefetch(),
    ],
    output: "hybrid",
-   adapter: cloudflare({ imageService: "compile" }),
+   adapter: cloudflare(),
 });

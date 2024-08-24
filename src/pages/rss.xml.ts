@@ -1,10 +1,11 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import type { APIContext } from "astro";
+import type { APIRoute } from "astro";
 
-export async function get(context: APIContext) {
+export const GET: APIRoute = async (context) =>{
    const posts = await getCollection("blog");
+
    return rss({
       title: SITE_TITLE,
       description: SITE_DESCRIPTION,

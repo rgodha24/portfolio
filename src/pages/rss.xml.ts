@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import type { APIRoute } from "astro";
 
-export const GET: APIRoute = async (context) =>{
+export const GET: APIRoute = async (context) => {
    const posts = await getCollection("blog");
 
    return rss({
@@ -15,4 +15,4 @@ export const GET: APIRoute = async (context) =>{
          link: `/blog/${post.slug}/`,
       })),
    });
-}
+};

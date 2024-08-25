@@ -14,9 +14,21 @@ const { description = SITE_DESCRIPTION, title, tags, ...props } = Astro.props;
       <BaseHead title={title} description={description} tags={tags} />
       {
          import.meta.env.PROD && (
-          <!-- 100% privacy-first analytics -->
-          <script data-collect-dnt="true" async defer src="https://api.rohangodha.com/latest.js"></script>
-          <noscript><img src="https://api.rohangodha.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+            <>
+               <script
+                  data-collect-dnt="true"
+                  async
+                  defer
+                  src="https://api.rohangodha.com/latest.js"
+               />
+               <noscript>
+                  <img
+                     src="https://api.rohangodha.com/noscript.gif?collect-dnt=true"
+                     alt=""
+                     referrerpolicy="no-referrer-when-downgrade"
+                  />
+               </noscript>
+            </>
          )
       }
       <ViewTransitions />
@@ -47,8 +59,6 @@ const { description = SITE_DESCRIPTION, title, tags, ...props } = Astro.props;
             --un-prose-invert-code: #ffe4e6;
             --un-prose-invert-borders: #be123c;
             --un-prose-invert-bg-soft: #9f1239;
-            --un-prose-font-mono: "Norwester", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-               "Liberation Mono", "Courier New", monospace;
          }
          a {
             text-decoration: none;

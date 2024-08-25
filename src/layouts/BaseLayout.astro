@@ -33,7 +33,7 @@ const { description = SITE_DESCRIPTION, title, tags, ...props } = Astro.props;
       }
       <ViewTransitions />
    </head>
-   <body class={`${props["class"] || ""} `}>
+   <body class={`${props["class"] || ""} font-sans`}>
       <slot />
       <style is:global>
          :root {

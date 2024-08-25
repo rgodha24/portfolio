@@ -16,16 +16,18 @@ export const prerender = true;
          <TextBackground client:only="solid-js" />
       </div>
       <Header />
-      <div class="centered transform-center w-full">
+      <div class="w-full centered transform-center">
          <div class="md:pl-15% flex flex-col pl-12">
             <div class="w-full font-bold">
                <h1
-                  class="gradient-text bg-gradient-from-sky-400 bg-gradient-to-cyan-600 bg-gradient-to-r text-7xl font-bold md:text-8xl lg:text-9xl"
+                  class="text-7xl font-bold bg-gradient-to-r md:text-8xl lg:text-9xl gradient-text bg-gradient-from-sky-400 bg-gradient-to-cyan-600"
                >
                   Rohan Godha
                </h1>
-               <h3 class="text-2xl font-bold text-sky-600 md:text-3xl lg:text-4xl xl:text-5xl">
-                  CS Student @ GATech
+               <h3
+                  class="text-xl font-bold md:text-3xl lg:text-4xl xl:text-5xl font-handwriting text-sky-600"
+               >
+                  CS Student at Georgia Tech
                </h3>
             </div>
          </div>
@@ -34,7 +36,7 @@ export const prerender = true;
    </section>
    <section class="m-auto w-full max-w-[calc(75ch+1.25rem)] px-10 py-5">
       <div
-         class="prose bbg min-h-100vh min-w-full overflow-auto break-words text-xl text-slate-300"
+         class="overflow-auto min-w-full text-xl break-words prose bbg min-h-100vh text-slate-300"
       >
          <p>
             Hi! My name is Rohan, and I'm a 18 year old graduating senior at
@@ -54,8 +56,8 @@ export const prerender = true;
             I've also started to love Graphic Design and typography, and I'm currently learning
             Adobe Illustrator
          </p>
-         <h2 class="text-bold -mt-1">
-            <a class="not-prose font-bold hover:text-cyan-400" href="/projects">Projects</a>
+         <h2 class="-mt-1 text-bold">
+            <a class="font-bold hover:text-cyan-400 not-prose" href="/projects">Projects</a>
          </h2>
          <Projects amount={2} />
          <Footer />

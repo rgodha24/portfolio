@@ -1,36 +1,37 @@
 {
-   "name": "portfolio",
-   "type": "module",
-   "version": "0.0.1",
-   "private": true,
-   "scripts": {
-      "dev": "astro dev",
-      "start": "astro dev",
-      "build": "astro build",
-      "preview": "astro preview",
-      "astro": "astro",
-      "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,cjs,mjs,json}\""
-   },
-   "dependencies": {
-      "@astrojs/prefetch": "0.4.1",
-      "@astrojs/rss": "4.0.7",
-      "@astrojs/sitemap": "3.1.6",
-      "astro": "4.14.5",
-      "simple-icons": "^8.15.0",
-      "solid-js": "^1.7.11",
-      "ufo": "^1.5.3",
-      "web-vitals": "^3.4.0"
-   },
-   "devDependencies": {
-      "@astrojs/cloudflare": "11.0.4",
-      "@astrojs/mdx": "3.1.4",
-      "@astrojs/solid-js": "4.4.1",
-      "@unocss/preset-typography": "^0.60.2",
-      "@unocss/preset-web-fonts": "^0.60.2",
-      "@unocss/reset": "^0.60.2",
-      "prettier": "^2.8.8",
-      "prettier-plugin-astro": "^0.8.1",
-      "prettier-plugin-tailwindcss": "^0.2.8",
-      "unocss": "^0.60.2"
-   }
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,cjs,mjs,json}\""
+  },
+  "dependencies": {
+    "@astrojs/prefetch": "0.4.1",
+    "@astrojs/rss": "4.0.7",
+    "@astrojs/sitemap": "3.1.6",
+    "@fontsource/monaspace-krypton": "^5.0.1",
+    "@fontsource/monaspace-radon": "^5.0.2",
+    "@fontsource/norwester": "^5.0.11",
+    "astro": "4.14.5",
+    "solid-js": "^1.7.11",
+    "ufo": "^1.5.3"
+  },
+  "devDependencies": {
+    "@astrojs/cloudflare": "11.0.4",
+    "@astrojs/mdx": "3.1.4",
+    "@astrojs/solid-js": "4.4.1",
+    "@unocss/preset-typography": "^0.60.2",
+    "@unocss/preset-web-fonts": "^0.60.2",
+    "@unocss/reset": "^0.60.2",
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "unocss": "^0.60.2"
+  }
 }

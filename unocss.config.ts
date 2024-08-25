@@ -11,7 +11,15 @@ export default defineConfig({
       presetWind(),
       presetWebFonts({
          fonts: {
-            mono: ["Intel Mono"],
+            mono: ["Monaspace Krypton"],
+            sans: ["Norwester"],
+            handwriting: [
+               "Monaspace Radon",
+               "Brush Script MT",
+               "Segoe Script",
+               "Lucida Handwriting",
+               "cursive",
+            ],
          },
          provider: "none",
       }),

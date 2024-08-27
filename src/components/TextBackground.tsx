@@ -28,7 +28,7 @@ export default function TextBackground() {
          updateText(text);
 
          ctx.clearRect(0, 0, canvas.width, canvas.height);
-         ctx.font = "16px Intel One Mono";
+         ctx.font = `300 16px "Monaspace Krypton", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
          ctx.letterSpacing = `${sizes().letterSpacing}px`;
          ctx.textRendering = "optimizeLegibility";
 
@@ -45,12 +45,7 @@ export default function TextBackground() {
    });
 
    return (
-      <canvas
-         ref={canvasRef}
-         aria-hidden="true"
-         width={sizes().width}
-         height={sizes().height}
-      />
+      <canvas ref={canvasRef} aria-hidden="true" width={sizes().width} height={sizes().height} />
    );
 }
 
@@ -76,9 +71,9 @@ function updateText(text: string[]) {
 function calculateSizes(height: number, width: number) {
    const minLineHeight = 17;
    const maxLineHeight = 21;
-   const minLetterSpacing = -0.3;
-   const maxLetterSpacing = 0.3;
-   const charWidth = 9.83;
+   const minLetterSpacing = -0.4;
+   const maxLetterSpacing = 0.4;
+   const charWidth = 9.92;
 
    let bestSolution = null;
    let minEmptySpace = Infinity;

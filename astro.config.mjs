@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import solidJs from "@astrojs/solid-js";
 import unocss from "unocss/astro";
@@ -10,7 +9,6 @@ import prefetch from "@astrojs/prefetch";
 export default defineConfig({
    site: "https://www.rohangodha.com",
    integrations: [
-      mdx(),
       sitemap(),
       solidJs(),
       unocss({

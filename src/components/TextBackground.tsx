@@ -29,7 +29,7 @@ export default function TextBackground() {
          updateText(text);
 
          ctx.clearRect(0, 0, canvas.width, canvas.height);
-         ctx.font = "16px Intel One Mono";
+         ctx.font = `16px "Intel Mono", ui-monospace, monospace`;
          ctx.letterSpacing = `${sizes().letterSpacing}px`;
          ctx.textRendering = "optimizeLegibility";
 

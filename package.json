@@ -18,7 +18,10 @@
       "@fontsource/monaspace-krypton": "^5.0.1",
       "@fontsource/monaspace-radon": "^5.0.2",
       "@fontsource/norwester": "^5.0.11",
+      "@nanostores/solid": "^0.4.2",
       "astro": "4.14.5",
+      "lucide-solid": "^0.436.0",
+      "nanostores": "^0.11.3",
       "solid-js": "^1.7.11",
       "ufo": "^1.5.3"
    },

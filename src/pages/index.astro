@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TextBackground from "../components/TextBackground";
+import Icons from "../components/Icons";
 import pfp from "../pfp.png";
 import { Image } from "astro:assets";
 
@@ -8,13 +9,12 @@ export const prerender = true;
 ---
 
 <BaseLayout title="homepage">
-   <section class="h-100vh w-100%">
-      <div class="h-100vh w-100% z--1 absolute">
+   <section class="w-screen h-screen">
+      <div class="absolute w-screen h-screen z--1">
          <TextBackground client:only="solid-js" />
       </div>
-      <!-- TODO: responsive -->
-      <div class="w-full centered transform-center">
-         <div class="flex flex-col gap-4 items-center">
+      <div class="flex flex-col h-full">
+         <div class="flex flex-col flex-grow gap-8 justify-center items-center">
             <div class="flex flex-row gap-16 items-center">
                <div class="" id="image-container">
                   <Image src={pfp} alt="" class="w-full h-full" loading="eager" />
@@ -23,60 +23,70 @@ export const prerender = true;
                   <h1 class="font-sans text-sky-400">ROHAN GODHA</h1>
                </div>
             </div>
-            <div class="w-full pl-10vw">
-               <h2 class="text-80vh w-min-content font-handwriting text-sky-400">
+            <div class="w-full" id="subtitle-text">
+               <h2 class="w-min-content font-handwriting text-sky-400">
                   CS Student at Georgia Tech
                </h2>
             </div>
          </div>
+         <div class="relative mb-24 h-min-content">
+            <div
+               class="w-800px h-70px bg-#121A5D/50 rounded-24px border-x-1.5 border-b-3 border-t-1 backdrop-blur-2px absolute bottom-0 left-1/2 -translate-x-1/2 transform border-sky-400"
+            >
+            </div>
+
+            <Icons client:load />
+         </div>
       </div>
    </section>
-</BaseLayout>
 
-<style is:global>
-   .centered {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-   }
-   .transform-center {
-      transform: translate(-50%, -50%);
-   }
+   <style is:global>
+      :root {
+         --font-size-to-text-width: 4.9692797394;
+         --image-size-to-text-height: 1.5;
+         --space-to-use: 70vw;
+      }
 
-   /* basically what we want is for the image to be 1.9338842975 x the height of the 
+      /* basically what we want is for the image to be a multiple of the height of the 
     text, and for the width the text + image + gap to be 80% of the screen
 
     x = text width
     y = font size = text height = line height
     z = image width = image height
 
-    x = y * 5.409
+    x = y * --font-size-to-text-width
     x + z + 64 = 80vw
-    z = y * 1.9338842975
+    z = y * --image-size-to-text-height
 
-    5.409y + 1.9338842975y + 64px = 80vw;
-    y = (80vw-64px)/7.3428842975
-    z = y * 1.9338842975 
+    --font-size-to-text-width * y + --image-size-to-text-height * y + 64px = 80vw;
+    y = (80vw-64px)/(--font-size-to-text-width + --image-size-to-text-height)
+    z = y * --image-size-to-text-height 
 
     there's probably an easier way of doing this, but idk how to
-   */
+     */
 
-   :root {
-      --y: calc((80vw - 64px) / 7.3428842975);
-      --z: calc(var(--y) * 1.9338842975);
-   }
+      :root {
+         --font-size: calc(
+            (var(--space-to-use) - 64px) /
+               (var(--font-size-to-text-width) + var(--image-size-to-text-height))
+         );
+         --image-size: calc(var(--font-size) * var(--image-size-to-text-height));
+      }
 
-   #image-container {
-      height: var(--z);
-      width: var(--z);
-   }
+      #image-container {
+         height: var(--image-size);
+         width: var(--image-size);
+      }
 
-   #h1-container {
-      font-size: var(--y);
-      line-height: var(--y);
-   }
+      #h1-container {
+         font-size: var(--font-size);
+         line-height: var(--font-size);
+         letter-spacing: calc(var(--font-size) * -0.04);
+      }
 
-   .text-80vh {
-      font-size: calc(80vw / 16.1202083333);
-   }
-</style>
+      #subtitle-text {
+         font-size: calc(var(--space-to-use) / 16.1202083333);
+         padding-left: calc((100vw - var(--space-to-use)) / 2);
+      }
+   </style>
+</BaseLayout>

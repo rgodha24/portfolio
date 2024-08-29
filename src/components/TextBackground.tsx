@@ -38,7 +38,7 @@ export default function TextBackground() {
 
          text.forEach((line, i) => {
             ctx.fillStyle = gradient;
-            ctx.fillText(line, 0, (i + 1) * sizes().lineHeight, window.innerWidth);
+            ctx.fillText(line, 0, (i + 0.85) * sizes().lineHeight, window.innerWidth);
          });
       }, 100);
       onCleanup(() => clearInterval(interval));

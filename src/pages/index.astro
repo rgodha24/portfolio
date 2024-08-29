@@ -1,11 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Technology from "../components/Technology.astro";
-import Projects from "../components/Projects.astro";
 import TextBackground from "../components/TextBackground";
-import Header from "../components/Header.astro";
-import NavigateDownButton from "../components/NavigateDownBtn";
-import Footer from "../components/Footer.astro";
+import pfp from "../pfp.png";
+import { Image } from "astro:assets";
 
 export const prerender = true;
 ---
@@ -15,52 +12,23 @@ export const prerender = true;
       <div class="h-100vh w-100% z--1 absolute">
          <TextBackground client:only="solid-js" />
       </div>
-      <Header />
-      <div class="centered transform-center w-full">
-         <div class="md:pl-15% flex flex-col pl-12">
-            <div class="w-full font-bold">
-               <h1
-                  class="gradient-text bg-gradient-from-sky-400 bg-gradient-to-cyan-600 bg-gradient-to-r text-7xl font-bold md:text-8xl lg:text-9xl"
-               >
-                  Rohan Godha
-               </h1>
-               <h3
-                  class="font-handwriting text-xl font-bold text-sky-600 md:text-3xl lg:text-4xl xl:text-5xl"
-               >
+      <!-- TODO: responsive -->
+      <div class="w-full centered transform-center">
+         <div class="flex flex-col gap-4 items-center">
+            <div class="flex flex-row gap-16 items-center">
+               <div class="" id="image-container">
+                  <Image src={pfp} alt="" class="w-full h-full" loading="eager" />
+               </div>
+               <div class="" id="h1-container">
+                  <h1 class="font-sans text-sky-400">ROHAN GODHA</h1>
+               </div>
+            </div>
+            <div class="w-full pl-10vw">
+               <h2 class="text-80vh w-min-content font-handwriting text-sky-400">
                   CS Student at Georgia Tech
-               </h3>
+               </h2>
             </div>
          </div>
-      </div>
-      <NavigateDownButton client:only="solid-js" />
-   </section>
-   <section class="m-auto w-full max-w-[calc(75ch+1.25rem)] px-10 py-5">
-      <div
-         class="prose bbg min-h-100vh min-w-full overflow-auto break-words text-xl text-slate-300"
-      >
-         <p>
-            Hi! My name is Rohan, and I'm a 18 year old graduating senior at
-            <Technology href="https://brophyprep.org/">Brophy College Prep</Technology>, and
-            incoming CS major at <Technology href="https://gatech.edu">Georgia Tech</Technology>.
-         </p>
-         <p>
-            I love learning about new technology, currently including
-            <Technology href="https://www.rust-lang.org/">Rust</Technology> and
-            <Technology href="https://sst.dev">SST</Technology>.
-         </p>
-         <p>
-            Robotics is one of my passions, and I'm currently on the Robotics team at Brophy,
-            <Technology href="https://frcteam254.com">Broncobotics.</Technology>
-         </p>
-         <p>
-            I've also started to love Graphic Design and typography, and I'm currently learning
-            Adobe Illustrator
-         </p>
-         <h2 class="text-bold -mt-1">
-            <a class="not-prose font-bold hover:text-cyan-400" href="/projects">Projects</a>
-         </h2>
-         <Projects amount={2} />
-         <Footer />
       </div>
    </section>
 </BaseLayout>
@@ -73,5 +41,42 @@ export const prerender = true;
    }
    .transform-center {
       transform: translate(-50%, -50%);
+   }
+
+   /* basically what we want is for the image to be 1.9338842975 x the height of the 
+    text, and for the width the text + image + gap to be 80% of the screen
+
+    x = text width
+    y = font size = text height = line height
+    z = image width = image height
+
+    x = y * 5.409
+    x + z + 64 = 80vw
+    z = y * 1.9338842975
+
+    5.409y + 1.9338842975y + 64px = 80vw;
+    y = (80vw-64px)/7.3428842975
+    z = y * 1.9338842975 
+
+    there's probably an easier way of doing this, but idk how to
+   */
+
+   :root {
+      --y: calc((80vw - 64px) / 7.3428842975);
+      --z: calc(var(--y) * 1.9338842975);
+   }
+
+   #image-container {
+      height: var(--z);
+      width: var(--z);
+   }
+
+   #h1-container {
+      font-size: var(--y);
+      line-height: var(--y);
+   }
+
+   .text-80vh {
+      font-size: calc(80vw / 16.1202083333);
    }
 </style>

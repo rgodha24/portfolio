@@ -1,7 +1,11 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import "../styles/global.css";
 import { getOgURL } from "../og.ts";
+
+import "@fontsource/norwester";
+import norwesterWoff2 from "@fontsource/norwester/files/norwester-latin-400-normal.woff2";
+import "@fontsource/monaspace-radon/500.css";
+import "@fontsource/monaspace-krypton/300.css";
 
 export interface Props {
    title: string;
@@ -44,4 +48,5 @@ const fullTitle = `Rohan's ${title}`;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={ogURL} />
 
-<!-- <ViewTransitions /> -->
+<ViewTransitions />
+<link rel="preload" as="font" type="font/woff2" href={norwesterWoff2} crossorigin="anonymous" />

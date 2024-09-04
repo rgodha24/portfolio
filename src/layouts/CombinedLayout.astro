@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 type Props = { description?: string; title: string; tags?: string[]; nav?: boolean };
@@ -10,11 +8,9 @@ const { description = SITE_DESCRIPTION, title, tags, nav = false } = Astro.props
 ---
 
 <BaseLayout description={description} title={title} tags={tags} class="">
-   <Header nav={nav} />
    <main
       class="prose bbg m-auto w-full max-w-[calc(75ch+1.25rem)] overflow-auto break-words px-10 pt-5 text-slate-300"
    >
       <slot />
    </main>
-   <Footer />
 </BaseLayout>

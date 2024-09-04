@@ -1,4 +1,6 @@
 import { createSignal, onCleanup, onMount } from "solid-js";
+import { names, hoveredIcon } from "../icons";
+import { useStore } from "@nanostores/solid";
 
 const ALL_LETTERS = "abcdefghijklmnopqrstuvwxyz";
 

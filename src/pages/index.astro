@@ -35,19 +35,20 @@ export const prerender = true;
             >
             </div>
 
-            <Icons client:load />
+            <Icons client:idle />
          </div>
       </div>
    </section>
+</BaseLayout>
 
-   <style is:global>
-      :root {
-         --font-size-to-text-width: 4.9692797394;
-         --image-size-to-text-height: 1.5;
-         --space-to-use: 70vw;
-      }
+<style is:global>
+   :root {
+      --font-size-to-text-width: 4.9692797394;
+      --image-size-to-text-height: 1.5;
+      --space-to-use: 70vw;
+   }
 
-      /* basically what we want is for the image to be a multiple of the height of the 
+   /* basically what we want is for the image to be a multiple of the height of the 
     text, and for the width the text + image + gap to be 80% of the screen
 
     x = text width
@@ -65,28 +66,27 @@ export const prerender = true;
     there's probably an easier way of doing this, but idk how to
      */
 
-      :root {
-         --font-size: calc(
-            (var(--space-to-use) - 64px) /
-               (var(--font-size-to-text-width) + var(--image-size-to-text-height))
-         );
-         --image-size: calc(var(--font-size) * var(--image-size-to-text-height));
-      }
+   :root {
+      --font-size: calc(
+         (var(--space-to-use) - 64px) /
+            (var(--font-size-to-text-width) + var(--image-size-to-text-height))
+      );
+      --image-size: calc(var(--font-size) * var(--image-size-to-text-height));
+   }
 
-      #image-container {
-         height: var(--image-size);
-         width: var(--image-size);
-      }
+   #image-container {
+      height: var(--image-size);
+      width: var(--image-size);
+   }
 
-      #h1-container {
-         font-size: var(--font-size);
-         line-height: var(--font-size);
-         letter-spacing: calc(var(--font-size) * -0.04);
-      }
+   #h1-container {
+      font-size: var(--font-size);
+      line-height: var(--font-size);
+      letter-spacing: calc(var(--font-size) * -0.04);
+   }
 
-      #subtitle-text {
-         font-size: calc(var(--space-to-use) / 16.1202083333);
-         padding-left: calc((100vw - var(--space-to-use)) / 2);
-      }
-   </style>
-</BaseLayout>
+   #subtitle-text {
+      font-size: calc(var(--space-to-use) / 16.1202083333);
+      padding-left: calc((100vw - var(--space-to-use)) / 2);
+   }
+</style>

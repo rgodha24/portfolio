@@ -15,17 +15,17 @@ const {
 ---
 
 <Wrapper>
-   <h3 class="text-center text-3xl hover:text-cyan-400">
+   <h3 class="text-3xl text-center hover:text-cyan-400 font-heading">
       <a class="" href={`/projects/${slug}`}>
          {title}
       </a>
    </h3>
    <a
-      class="text-bluegray-200 md:text-md -my-4 mx-auto text-sm hover:text-slate-300"
+      class="mx-auto -my-4 text-sm text-bluegray-200 md:text-md hover:text-slate-300"
       href={`/projects/${slug}`}>click here for more info</a
    >
-   <p class="text-center text-sm text-slate-300">{blurb}</p>
-   <div class="flex flex-row justify-center gap-10">
+   <p class="text-sm text-center text-slate-300">{blurb}</p>
+   <div class="flex flex-row gap-10 justify-center">
       <Icon href={website} title={title + " website link"} stroke>
          <Link />
       </Icon>

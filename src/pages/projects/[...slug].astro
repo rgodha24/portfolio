@@ -23,10 +23,10 @@ export const prerender = true;
 
 <CombinedLayout title={`projects: ${props.data.title}`} description={props.data.blurb}>
    <div
-      class="border-1 rounded-4 gradient from-coolgray-900 to-coolgray-800 m-4 border border-sky-300 p-5 hover:from-slate-900 hover:to-slate-800"
+      class="p-5 m-4 border border-1 rounded-4 gradient from-coolgray-900 to-coolgray-800 border-sky-300 hover:from-slate-900 hover:to-slate-800"
    >
       <Content />
-      <div class="gap-35 flex flex-row justify-center">
+      <div class="flex flex-row justify-center gap-35">
          <Icon href={props.data.website} title={props.data.title + " website link"} stroke>
             <Link />
          </Icon>
@@ -58,5 +58,9 @@ export const prerender = true;
       100% {
          background-position: 0% 50%;
       }
+   }
+
+   h1, h2, h3 {
+     @apply font-heading;
    }
 </style>

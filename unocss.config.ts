@@ -11,8 +11,21 @@ export default defineConfig({
       presetWind(),
       presetWebFonts({
          fonts: {
-            mono: ["Monaspace Krypton"],
-            sans: ["Norwester"],
+            mono: ["Monaspace Radon"],
+            heading: [
+               "Norwester",
+               "ui-sans-serif",
+               "system-ui",
+               "-apple-system",
+               "BlinkMacSystemFont",
+               "Segoe UI",
+               "Roboto",
+               "Helvetica Neue",
+               "Arial",
+               "Noto Sans",
+               "sans-serif",
+            ],
+            sans: ["Raleway"],
             handwriting: [
                "Monaspace Radon",
                "Brush Script MT",

@@ -2,11 +2,7 @@ import { FileText, Linkedin, Github, Braces, Music, BookMarked } from "lucide-so
 import { atom } from "nanostores";
 
 export const icons = [
-   {
-      name: "resume",
-      link: "https://docs.google.com/document/d/e/2PACX-1vR6n_-o3-mLO038zZ-YRmGB3k-j9fPEbmYldCuAM4tMnIsBh12quwxud6QTMOm8jcecsgySJklRm_0v/pub",
-      Icon: FileText,
-   },
+   { name: "resume", link: "/Resume.pdf", Icon: FileText },
    { name: "linkedin", link: "https://www.linkedin.com/in/rohan-godha-370711279/", Icon: Linkedin },
    { name: "github", link: "https://github.com/rgodha24", Icon: Github },
    { name: "projects", link: "/projects", Icon: Braces },

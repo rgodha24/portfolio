@@ -1,0 +1,132 @@
+interests = [
+  "Video Games",
+  "Anime",
+  "Reading Non-fiction",
+  "Classical and Original Soundtrack Music",
+]
+
+[personal]
+name = "Rohan Godha"
+title = "FULLSTACK ENGINEER"
+website = "rohangodha.com"
+github = "github.com/rgodha24"
+email = "rgodha3@gatech.edu"
+linkedin = "linkedin.com/in/rohan-godha"
+
+[[work]]
+organization = "NewGen Business Solutions"
+url = "https://newgennow.com/"
+position = "Intern"
+startDate = "2021-08-01"
+endDate = "present"
+highlights = [
+  "This being the theory I hold, why need I be afraid of not being able to reconcile it with the case of my ancestors?",
+  "The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+  "Do you really believe that they charged an armed enemy, or treated their children, their own flesh and blood, so cruelly, without a thought for their own interest or advantage?",
+]
+
+[[education]]
+institution = "Georgia Institute of Technology, College of Computing"
+url = "https://example.com/"
+area = "Computer Science"
+studyType = "Candidate: B.S."
+concentrations = ["Devices", "Intelligence"]
+startDate = "2024-08-01"
+endDate = "2027-05-01"
+honors = [] # lol
+courses = ["Data Structures & Algorithms", "Linear Algebra"] # lol 
+highlights = [
+  "*Activities*: Marine Robotics Group, dependently-types, Competitive Programming",
+]
+
+[[affiliations]]
+organization = "White Hat Hackers Association"
+position = "Vice President for Internal Affairs"
+location = "Cambridge, United Kingdom"
+url = "https://example.com/"
+startDate = "2020-05-30"
+endDate = "2021-05-30"
+highlights = [
+  "But I must explain to you how all this mistaken idea of reprobating pleasure and extolling pain arose.",
+  "But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
+  "Can you then suppose that those heroic men performed their famous deeds without any motive at all?",
+]
+
+[[affiliations]]
+organization = "London Bridge Toastmasters Club"
+position = "Member"
+location = "City of London, United Kingdom"
+url = ""
+startDate = "2022-06-15"
+endDate = "2023-06-30"
+highlights = [
+  "Won Champion in the Division A District X Speech Evaluation Contest of Toastmasters International",
+  "Promising Toastmaster of the Year (PY 2022-2023)",
+  "Tell me, pray, what explanation do you put upon their actions?",
+]
+
+[[projects]]
+name = "Job Tailor"
+url = "https://example.com/"
+affiliation = "Open University"
+startDate = "2020-11-01"
+endDate = "2021-04-30"
+highlights = [
+  "Developed an AI-powered résumé editor app to create tailored résumés from users' CVs based on specific job descriptions.",
+  "Acquired more than 100,000 user sign ups in 3 months and more than 10,000 active monthly users.",
+  "Generated profit of upwards \\$20,000 yearly with a team of only four developers and three business operatives",
+]
+
+[[skills]]
+category = "Programming"
+skills = [
+  "Python",
+  "SQL, PostgreSQL",
+  "MATLAB/Octave",
+  "HTML",
+  "CSS",
+  "Javascript",
+  "Typst",
+  "LaTeX",
+]
+
+[[skills]]
+category = "Tools"
+skills = ["Microsoft Word", "Git", "Docker", "Visual Studio Code", "Canva"]
+
+[[skills]]
+category = "Web Development"
+skills = [
+  "React",
+  "Next.js",
+  "Svelte & Sveltekit",
+  "Tailwind CSS",
+  "Node.js",
+  "Deno",
+  "FastAPI",
+  "Flask",
+]
+
+[[skills]]
+category = "BI & Data Analytics"
+skills = [
+  "Microsoft Excel",
+  "Microsoft Power BI",
+  "Jupyter Notebook",
+  "Numpy",
+  "Pandas",
+  "Plotly",
+  "Altair",
+]
+
+[[languages]]
+language = "English"
+fluency = "Native speaker"
+
+[[languages]]
+language = "Hindi"
+fluency = "Conversational"
+
+[[languages]]
+language = "Spanish"
+fluency = "Basic proficiency"

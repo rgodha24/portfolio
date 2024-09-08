@@ -1,6 +1,5 @@
 #import "utils.typ"
 
-// set rules
 #let setrules(uservars, doc) = {
   set text(
     font: uservars.bodyfont,
@@ -133,13 +132,16 @@
       #for w in info.work {
         let start = utils.strpdate(w.startDate)
         let end = utils.strpdate(w.endDate)
+        let index = 0
         block(width: 100%, breakable: isbreakable)[
+          #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
           *#link(w.url)[#text(13pt)[#w.organization]]*, #w.position #h(1fr) #text(style:"italic")[#utils.daterange(start,end)] \
         ]
         v(0.2em)
         for hi in w.highlights [
           - #eval(hi, mode: "markup")
         ]
+        index += 1
       }
     ]
   }
@@ -147,6 +149,8 @@
 
 #let cveducation(info, title: "Education", isbreakable: true) = {
   if info.education != none {
+
+    let index = 0
     block[
       == #title
       #for edu in info.education {
@@ -171,12 +175,15 @@
 
         // Create a block layout for each education entry
         block(width: 100%, breakable: isbreakable)[
-          // Line 1: Institution and Location
+          #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
           *#link(edu.url)[#text(13pt)[#edu.institution]]* #h(1fr) _#utils.daterange(start, end)_ \
-          #text(style: "italic")[#edu.studyType in #edu.area with concentrations in #edu.concentrations.at(0) and #edu.concentrations.at(1)] #h(1fr)
-          \
+          #if edu.area != "" [
+            #text(style: "italic")[#edu.studyType in #edu.area with concentrations in #edu.concentrations.at(0) and #edu.concentrations.at(1)] #h(1fr)\
+          ]
           #eval(edu-items, mode: "markup")
         ]
+
+        index += 1
       }
     ]
   }
@@ -184,17 +191,19 @@
 
 #let cvaffiliations(
   info,
-  title: "Leadership and Activities",
+  title: "Activities",
   isbreakable: true,
 ) = {
   if info.affiliations != none {
     block[
       == #title
+      #let index = 0
       #for org in info.affiliations {
         let start = utils.strpdate(org.startDate)
         let end = utils.strpdate(org.endDate)
 
         block(width: 100%, breakable: isbreakable)[
+          #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
           *#link(org.url)[#text(13pt)[#org.organization]]*, #org.position #h(1fr) _#utils.daterange(start, end)_
           #v(0.2em)
           #if org.highlights != none {
@@ -203,6 +212,7 @@
             ]
           } else { }
         ]
+        index += 1
       }
     ]
   }
@@ -210,22 +220,18 @@
 
 #let cvprojects(info, title: "Projects", isbreakable: true) = {
   if info.projects != none {
+    let index = 0
     block[
       == #title
       #for project in info.projects {
-        // Create a block layout for each project entry
         block(width: 100%, breakable: isbreakable)[
-          // Line 1: Project Name
-          #if project.url != none [
-            *#link(project.url)[#project.name]* \
-          ] else [
-            *#project.name* \
-          ]
-          // Summary or Description
+          #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
+          *#text(13pt)[#link(project.url)[#project.name]]* \
           #for hi in project.highlights [
             - #eval(hi, mode: "markup")
           ]
         ]
+        index += 1
       }
     ]
   }
@@ -296,7 +302,7 @@
 
 #let cvskills(
   info,
-  title: "Skills, Languages, Interests",
+  title: "Skills",
   isbreakable: true,
 ) = {
   if (info.languages != none) or (info.skills != none) or (

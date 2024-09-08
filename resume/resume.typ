@@ -20,7 +20,7 @@
 #let light = white;
 #let subtitle_text = "FULLSTACK ENGINEER";
 #let margin = 1.25cm;
-#let rect_height = 85pt;
+#let rect_height = 90pt;
 
 // setrules and showrules can be overridden by re-declaring it here
 // #let setrules(doc) = {
@@ -80,32 +80,32 @@
     #place(horizon)[
       #align(left)[
         #stack(
+          stack(
+            dir: ltr,
+            spacing: 1em,
+            image("./icons/website.svg", height: icon_size),
+            h(1fr),
+            link("https://" + cvdata.personal.github)[#text(icon_size)[#cvdata.personal.website]],
+          ),
           spacing: 1fr,
           stack(
             dir: ltr,
             spacing: 1em,
-            image("/icons/email.svg", height: icon_size),
+            image("./icons/email.svg", height: icon_size),
             h(1fr),
             link("mailto:" + cvdata.personal.email)[#text(icon_size)[#cvdata.personal.email]],
           ),
           stack(
             dir: ltr,
             spacing: 1em,
-            image("/icons/github.svg", height: icon_size),
+            image("./icons/github.svg", height: icon_size),
             h(1fr),
             link("https://" + cvdata.personal.github)[#text(icon_size)[#cvdata.personal.github]],
           ),
           stack(
             dir: ltr,
             spacing: 1em,
-            image("/icons/website.svg", height: icon_size),
-            h(1fr),
-            link("https://" + cvdata.personal.github)[#text(icon_size)[#cvdata.personal.website]],
-          ),
-          stack(
-            dir: ltr,
-            spacing: 1em,
-            image("/icons/linkedin.svg", height: icon_size),
+            image("./icons/linkedin.svg", height: icon_size),
             h(1fr),
             link("https://" + cvdata.personal.linkedin)[#text(icon_size)[#cvdata.personal.linkedin]],
           ),

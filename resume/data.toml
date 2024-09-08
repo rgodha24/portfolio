@@ -1,9 +1,4 @@
-interests = [
-  "Video Games",
-  "Anime",
-  "Reading Non-fiction",
-  "Classical and Original Soundtrack Music",
-]
+interests = ["Video Games", "Reading Science Fiction", "Rap and Hip-Hop music"]
 
 [personal]
 name = "Rohan Godha"
@@ -17,12 +12,12 @@ linkedin = "linkedin.com/in/rohan-godha"
 organization = "NewGen Business Solutions"
 url = "https://newgennow.com/"
 position = "Intern"
-startDate = "2021-08-01"
-endDate = "present"
+startDate = "2023-05-01"
+endDate = "2023-08-01"
 highlights = [
-  "This being the theory I hold, why need I be afraid of not being able to reconcile it with the case of my ancestors?",
-  "The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
-  "Do you really believe that they charged an armed enemy, or treated their children, their own flesh and blood, so cruelly, without a thought for their own interest or advantage?",
+  "Modernized Oracle’s SuiteCloud Extension testing framework by migrating from Jest version to Vitest",
+  "Created tests for 80% of all API endpoints in ConventionSuite, NewGen’s primary product, increasing confidence in their ongoing rewrite from Create-React-App to Vite",
+  "Led effort to modernize target client database, increasing conversion rate on email marketing campaigns",
 ]
 
 [[education]]
@@ -33,66 +28,89 @@ studyType = "Candidate: B.S."
 concentrations = ["Devices", "Intelligence"]
 startDate = "2024-08-01"
 endDate = "2027-05-01"
-honors = [] # lol
-courses = ["Data Structures & Algorithms", "Linear Algebra"] # lol 
+honors = []
+courses = ["Data Structures & Algorithms", "Linear Algebra"]
 highlights = [
   "*Activities*: Marine Robotics Group, dependently-types, Competitive Programming",
 ]
 
-[[affiliations]]
-organization = "White Hat Hackers Association"
-position = "Vice President for Internal Affairs"
-location = "Cambridge, United Kingdom"
-url = "https://example.com/"
-startDate = "2020-05-30"
-endDate = "2021-05-30"
+[[education]]
+institution = "Brophy College Preparatory"
+url = "https://brophyprep.org"
+area = ""
+studyType = ""
+concentrations = []
+startDate = "2020-08-01"
+endDate = "2024-05-01"
+honors = []
+courses = [
+  "Intro to Engineering",
+  "Advanced Innovative Technology",
+  "GPA: 4.519/4.0",
+]
 highlights = [
-  "But I must explain to you how all this mistaken idea of reprobating pleasure and extolling pain arose.",
-  "But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
-  "Can you then suppose that those heroic men performed their famous deeds without any motive at all?",
+  "*Activities*: Broncobotics, Coding Club, National Honors Society, Brophy Big Brothers",
+]
+
+
+[[affiliations]]
+organization = "Broncobotics"
+position = "Head of Technology"
+url = "https://broncobotics.org"
+startDate = "2020-08-30"
+endDate = "2024-05-30"
+highlights = [
+  "Created virtual courses to teach over 70 students CAD, Programming, Project Management, and Machining",
+  "Led team to second place finish in the Las Vegas FRC Regional in 2022 as programmer and strategist",
+  "Spearheaded 20 student team creating and coding a robot in 6 weeks for the FIRST Robotics Competition",
 ]
 
 [[affiliations]]
-organization = "London Bridge Toastmasters Club"
+organization = "Marine Robotics Group"
 position = "Member"
-location = "City of London, United Kingdom"
-url = ""
-startDate = "2022-06-15"
-endDate = "2023-06-30"
+url = "https://marinerobotics.gtorg.gatech.edu/"
+startDate = "2024-08-01"
+endDate = "present"
 highlights = [
-  "Won Champion in the Division A District X Speech Evaluation Contest of Toastmasters International",
-  "Promising Toastmaster of the Year (PY 2022-2023)",
-  "Tell me, pray, what explanation do you put upon their actions?",
+  "Updated internal documentation in the RobotX competition repository to make onboarding simpler",
+  "Created a web-based dashboard to display telemetry data from the autonomous boat and UAV",
 ]
 
 [[projects]]
-name = "Job Tailor"
-url = "https://example.com/"
-affiliation = "Open University"
-startDate = "2020-11-01"
-endDate = "2021-04-30"
+name = "Brophy Attendance"
+url = "rgodha.com/attendance"
 highlights = [
-  "Developed an AI-powered résumé editor app to create tailored résumés from users' CVs based on specific job descriptions.",
-  "Acquired more than 100,000 user sign ups in 3 months and more than 10,000 active monthly users.",
-  "Generated profit of upwards \\$20,000 yearly with a team of only four developers and three business operatives",
+  "Built an attendance system in use at Brophy College Prep based on scanning barcodes on student ids",
+  "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda based backend in Typescript, and a realtime, local-first, web dashboard in Typescript using technology like SST and React",
+]
+
+[[projects]]
+name = "Portfolio"
+url = "rgodha.com/portfolio"
+highlights = [
+  "Utilized SolidJS and Astro to create a unique portfolio website based around animated text and canvases",
+  "Built a resume generator using typst to create a resume from a TOML file and display it on the website",
+]
+
+[[projects]]
+name = "Advent of Code"
+url = "rgodha.com/aoc"
+highlights = [
+  "Solutions for the competitive programming challenge Advent of Code, in Rust, Python and Typescript",
+  "Used Advent of Code to teach 30+ students programming as President of the Coding Club",
+]
+
+[[projects]]
+name = "cryptenv"
+url = "rgodha.com/cryptenv"
+highlights = [
+  "Developed a tool to store encrypted environment variables, and switch between them for different projects",
 ]
 
 [[skills]]
-category = "Programming"
-skills = [
-  "Python",
-  "SQL, PostgreSQL",
-  "MATLAB/Octave",
-  "HTML",
-  "CSS",
-  "Javascript",
-  "Typst",
-  "LaTeX",
-]
+category = "Programming Languages"
+skills = ["Typescript", "Rust", "Python", "Java", "Go"]
 
-[[skills]]
-category = "Tools"
-skills = ["Microsoft Word", "Git", "Docker", "Visual Studio Code", "Canva"]
 
 [[skills]]
 category = "Web Development"
@@ -101,22 +119,8 @@ skills = [
   "Next.js",
   "Svelte & Sveltekit",
   "Tailwind CSS",
-  "Node.js",
-  "Deno",
-  "FastAPI",
-  "Flask",
-]
-
-[[skills]]
-category = "BI & Data Analytics"
-skills = [
-  "Microsoft Excel",
-  "Microsoft Power BI",
-  "Jupyter Notebook",
-  "Numpy",
-  "Pandas",
-  "Plotly",
-  "Altair",
+  "AWS",
+  "Cloudflare Pages",
 ]
 
 [[languages]]

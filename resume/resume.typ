@@ -22,13 +22,6 @@
 #let margin = 1.25cm;
 #let rect_height = 90pt;
 
-// setrules and showrules can be overridden by re-declaring it here
-// #let setrules(doc) = {
-//      // add custom document style rules here
-//
-//      doc
-// }
-
 #let customrules(doc) = {
   set page(
     paper: "us-letter",
@@ -42,6 +35,8 @@
 
   doc
 }
+
+#set text(fill: dark)
 
 #let cvinit(doc) = {
   doc = setrules(uservars, doc)
@@ -59,7 +54,7 @@
     radius: (bottom-right: 10000pt),
     inset: (left: margin, right: 20pt, top: margin, bottom: 23pt),
     [
-      #text(50pt, font: "Norwester", fill: accent)[ROHAN GODHA],
+      #text(50pt, font: "Norwester", fill: accent)[ROHAN GODHA]\
       #pad(top: -5pt)[
         #text(
           16pt,
@@ -85,7 +80,7 @@
             spacing: 1em,
             image("./icons/website.svg", height: icon_size),
             h(1fr),
-            link("https://" + cvdata.personal.github)[#text(icon_size)[#cvdata.personal.website]],
+            link("https://" + cvdata.personal.website)[#text(icon_size)[#cvdata.personal.website]],
           ),
           spacing: 1fr,
           stack(

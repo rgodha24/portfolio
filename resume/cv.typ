@@ -135,7 +135,7 @@
         let index = 0
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#link(w.url)[#text(13pt)[#w.organization]]*, #w.position #h(1fr) #text(style:"italic")[#utils.daterange(start,end)] \
+          *#link("https://"+w.url)[#text(13pt)[#w.organization]]*, #w.position #h(1fr) #text(style:"italic")[#utils.daterange(start,end)] \
         ]
         v(0.2em)
         for hi in w.highlights [
@@ -176,7 +176,7 @@
         // Create a block layout for each education entry
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#link(edu.url)[#text(13pt)[#edu.institution]]* #h(1fr) _#utils.daterange(start, end)_ \
+          *#link("https://"+edu.url)[#text(13pt)[#edu.institution]]* #h(1fr) _#utils.daterange(start, end)_ \
           #if edu.area != "" [
             #text(style: "italic")[#edu.studyType in #edu.area with concentrations in #edu.concentrations.at(0) and #edu.concentrations.at(1)] #h(1fr)\
           ]
@@ -204,7 +204,7 @@
 
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#link(org.url)[#text(13pt)[#org.organization]]*, #org.position #h(1fr) _#utils.daterange(start, end)_
+          *#link("https://"+org.url)[#text(13pt)[#org.organization]]*, #org.position #h(1fr) _#utils.daterange(start, end)_
           #v(0.2em)
           #if org.highlights != none {
             for hi in org.highlights [
@@ -226,7 +226,7 @@
       #for project in info.projects {
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#text(13pt)[#link(project.url)[#project.name]]* \
+          *#text(13pt)[#link("https://"+project.url)[#project.name]]* #h(1fr) _ #link("https://"+project.url)[#project.url] _\
           #for hi in project.highlights [
             - #eval(hi, mode: "markup")
           ]

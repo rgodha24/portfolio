@@ -15,23 +15,29 @@ export const prerender = true;
       </div>
       <div class="flex flex-col h-full">
          <div class="flex flex-col flex-grow gap-8 justify-center items-center">
-            <div class="flex flex-row gap-16 items-center">
+            <div class="flex flex-col gap-4 items-center md:flex-row md:gap-16">
                <div class="" id="image-container">
                   <Image src={pfp} alt="" class="w-full h-full" loading="eager" />
                </div>
-               <div class="" id="h1-container">
-                  <h1 class="font-heading text-sky-400">ROHAN GODHA</h1>
+               <div class="flex justify-center items-center" id="h1-container">
+                  <h1 class="w-min font-heading text-sky-400">ROHAN GODHA</h1>
                </div>
             </div>
-            <div class="w-full" id="subtitle-text">
-               <h2 class="w-min-content font-handwriting text-sky-400">
+            <div class="flex flex-row justify-center items-center w-full md:block">
+               <h2
+                  class="hidden md:block w-min-content font-handwriting text-sky-400"
+                  id="subtitle-text"
+               >
                   CS Student at Georgia Tech
+               </h2>
+               <h2 class="text-4xl md:hidden w-min-content font-handwriting text-sky-400">
+                  CS at GaTech
                </h2>
             </div>
          </div>
-         <div class="relative mb-24 h-min-content">
+         <div class="relative mb-20 md:mb-24 h-min-content">
             <div
-               class="w-800px h-70px bg-#121A5D/50 rounded-24px border-x-1.5 border-b-3 border-t-1 backdrop-blur-2px absolute bottom-0 left-1/2 -translate-x-1/2 transform border-sky-400"
+               class="w-800px h-70px bg-#121A5D/50 rounded-24px border-x-1.5 border-b-3 border-t-1 backdrop-blur-2px absolute bottom-0 left-1/2 hidden -translate-x-1/2 transform border-sky-400 md:block"
             >
             </div>
 
@@ -74,19 +80,31 @@ export const prerender = true;
       --image-size: calc(var(--font-size) * var(--image-size-to-text-height));
    }
 
-   #image-container {
-      height: var(--image-size);
-      width: var(--image-size);
-   }
+   @media (min-width: 768px) {
+      #image-container {
+         height: var(--image-size);
+         width: var(--image-size);
+      }
 
-   #h1-container {
-      font-size: var(--font-size);
-      line-height: var(--font-size);
-      letter-spacing: calc(var(--font-size) * -0.04);
-   }
+      #h1-container {
+         font-size: var(--font-size);
+         line-height: var(--font-size);
+         letter-spacing: calc(var(--font-size) * -0.04);
+      }
 
-   #subtitle-text {
-      font-size: calc(var(--space-to-use) / 16.1202083333);
-      padding-left: calc((100vw - var(--space-to-use)) / 2);
+      #subtitle-text {
+         font-size: calc(var(--space-to-use) / 16.1202083333);
+         padding-left: calc((100vw - var(--space-to-use)) / 2);
+      }
+   }
+   @media (max-width: 767px) {
+      #image-container {
+         height: 50vw;
+         width: 50vw;
+      }
+
+      #h1-container {
+         @apply text-8xl;
+      }
    }
 </style>

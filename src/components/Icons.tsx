@@ -3,7 +3,7 @@ import { hoveredIcon, icons } from "../icons";
 
 export default function Icons() {
    return (
-      <div class="bottom-25px px-18px gap-33px w-800px absolute left-1/2 flex -translate-x-1/2 transform flex-row justify-between ">
+      <div class="md:bottom-25px md:px-18px md:gap-33px md:w-800px grid transform grid-cols-3 grid-rows-2 place-items-center justify-between gap-y-4 md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:flex-row">
          <For each={icons}>
             {({ name, Icon, link }) => (
                <a

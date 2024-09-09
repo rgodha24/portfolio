@@ -1,4 +1,7 @@
-interests = ["Video Games", "Reading Science Fiction", "Rap and Hip-Hop music"]
+interests = [
+  "Overwatch (2x national champion)",
+  "Rap and Hip-Hop music (JID, Kendrick Lamar)",
+]
 
 [personal]
 name = "Rohan Godha"
@@ -77,7 +80,7 @@ highlights = [
 ]
 
 [[projects]]
-name = "Brophy Attendance"
+name = "Brophy Attendance System"
 url = "rgodha.com/attendance"
 highlights = [
   "Built an attendance system in use at Brophy College Prep based on scanning barcodes on student ids",
@@ -104,7 +107,7 @@ highlights = [
 name = "cryptenv"
 url = "rgodha.com/cryptenv"
 highlights = [
-  "Developed a tool to store encrypted environment variables, and switch between them for different projects",
+  "A Rust-based tool to store encrypted environment variables, and switch between them for different projects",
 ]
 
 [[skills]]
@@ -120,6 +123,8 @@ skills = [
   "Svelte & Sveltekit",
   "Tailwind CSS",
   "AWS",
+  "Serverless",
+  "IAC",
   "Cloudflare Pages",
 ]
 

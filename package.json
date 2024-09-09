@@ -1,45 +1,20 @@
 {
    "name": "portfolio",
-   "type": "module",
-   "version": "0.0.1",
-   "private": true,
-   "scripts": {
-      "dev": "astro dev",
-      "start": "astro dev",
-      "build": "astro build",
-      "preview": "astro preview",
-      "astro": "astro",
-      "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,cjs,mjs,json}\"",
-      "link-shortener": "bun build --minify link-shortener/index.ts --outfile dist/_worker.js"
-   },
-   "dependencies": {
-      "@astrojs/prefetch": "0.4.1",
-      "@astrojs/rss": "4.0.7",
-      "@astrojs/sitemap": "3.1.6",
-      "@fontsource-variable/raleway": "^5.0.21",
-      "@fontsource/monaspace-krypton": "^5.0.1",
-      "@fontsource/monaspace-radon": "^5.0.2",
-      "@fontsource/norwester": "^5.0.11",
-      "@nanostores/solid": "^0.4.2",
-      "astro": "4.14.5",
-      "hono": "^4.5.11",
-      "lucide-solid": "^0.436.0",
-      "nanostores": "^0.11.3",
-      "simple-icons": "^8.15.0",
-      "solid-js": "^1.7.11",
-      "ufo": "^1.5.3"
-   },
+   "description": "",
+   "workspaces": [
+      "site/",
+      "link-shortener/"
+   ],
+   "scripts": {},
+   "keywords": [],
+   "author": "",
    "devDependencies": {
-      "@astrojs/cloudflare": "11.0.4",
-      "@astrojs/mdx": "3.1.4",
-      "@astrojs/solid-js": "4.4.1",
-      "@types/bun": "^1.1.8",
-      "@unocss/preset-typography": "^0.60.2",
-      "@unocss/preset-web-fonts": "^0.60.2",
-      "@unocss/reset": "^0.60.2",
+      "just-install": "^2.0.2",
       "prettier": "^3.0.0",
       "prettier-plugin-astro": "^0.14.1",
-      "prettier-plugin-tailwindcss": "^0.2.8",
-      "unocss": "^0.60.2"
-   }
+      "prettier-plugin-tailwindcss": "^0.2.8"
+   },
+   "trustedDependencies": [
+      "just-install"
+   ]
 }

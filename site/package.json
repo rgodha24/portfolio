@@ -1,0 +1,39 @@
+{
+   "name": "portfolio",
+   "type": "module",
+   "version": "0.0.1",
+   "private": true,
+   "scripts": {
+      "dev": "astro dev",
+      "start": "astro dev",
+      "build": "astro build",
+      "preview": "astro preview",
+      "astro": "astro"
+   },
+   "dependencies": {
+      "@astrojs/prefetch": "0.4.1",
+      "@astrojs/rss": "4.0.7",
+      "@astrojs/sitemap": "3.1.6",
+      "@fontsource-variable/raleway": "^5.0.21",
+      "@fontsource/monaspace-krypton": "^5.0.1",
+      "@fontsource/monaspace-radon": "^5.0.2",
+      "@fontsource/norwester": "^5.0.11",
+      "@nanostores/solid": "^0.4.2",
+      "astro": "4.14.5",
+      "lucide-solid": "^0.436.0",
+      "nanostores": "^0.11.3",
+      "simple-icons": "^8.15.0",
+      "solid-js": "^1.7.11",
+      "ufo": "^1.5.3"
+   },
+   "devDependencies": {
+      "@astrojs/cloudflare": "11.0.4",
+      "@astrojs/mdx": "3.1.4",
+      "@astrojs/solid-js": "4.4.1",
+      "@types/bun": "^1.1.8",
+      "@unocss/preset-typography": "^0.60.2",
+      "@unocss/preset-web-fonts": "^0.60.2",
+      "@unocss/reset": "^0.60.2",
+      "unocss": "^0.60.2"
+   }
+}

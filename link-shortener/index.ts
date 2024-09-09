@@ -12,6 +12,8 @@ app.get("/:path", (c) => {
       return c.redirect("https://www.rohangodha.com/projects/" + path);
    } else if (posts.includes(path)) {
       return c.redirect("https://www.rohangodha.com/blog/" + path);
+   } else if (/resume/gi.test(path)) {
+      return c.redirect("https://www.rohangodha.com/Resume.pdf");
    }
 
    // cf pages automatically redirects 404s to `/` so this is fine

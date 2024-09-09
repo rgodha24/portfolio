@@ -19,3 +19,10 @@ build-resume:
 
 build-link-shortener:
   bun build --minify link-shortener/index.ts --outfile dist/_worker.js
+
+dev:
+  (cd site/ && bun run dev) & \
+  (bun run --watch link-shortener/index.ts) & \
+  (TYPST_FONT_PATHS=./resume/fonts typst-live resume/resume.typ) & \
+  (typst watch --font-path resume/fonts/ resume/resume.typ site/public/Resume.pdf)
+

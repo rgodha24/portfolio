@@ -10,6 +10,7 @@ website = "rohangodha.com"
 github = "github.com/rgodha24"
 email = "rgodha3@gatech.edu"
 linkedin = "linkedin.com/in/rohan-godha"
+location = "Scottsdale, AZ"
 
 [[work]]
 organization = "NewGen Business Solutions"
@@ -112,7 +113,7 @@ highlights = [
 
 [[skills]]
 category = "Programming Languages"
-skills = ["Typescript", "Rust", "Python", "Java", "Go"]
+skills = ["Javascript/Typescript", "Rust", "Python", "Java", "Go"]
 
 
 [[skills]]

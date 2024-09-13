@@ -1,6 +1,7 @@
 #import "cv.typ": *
 
 #let cvdata = toml("data.toml")
+#let config = toml("config.toml")
 
 #let uservars = (
     headingfont: "Norwester",
@@ -68,13 +69,26 @@
 ]
 
 #let icon_size = 1.2em;
-#let link_hieght = 70pt;
+#let link_hieght = if config.includeLocation {
+  80pt
+} else {
+  70pt
+};
 
 #place(top + right, dy: -margin - 55pt)[
   #box(height: link_hieght, width: 40%)[
     #place(horizon)[
       #align(left)[
         #stack(
+          if config.includeLocation [
+            #stack(
+              dir: ltr,
+              spacing: 1em,
+              image("./icons/location.svg", height: icon_size),
+              h(1fr),
+              text(icon_size)[#cvdata.personal.location],
+            )
+          ] else [],
           stack(
             dir: ltr,
             spacing: 1em,

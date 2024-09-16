@@ -1,0 +1,13 @@
+[package]
+name = "resume"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.38"
+comemo = "0.4.0"
+serde = { version = "1.0.210", features = ["derive"] }
+shellexpand = "3.1.0"
+toml = "0.8.19"
+typst = "0.11.1"
+typst-pdf = "0.11.1"

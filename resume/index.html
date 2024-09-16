@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Resume Chooser</title>
+      <script
+         type="text/javascript"
+         src="https://cdn.jsdelivr.net/gh/brutusin/json-forms@1.6.3/dist/js/brutusin-json-forms.min.js"
+      ></script>
+      <link
+         rel="stylesheet"
+         type="text/css"
+         href="https://cdn.jsdelivr.net/gh/brutusin/json-forms@1.6.3/dist/css/brutusin-json-forms.min.css"
+      />
+
+      <script>
+         // automatically inserted at build time
+         const schema = JSON.parse(`{{schema}}`);
+         const data = JSON.parse(`{{data}}`);
+         const BrutusinForms = brutusin["json-forms"];
+         const bf = BrutusinForms.create(schema);
+
+         document.addEventListener("DOMContentLoaded", function () {
+            const container = document.getElementById("container");
+            bf.render(container);
+            const form = document.getElementsByClassName("brutusin-form")[0];
+            const resume = document.getElementById("resume");
+
+            document.addEventListener("keydown", (e) => {
+               if (e.key === "r" || e.key === "R") {
+                  const formData = bf.getData();
+                  const body = JSON.stringify({ ...data, ...formData });
+                  console.log(body);
+                  console.log(formData);
+
+                  fetch("/update", {
+                     method: "POST",
+                     headers: {
+                        "Content-Type": "application/json",
+                     },
+                     body,
+                  }).then(() => {
+                     resume.src += "";
+                  });
+               }
+            });
+         });
+      </script>
+
+      <style>
+         body {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+         }
+         .full {
+            height: 100%;
+            width: 100%;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="container"></div>
+      <div class="full">
+         <iframe id="resume" src="/resume.pdf" type="application/pdf" width="100%" height="100%" />
+      </div>
+   </body>
+</html>

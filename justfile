@@ -26,3 +26,5 @@ dev:
   (TYPST_FONT_PATHS=./resume/fonts typst-live resume/resume.typ) & \
   (typst watch --font-path resume/fonts/ resume/resume.typ site/public/Resume.pdf)
 
+resume:
+  cd resume && cargo watch -x "run -q"

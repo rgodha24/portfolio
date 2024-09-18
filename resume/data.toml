@@ -35,7 +35,7 @@ endDate = "2027-05-01"
 honors = []
 courses = ["Data Structures & Algorithms", "Linear Algebra"]
 highlights = [
-  "*Activities*: Marine Robotics Group, dependently-types, Competitive Programming",
+  "*Activities*: Marine Robotics Group, dependently-typed, Competitive Programming",
 ]
 
 [[education]]
@@ -121,7 +121,7 @@ category = "Web Development"
 skills = [
   "React",
   "Next.js",
-  "Svelte & Sveltekit",
+  "Svelte & SvelteKit",
   "Tailwind CSS",
   "AWS",
   "Serverless",

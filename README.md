@@ -11,6 +11,7 @@ All of the commands that you could ever need are in the `justfile`, which means 
 
 ## credits
 The resume was adapted from (imprecv)[https://github.com/jskherman/imprecv/blob/main/LICENSE]
+
 The text background was originally inspired by the (midjourney landing page)[midjourney.com], but it's changed a lot since then.
+
 A much older version of this site was based on the (LiveTerm Template)[https://github.com/Cveinnt/LiveTerm]
- much older version of this site was based on the (LiveTerm Template)[https://github.com/Cveinnt/LiveTerm]

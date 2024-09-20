@@ -1,3 +1,4 @@
 # this file contains the default config, which is what's used for rohangodha.com/Resume.pdf
 
 includeLocation = false
+diabetic = false

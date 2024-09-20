@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TextBackground from "../components/TextBackground";
+import Icons from "../components/Icons";
+import pfp from "../pfp.png";
+import { Image } from "astro:assets";
+
+export const prerender = true;
+---
+
+<BaseLayout title="homepage">
+   <section class="w-screen h-screen">
+      <div class="absolute w-screen h-screen z--1">
+         <TextBackground client:only="solid-js" />
+      </div>
+      <div class="flex flex-col h-full">
+         <div class="relative mt-8 ml-8">
+            <div class="flex flex-row gap-8 items-center md:flex-row md:gap-16">
+               <a class="w-32 h-32" href="/">
+                  <Image
+                     src={pfp}
+                     alt=""
+                     class="w-full h-full"
+                     loading="eager"
+                     transition:name="pfp"
+                  />
+               </a>
+               <a class="flex justify-center items-center" href="/">
+                  <h1 class="<sm:w-min font-heading text-sky-400 text-8xl" transition:name="text">
+                     ROHAN GODHA
+                  </h1>
+               </a>
+            </div>
+         </div>
+         <div class="h-screen"></div>
+         <div class="relative mb-20 md:mb-24 h-min-content">
+            <Icons client:idle hideable={true} />
+         </div>
+      </div>
+   </section>
+</BaseLayout>

@@ -128,4 +128,4 @@
 #cveducation(cvdata)
 #cvaffiliations(cvdata)
 #cvprojects(cvdata)
-#cvskills(cvdata)
+#cvskills(cvdata, config)

@@ -302,6 +302,7 @@
 
 #let cvskills(
   info,
+  config,
   title: "Skills",
   isbreakable: true,
 ) = {
@@ -322,7 +323,10 @@
           - *#group.category*: #group.skills.join(", ")
         ]
       ]
-      #if (info.interests != none) [
+      #if (config.diabetic == true) [
+        - *Other*: I'm a type 1 diabetic, and I use a Dexcom G6 and Omnipod 5 every day
+      ]
+      #if (info.interests != none and config.diabetic == false) [
         - *Interests*: #info.interests.join(", ")
       ]
     ]

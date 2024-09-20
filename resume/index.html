@@ -28,6 +28,7 @@
             const resume = document.getElementById("resume");
 
             document.addEventListener("keydown", (e) => {
+               console.log("keydown. key: " + e.key);
                if (e.key === "r" || e.key === "R") {
                   const formData = bf.getData();
                   const body = JSON.stringify({ ...data, ...formData });

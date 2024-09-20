@@ -71,12 +71,13 @@ pub struct Config {
     #[serde(rename = "includeLocation")]
     /// should it include the location in the top left?
     include_location: bool,
+    /// should it include if I'm a diabetic?
+    diabetic: bool,
 }
 
 impl Default for Config {
     fn default() -> Self {
-        Self {
-            include_location: false,
-        }
+        let config_file = include_str!("../config.toml");
+        toml::from_str(config_file).expect("default config file is valid toml")
     }
 }

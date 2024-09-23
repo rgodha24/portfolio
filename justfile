@@ -3,7 +3,7 @@ default:
 
 format:
   taplo format
-  prettier --write "**/*.{astro,ts,tsx,js,jsx,cjs,mjs,json}"
+  prettier --write "(site|link-shortener)/**/*.{astro,ts,tsx,js,jsx,cjs,mjs,json}"
 
 format-check:
   taplo format --check

@@ -1,51 +1,53 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TextBackground from "../components/TextBackground";
+import TextBackground from "../components/TextBackground.astro";
 import Icons from "../components/Icons";
 import pfp from "../pfp.png";
 import { Image } from "astro:assets";
 ---
 
 <BaseLayout title="homepage">
-   <section class="w-screen h-screen">
-      <div class="absolute w-screen h-screen z--1">
-         <TextBackground client:only="solid-js" transition:persist />
-      </div>
-      <div class="flex flex-col h-full">
-         <div class="flex flex-col flex-grow gap-8 justify-center items-center">
-            <div class="flex flex-col gap-8 items-center md:flex-row md:gap-16">
-               <div class="" id="image-container">
-                  <Image
-                     src={pfp}
-                     alt=""
-                     class="w-full h-full"
-                     loading="eager"
-                     transition:name="pfp"
-                  />
+   <main id="main">
+      <section class="w-screen h-screen">
+         <div class="absolute w-screen h-screen z--1">
+            <TextBackground />
+         </div>
+         <div class="flex flex-col h-full">
+            <div class="flex flex-col flex-grow gap-8 justify-center items-center">
+               <div class="flex flex-col gap-8 items-center md:flex-row md:gap-16">
+                  <div class="" id="image-container">
+                     <Image
+                        src={pfp}
+                        alt=""
+                        class="w-full h-full"
+                        loading="eager"
+                        transition:name="pfp"
+                     />
+                  </div>
+                  <div class="flex justify-center items-center" id="h1-container">
+                     <h1 class="<sm:w-min font-heading text-sky-400" transition:name="name">
+                        ROHAN GODHA
+                     </h1>
+                  </div>
                </div>
-               <div class="flex justify-center items-center" id="h1-container">
-                  <h1 class="<sm:w-min font-heading text-sky-400" transition:name="name">
-                     ROHAN GODHA
-                  </h1>
+               <div class="flex flex-row justify-center items-center w-full md:block">
+                  <h2
+                     class="hidden md:block w-min-content font-handwriting text-sky-400"
+                     id="subtitle-text"
+                  >
+                     CS Student at Georgia Tech
+                  </h2>
+                  <h2 class="text-4xl md:hidden w-min-content font-handwriting text-sky-400">
+                     CS at GaTech
+                  </h2>
                </div>
             </div>
-            <div class="flex flex-row justify-center items-center w-full md:block">
-               <h2
-                  class="hidden md:block w-min-content font-handwriting text-sky-400"
-                  id="subtitle-text"
-               >
-                  CS Student at Georgia Tech
-               </h2>
-               <h2 class="text-4xl md:hidden w-min-content font-handwriting text-sky-400">
-                  CS at GaTech
-               </h2>
+            <div class="relative mb-20 md:mb-24 h-min-content">
+               <Icons client:idle hideable={false} />
             </div>
          </div>
-         <div class="relative mb-20 md:mb-24 h-min-content">
-            <Icons client:idle hideable={false} />
-         </div>
-      </div>
-   </section>
+      </section>
+   </main>
 </BaseLayout>
 
 <style is:global>

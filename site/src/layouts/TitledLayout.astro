@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TextBackground from "../components/TextBackground.astro";
+import HideMenu from "../components/HideMenu";
+import Icons from "../components/Icons";
+import pfp from "../pfp.png";
+import { Image } from "astro:assets";
+
+interface Props {
+   title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+   <main class="min-h-screen" id="main">
+      <div class="absolute z--1">
+         <TextBackground />
+      </div>
+      <div class="px-8 pt-8">
+         <div class="flex flex-row justify-between items-center">
+            <div class="flex flex-row gap-8 items-center md:flex-row md:gap-12">
+               <a class="w-32 h-32 rounded-full" href="/">
+                  <Image
+                     src={pfp}
+                     alt="my profile picture"
+                     class="w-full h-full rounded-full"
+                     loading="eager"
+                     transition:name="pfp"
+                     aria-label="go to homepage"
+                  />
+               </a>
+               <a class="flex justify-center items-center mt-2" href="/">
+                  <h1 class="<sm:w-min font-heading text-sky-400 text-8xl" transition:name="name">
+                     ROHAN GODHA
+                  </h1>
+               </a>
+            </div>
+            <HideMenu client:load />
+         </div>
+      </div>
+
+      <slot />
+   </main>
+
+   <div class="fixed left-0 bottom-20 w-full h-min-content">
+      <Icons client:idle hideable={true} />
+   </div>
+</BaseLayout>

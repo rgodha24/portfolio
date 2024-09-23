@@ -32,14 +32,16 @@
 
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
 
-      gradient.addColorStop((window.innerHeight + window.scrollY) / 2 / sizes.height, "#3730A3"); //indigo-800
+      gradient.addColorStop(0, "#3730A3"); //indigo-800
+      gradient.addColorStop((window.innerHeight / 2 + window.scrollY) / sizes.height, "#3730A3"); //indigo-800
       gradient.addColorStop((window.innerHeight + window.scrollY) / sizes.height, "#38BDF9"); //sky-400
+      ctx.fillStyle = gradient;
 
       text.forEach((line, i) => {
-         ctx.fillStyle = gradient;
          ctx.fillText(line, 0, (i + 0.85) * sizes.lineHeight, sizes.width);
       });
    }, 100);
+
    const ALL_LETTERS = "abcdefghijklmnopqrstuvwxyz";
 
    function generateText(lines: number, letters: number): string[] {

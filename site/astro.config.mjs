@@ -11,4 +11,7 @@ export default defineConfig({
    integrations: [sitemap(), solidJs(), unocss({ mode: "global", injectReset: true }), prefetch()],
    output: "static",
    adapter: cloudflare(),
+   image: {
+      remotePatterns: [{ hostname: "**.scdn.co" }, { hostname: "**.mzstatic.com" }],
+   },
 });

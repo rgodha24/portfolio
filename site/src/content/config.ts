@@ -1,7 +1,7 @@
 import { defineCollection, z } from "astro:content";
+import { Api, Range } from "@statsfm/statsfm.js";
 
 const blog = defineCollection({
-   // Type-check frontmatter using a schema
    schema: z.object({
       title: z.string(),
       description: z.string(),
@@ -24,4 +24,31 @@ const projects = defineCollection({
    }),
 });
 
-export const collections = { blog, projects };
+// astro is so cool
+const albums = defineCollection({
+   loader: async () => {
+      const api = new Api();
+      const albums = await api.users.topAlbums("rgodha", {
+         range: Range.WEEKS,
+      });
+      console.log(JSON.stringify(albums));
+
+      return albums.slice(0, 30).map(({ album }) => ({
+         ...album,
+         id: album.id.toString(),
+         name: album.name.replace(/\([\w\s]+\)/gi, ""),
+      }));
+   },
+   schema: z.object({
+      id: z.string(),
+      name: z.string(),
+      image: z.string().url(),
+      artists: z.array(
+         z.object({
+            name: z.string(),
+         }),
+      ),
+   }),
+});
+
+export const collections = { blog, projects, albums };

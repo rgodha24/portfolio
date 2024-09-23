@@ -1,48 +1,38 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import TextBackground from "../components/TextBackground";
-import HideMenu from "../components/HideMenu";
-import Icons from "../components/Icons";
-import pfp from "../pfp.png";
+import { getCollection } from "astro:content";
+import TitledLayout from "../layouts/TitledLayout.astro";
 import { Image } from "astro:assets";
+
+const albums = await getCollection("albums");
 ---
 
-<BaseLayout title="homepage">
-   <section class="w-screen h-screen">
-      <div class="absolute w-screen h-screen z--1">
-         <TextBackground client:only="solid-js" transition:persist />
-      </div>
-
-      <div class="flex flex-col h-full">
-         <div class="relative mx-8 mt-8">
-            <div class="flex flex-row justify-between items-center">
-               <div class="flex flex-row gap-8 items-center md:flex-row md:gap-12">
-                  <a class="w-32 h-32 rounded-full" href="/">
-                     <Image
-                        src={pfp}
-                        alt="my profile picture"
-                        class="w-full h-full rounded-full"
-                        loading="eager"
-                        transition:name="pfp"
-                        aria-label="go to homepage"
-                     />
-                  </a>
-                  <a class="flex justify-center items-center mt-2" href="/">
-                     <h1
-                        class="<sm:w-min font-heading text-sky-400 text-8xl"
-                        transition:name="name"
-                     >
-                        ROHAN GODHA
-                     </h1>
-                  </a>
+<TitledLayout title="Music">
+   <h2 class="px-16 pt-8 text-6xl font-semibold text-sky-400">
+      Here are some of my favorite albums!
+   </h2>
+   <ol class="grid grid-cols-1 gap-x-8 gap-y-8 py-8 px-16 xl:grid-cols-2">
+      {
+         albums.map(({ data }) => (
+            <div class="bg-#180849/40 backdrop-blur-4px rounded-40px flex flex-row p-4 gap-x-4">
+               <div class="ml-4 w-100px min-w-100px">
+                  <Image
+                     inferSize
+                     src={data.image}
+                     alt={`${data.name} by ${data.artists.map(({ name }) => name).join(", ")}`}
+                     class="w-full h-auto rounded-md"
+                  />
                </div>
-               <HideMenu client:only="solid-js" />
+               {/* TODO: make this wrap around instead of this goofy multi line stuff */}
+               <div class="flex-1 font-sans text-sky-400">
+                  <h3 class="max-w-full font-bold sm:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                     {data.name}
+                  </h3>
+                  <h4 class="italic sm:text-xl lg:text-2xl xl:text-xl 2xl:text-2xl">
+                     {data.artists.map(({ name }) => name).join(", ")}
+                  </h4>
+               </div>
             </div>
-         </div>
-         <div class="h-screen"></div>
-         <div class="relative mb-20 md:mb-24 h-min-content">
-            <Icons client:idle hideable={true} />
-         </div>
-      </div>
-   </section>
-</BaseLayout>
+         ))
+      }
+   </ol>
+</TitledLayout>

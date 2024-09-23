@@ -27,4 +27,4 @@ dev:
   (typst watch --font-path resume/fonts/ resume/resume.typ site/public/Resume.pdf)
 
 resume:
-  cd resume && cargo watch -x "run -q"
+  cd resume && cargo watch -x "run --release -q"

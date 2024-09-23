@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TextBackground from "../components/TextBackground";
+import HideMenu from "../components/HideMenu";
 import Icons from "../components/Icons";
 import pfp from "../pfp.png";
 import { Image } from "astro:assets";
@@ -11,25 +12,33 @@ export const prerender = true;
 <BaseLayout title="homepage">
    <section class="w-screen h-screen">
       <div class="absolute w-screen h-screen z--1">
-         <TextBackground client:only="solid-js" />
+         <TextBackground client:only="solid-js" transition:persist />
       </div>
+
       <div class="flex flex-col h-full">
-         <div class="relative mt-8 ml-8">
-            <div class="flex flex-row gap-8 items-center md:flex-row md:gap-16">
-               <a class="w-32 h-32" href="/">
-                  <Image
-                     src={pfp}
-                     alt=""
-                     class="w-full h-full"
-                     loading="eager"
-                     transition:name="pfp"
-                  />
-               </a>
-               <a class="flex justify-center items-center" href="/">
-                  <h1 class="<sm:w-min font-heading text-sky-400 text-8xl" transition:name="text">
-                     ROHAN GODHA
-                  </h1>
-               </a>
+         <div class="relative mx-8 mt-8">
+            <div class="flex flex-row justify-between items-center">
+               <div class="flex flex-row gap-8 items-center md:flex-row md:gap-12">
+                  <a class="w-32 h-32 rounded-full" href="/">
+                     <Image
+                        src={pfp}
+                        alt="my profile picture"
+                        class="w-full h-full rounded-full" 
+                        loading="eager"
+                        transition:name="pfp"
+                        aria-label="go to homepage"
+                     />
+                  </a>
+                  <a class="flex justify-center items-center mt-2" href="/">
+                     <h1
+                        class="<sm:w-min font-heading text-sky-400 text-8xl"
+                        transition:name="name"
+                     >
+                        ROHAN GODHA
+                     </h1>
+                  </a>
+               </div>
+               <HideMenu client:only="solid-js" />
             </div>
          </div>
          <div class="h-screen"></div>

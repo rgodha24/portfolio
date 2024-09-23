@@ -1,22 +1,36 @@
-import { For } from "solid-js";
-import { hoveredIcon, icons } from "../icons";
+import { For, Show } from "solid-js";
+import { hoveredIcon, icons, showIconBar } from "../icons";
+import { useStore } from "@nanostores/solid";
 
-export default function Icons() {
+export default function Icons({ hideable }: { hideable: boolean }) {
+   const showIcons = useStore(showIconBar);
+
    return (
-      <div class="md:bottom-25px md:px-18px md:gap-33px md:w-800px grid transform grid-cols-3 grid-rows-2 place-items-center justify-between gap-y-4 md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:flex-row">
-         <For each={icons}>
-            {({ name, Icon, link }) => (
-               <a
-                  class="w-100px h-100px border-x-1 icon-shadow-blur bg-#180849/60 hover:bg-#17005C/50 backdrop-blur-2px flex flex-row items-center justify-center rounded-full border-b-2 border-sky-400 text-sky-400 shadow-md shadow-blue-900 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
-                  href={link}
-                  target={link.startsWith("/") ? "_self" : "_blank"}
-                  onMouseEnter={() => hoveredIcon.set(name)}
-                  onMouseLeave={() => hoveredIcon.set(null)}
-               >
-                  <Icon size={60} />
-               </a>
-            )}
-         </For>
-      </div>
+      <Show when={!hideable || (hideable && showIcons())}>
+         <div class="w-800px h-70px bg-#121A5D/50 rounded-24px border-x-1.5 border-b-3 border-t-1 backdrop-blur-2px absolute bottom-0 left-1/2 hidden -translate-x-1/2 transform border-sky-400 md:block"></div>
+         <div class="md:bottom-25px md:px-18px md:gap-33px md:w-800px grid transform grid-cols-3 grid-rows-2 place-items-center justify-between gap-y-4 md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:flex-row">
+            <For each={icons}>
+               {({ name, Icon, link }) => (
+                  <div class="group relative rounded-full">
+                     <a
+                        class="w-100px h-100px border-x-1 bg-#180849/60 group-hover:bg-#17005C/50 group-hover:backdrop-blur-4px backdrop-blur-2px flex flex-row items-center justify-center rounded-full border-b-2 border-sky-400 text-sky-400 shadow-md shadow-blue-900 transition-transform duration-200 group-hover:-translate-y-2 group-hover:shadow-lg"
+                        href={link}
+                        target={link.startsWith("/") ? "_self" : "_blank"}
+                        onMouseEnter={() => hoveredIcon.set(name)}
+                        onMouseLeave={() => hoveredIcon.set(null)}
+                        aria-label={name}
+                     >
+                        <Icon size={60} />
+                     </a>
+                     {/*
+                        <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full hidden group-hover:block transition-opacity duration-200 bg-black text-white py-1 px-2 rounded text-sm whitespace-nowrap">
+                           {name}
+                        </span>
+                     */}
+                  </div>
+               )}
+            </For>
+         </div>
+      </Show>
    );
 }

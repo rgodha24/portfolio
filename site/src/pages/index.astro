@@ -11,16 +11,24 @@ export const prerender = true;
 <BaseLayout title="homepage">
    <section class="w-screen h-screen">
       <div class="absolute w-screen h-screen z--1">
-         <TextBackground client:only="solid-js" />
+         <TextBackground client:only="solid-js" transition:persist />
       </div>
       <div class="flex flex-col h-full">
          <div class="flex flex-col flex-grow gap-8 justify-center items-center">
             <div class="flex flex-col gap-8 items-center md:flex-row md:gap-16">
                <div class="" id="image-container">
-                  <Image src={pfp} alt="" class="w-full h-full" loading="eager" />
+                  <Image
+                     src={pfp}
+                     alt=""
+                     class="w-full h-full"
+                     loading="eager"
+                     transition:name="pfp"
+                  />
                </div>
                <div class="flex justify-center items-center" id="h1-container">
-                  <h1 class="<sm:w-min font-heading text-sky-400">ROHAN GODHA</h1>
+                  <h1 class="<sm:w-min font-heading text-sky-400" transition:name="name">
+                     ROHAN GODHA
+                  </h1>
                </div>
             </div>
             <div class="flex flex-row justify-center items-center w-full md:block">
@@ -36,12 +44,7 @@ export const prerender = true;
             </div>
          </div>
          <div class="relative mb-20 md:mb-24 h-min-content">
-            <div
-               class="w-800px h-70px bg-#121A5D/50 rounded-24px border-x-1.5 border-b-3 border-t-1 backdrop-blur-2px absolute bottom-0 left-1/2 hidden -translate-x-1/2 transform border-sky-400 md:block"
-            >
-            </div>
-
-            <Icons client:idle />
+            <Icons client:idle hideable={false} />
          </div>
       </div>
    </section>
@@ -50,7 +53,7 @@ export const prerender = true;
 <style is:global>
    :root {
       --font-size-to-text-width: 4.9692797394;
-      --image-size-to-text-height: 1.5;
+      --image-size-to-text-height: 1.15;
       --space-to-use: 70vw;
    }
 

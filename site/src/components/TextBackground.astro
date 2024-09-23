@@ -1,106 +1,108 @@
 <canvas aria-hidden="true" id="canvas"></canvas>
 
 <script>
-   const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
-   const ctx = canvas.getContext("2d")!;
-   const main = document.getElementById("main")!;
+   document.addEventListener("astro:page-load", () => {
+      const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
+      const ctx = canvas.getContext("2d")!;
+      const main = document.getElementById("main")!;
 
-   let sizes = calculateSizes(main.getBoundingClientRect());
-   canvas.height = sizes.height;
-   canvas.width = sizes.width;
-   let text: string[] = [];
-
-   window.addEventListener("resize", () => {
-      sizes = calculateSizes(main.getBoundingClientRect());
-
+      let sizes = calculateSizes(main.getBoundingClientRect());
       canvas.height = sizes.height;
       canvas.width = sizes.width;
-      text = [];
-   });
+      let text: string[] = [];
 
-   setInterval(() => {
-      if (text.length === 0) {
-         text = generateText(sizes.lines, sizes.letters);
-      }
+      window.addEventListener("resize", () => {
+         sizes = calculateSizes(main.getBoundingClientRect());
 
-      updateText(text);
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.font = `300 16px "Monaspace Krypton", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
-      ctx.letterSpacing = `${sizes.letterSpacing}px`;
-      ctx.textRendering = "optimizeLegibility";
-
-      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-
-      gradient.addColorStop(0, "#3730A3"); //indigo-800
-      gradient.addColorStop((window.innerHeight / 2 + window.scrollY) / sizes.height, "#3730A3"); //indigo-800
-      gradient.addColorStop((window.innerHeight + window.scrollY) / sizes.height, "#38BDF9"); //sky-400
-      ctx.fillStyle = gradient;
-
-      text.forEach((line, i) => {
-         ctx.fillText(line, 0, (i + 0.85) * sizes.lineHeight, sizes.width);
+         canvas.height = sizes.height;
+         canvas.width = sizes.width;
+         text = [];
       });
-   }, 100);
 
-   const ALL_LETTERS = "abcdefghijklmnopqrstuvwxyz";
-
-   function generateText(lines: number, letters: number): string[] {
-      const text: string[] = [];
-      for (let i = 0; i < lines; i++) {
-         const line = [];
-         for (let j = 0; j < letters; j++) {
-            line.push(ALL_LETTERS[Math.floor(Math.random() * ALL_LETTERS.length)]);
+      setInterval(() => {
+         if (text.length === 0) {
+            text = generateText(sizes.lines, sizes.letters);
          }
-         text.push(line.join(""));
+
+         updateText(text);
+
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         ctx.font = `300 16px "Monaspace Krypton", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
+         ctx.letterSpacing = `${sizes.letterSpacing}px`;
+         ctx.textRendering = "optimizeLegibility";
+
+         const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+
+         gradient.addColorStop(0, "#3730A3"); //indigo-800
+         gradient.addColorStop((window.innerHeight / 2 + window.scrollY) / sizes.height, "#3730A3"); //indigo-800
+         gradient.addColorStop((window.innerHeight + window.scrollY) / sizes.height, "#38BDF9"); //sky-400
+         ctx.fillStyle = gradient;
+
+         text.forEach((line, i) => {
+            ctx.fillText(line, 0, (i + 0.85) * sizes.lineHeight, sizes.width);
+         });
+      }, 100);
+
+      const ALL_LETTERS = "abcdefghijklmnopqrstuvwxyz";
+
+      function generateText(lines: number, letters: number): string[] {
+         const text: string[] = [];
+         for (let i = 0; i < lines; i++) {
+            const line = [];
+            for (let j = 0; j < letters; j++) {
+               line.push(ALL_LETTERS[Math.floor(Math.random() * ALL_LETTERS.length)]);
+            }
+            text.push(line.join(""));
+         }
+
+         return text;
       }
 
-      return text;
-   }
+      // mutates in place
+      function updateText(text: string[]) {
+         const first = text.shift()!;
+         text.push(first);
+      }
 
-   // mutates in place
-   function updateText(text: string[]) {
-      const first = text.shift()!;
-      text.push(first);
-   }
+      function calculateSizes({ height, width }: { height: number; width: number }) {
+         const minLineHeight = 17;
+         const maxLineHeight = 21;
+         const minLetterSpacing = -0.4;
+         const maxLetterSpacing = 0.4;
+         const charWidth = 9.92;
 
-   function calculateSizes({ height, width }: { height: number; width: number }) {
-      const minLineHeight = 17;
-      const maxLineHeight = 21;
-      const minLetterSpacing = -0.4;
-      const maxLetterSpacing = 0.4;
-      const charWidth = 9.92;
+         let bestSolution = null;
+         let minEmptySpace = Infinity;
 
-      let bestSolution = null;
-      let minEmptySpace = Infinity;
+         for (let lineHeight = minLineHeight; lineHeight <= maxLineHeight; lineHeight += 0.1) {
+            const lines = Math.floor(height / lineHeight);
 
-      for (let lineHeight = minLineHeight; lineHeight <= maxLineHeight; lineHeight += 0.1) {
-         const lines = Math.floor(height / lineHeight);
+            for (
+               let letterSpacing = minLetterSpacing;
+               letterSpacing <= maxLetterSpacing;
+               letterSpacing += 0.1
+            ) {
+               const effectiveCharWidth = charWidth + letterSpacing;
+               const letters = Math.floor(width / effectiveCharWidth);
 
-         for (
-            let letterSpacing = minLetterSpacing;
-            letterSpacing <= maxLetterSpacing;
-            letterSpacing += 0.1
-         ) {
-            const effectiveCharWidth = charWidth + letterSpacing;
-            const letters = Math.floor(width / effectiveCharWidth);
+               const usedWidth = letters * effectiveCharWidth;
+               const usedHeight = lines * lineHeight;
 
-            const usedWidth = letters * effectiveCharWidth;
-            const usedHeight = lines * lineHeight;
+               const emptySpace = width - usedWidth + (height - usedHeight);
 
-            const emptySpace = width - usedWidth + (height - usedHeight);
-
-            if (emptySpace < minEmptySpace) {
-               minEmptySpace = emptySpace;
-               bestSolution = {
-                  lines: lines,
-                  letters: letters,
-                  lineHeight: parseFloat(lineHeight.toFixed(1)),
-                  letterSpacing: parseFloat(letterSpacing.toFixed(1)),
-               };
+               if (emptySpace < minEmptySpace) {
+                  minEmptySpace = emptySpace;
+                  bestSolution = {
+                     lines: lines,
+                     letters: letters,
+                     lineHeight: parseFloat(lineHeight.toFixed(1)),
+                     letterSpacing: parseFloat(letterSpacing.toFixed(1)),
+                  };
+               }
             }
          }
-      }
 
-      return { ...bestSolution!, height, width };
-   }
+         return { ...bestSolution!, height, width };
+      }
+   });
 </script>

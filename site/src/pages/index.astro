@@ -10,7 +10,7 @@ import { Image } from "astro:assets";
    <main id="main">
       <section class="w-screen h-screen">
          <div class="absolute w-screen h-screen z--1">
-            <TextBackground />
+            <TextBackground transition:persist transition:name="background" />
          </div>
          <div class="flex flex-col h-full">
             <div class="flex flex-col flex-grow gap-8 justify-center items-center">

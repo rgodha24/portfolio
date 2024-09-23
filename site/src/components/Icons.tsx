@@ -22,11 +22,6 @@ export default function Icons({ hideable }: { hideable: boolean }) {
                      >
                         <Icon size={60} />
                      </a>
-                     {/*
-                        <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full hidden group-hover:block transition-opacity duration-200 bg-black text-white py-1 px-2 rounded text-sm whitespace-nowrap">
-                           {name}
-                        </span>
-                     */}
                   </div>
                )}
             </For>

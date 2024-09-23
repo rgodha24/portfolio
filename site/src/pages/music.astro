@@ -5,8 +5,6 @@ import HideMenu from "../components/HideMenu";
 import Icons from "../components/Icons";
 import pfp from "../pfp.png";
 import { Image } from "astro:assets";
-
-export const prerender = true;
 ---
 
 <BaseLayout title="homepage">
@@ -23,7 +21,7 @@ export const prerender = true;
                      <Image
                         src={pfp}
                         alt="my profile picture"
-                        class="w-full h-full rounded-full" 
+                        class="w-full h-full rounded-full"
                         loading="eager"
                         transition:name="pfp"
                         aria-label="go to homepage"

@@ -8,15 +8,7 @@ import prefetch from "@astrojs/prefetch";
 // https://astro.build/config
 export default defineConfig({
    site: "https://www.rohangodha.com",
-   integrations: [
-      sitemap(),
-      solidJs(),
-      unocss({
-         mode: "global",
-         injectReset: true,
-      }),
-      prefetch(),
-   ],
-   output: "hybrid",
+   integrations: [sitemap(), solidJs(), unocss({ mode: "global", injectReset: true }), prefetch()],
+   output: "static",
    adapter: cloudflare(),
 });

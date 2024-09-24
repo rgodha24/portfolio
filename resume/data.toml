@@ -113,7 +113,7 @@ highlights = [
 
 [[skills]]
 category = "Programming Languages"
-skills = ["Javascript/Typescript", "Rust", "Python", "Java", "Go"]
+skills = ["Javascript/Typescript", "Rust", "Python", "Java", "Go", "Nix"]
 
 
 [[skills]]
@@ -121,7 +121,7 @@ category = "Web Development"
 skills = [
   "React",
   "Next.js",
-  "Svelte & SvelteKit",
+  "Svelte",
   "Tailwind CSS",
   "AWS",
   "Serverless",

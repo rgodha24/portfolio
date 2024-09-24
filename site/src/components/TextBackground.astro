@@ -3,6 +3,8 @@
 <script>
    document.addEventListener("astro:page-load", () => {
       const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
+      // going to a page without a background
+      if (!canvas) return;
       const ctx = canvas.getContext("2d")!;
       const main = document.getElementById("main")!;
 

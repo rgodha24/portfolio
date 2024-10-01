@@ -4,6 +4,7 @@ default:
 format:
   taplo format
   prettier --write "(site|link-shortener)/**/*.{astro,ts,tsx,js,jsx,cjs,mjs,json}"
+  prettier --write "./package.json"
 
 format-check:
   taplo format --check

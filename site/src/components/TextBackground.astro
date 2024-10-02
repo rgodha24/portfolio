@@ -1,6 +1,11 @@
 <canvas aria-hidden="true" id="canvas"></canvas>
 
 <script>
+   let handle: number;
+   document.addEventListener("astro:after-swap", () => {
+      cancelAnimationFrame(handle);
+   });
+
    document.addEventListener("astro:page-load", () => {
       const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
       // going to a page without a background
@@ -9,11 +14,12 @@
       const main = document.getElementById("main")!;
 
       let sizes = calculateSizes(main.getBoundingClientRect());
-      canvas.height = sizes.height;
-      canvas.width = sizes.width;
       let text: string[] = [];
 
-      window.addEventListener("resize", () => {
+      window.addEventListener("resize", onResize);
+      onResize();
+
+      function onResize() {
          sizes = calculateSizes(main.getBoundingClientRect());
 
          canvas.height = sizes.height;
@@ -23,13 +29,11 @@
          ctx.font = `300 16px "Monaspace Krypton", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
          ctx.letterSpacing = `${sizes.letterSpacing}px`;
          ctx.textRendering = "optimizeLegibility";
-      });
+      }
 
-      ctx.font = `300 16px "Monaspace Krypton", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
-      ctx.letterSpacing = `${sizes.letterSpacing}px`;
-      ctx.textRendering = "optimizeLegibility";
-
-      let prevTime: number;
+      let prevTime = 0;
+      let prevH = 0;
+      let prevScroll = 0;
 
       function animate(time: DOMHighResTimeStamp) {
          if (text.length === 0) {
@@ -38,31 +42,39 @@
          if (!prevTime) {
             prevTime = time;
          }
+         let textUpdated = false;
          if (time - prevTime >= 100) {
             prevTime = time;
             updateText(text);
+            textUpdated = true;
          }
 
-         requestAnimationFrame(animate);
+         handle = requestAnimationFrame(animate);
 
-         const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+         if (prevH !== window.innerHeight || prevScroll !== window.scrollY || textUpdated) {
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-         ctx.clearRect(0, 0, canvas.width, canvas.height);
-         gradient.addColorStop(0, "#3730A3"); //indigo-800
-         // Math.min to stop overscrolling bugs
-         gradient.addColorStop(
-            Math.min((window.innerHeight / 2 + window.scrollY) / sizes.height, 1),
-            "#3730A3", //indigo-800
-         );
-         gradient.addColorStop(
-            Math.min((window.innerHeight + window.scrollY) / sizes.height, 1),
-            "#38BDF9", //sky-400
-         );
-         ctx.fillStyle = gradient;
+            gradient.addColorStop(0, "#3730A3"); //indigo-800
 
-         text.forEach((line, i) => {
-            ctx.fillText(line, 0, (i + 0.85) * sizes.lineHeight, sizes.width);
-         });
+            // Math.min to stop overscrolling bugs
+            gradient.addColorStop(
+               Math.min((window.innerHeight / 2 + window.scrollY) / sizes.height, 1),
+               "#3730A3" /*indigo-800*/,
+            );
+            gradient.addColorStop(
+               Math.min((window.innerHeight + window.scrollY) / sizes.height, 1),
+               "#38BDF9" /*sky-400*/,
+            );
+            ctx.fillStyle = gradient;
+
+            text.forEach((line, i) => {
+               ctx.fillText(line, 0, (i + 0.85) * sizes.lineHeight, sizes.width);
+            });
+         }
+
+         prevH = window.innerHeight;
+         prevScroll = window.scrollY;
       }
 
       requestAnimationFrame(animate);

@@ -19,31 +19,53 @@
          canvas.height = sizes.height;
          canvas.width = sizes.width;
          text = [];
-      });
 
-      setInterval(() => {
-         if (text.length === 0) {
-            text = generateText(sizes.lines, sizes.letters);
-         }
-
-         updateText(text);
-
-         ctx.clearRect(0, 0, canvas.width, canvas.height);
          ctx.font = `300 16px "Monaspace Krypton", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
          ctx.letterSpacing = `${sizes.letterSpacing}px`;
          ctx.textRendering = "optimizeLegibility";
+      });
+
+      ctx.font = `300 16px "Monaspace Krypton", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
+      ctx.letterSpacing = `${sizes.letterSpacing}px`;
+      ctx.textRendering = "optimizeLegibility";
+
+      let prevTime: number;
+
+      function animate(time: DOMHighResTimeStamp) {
+         if (text.length === 0) {
+            text = generateText(sizes.lines, sizes.letters);
+         }
+         if (!prevTime) {
+            prevTime = time;
+         }
+         if (time - prevTime >= 100) {
+            prevTime = time;
+            updateText(text);
+         }
+
+         requestAnimationFrame(animate);
 
          const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
 
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
          gradient.addColorStop(0, "#3730A3"); //indigo-800
-         gradient.addColorStop((window.innerHeight / 2 + window.scrollY) / sizes.height, "#3730A3"); //indigo-800
-         gradient.addColorStop((window.innerHeight + window.scrollY) / sizes.height, "#38BDF9"); //sky-400
+         // Math.min to stop overscrolling bugs
+         gradient.addColorStop(
+            Math.min((window.innerHeight / 2 + window.scrollY) / sizes.height, 1),
+            "#3730A3", //indigo-800
+         );
+         gradient.addColorStop(
+            Math.min((window.innerHeight + window.scrollY) / sizes.height, 1),
+            "#38BDF9", //sky-400
+         );
          ctx.fillStyle = gradient;
 
          text.forEach((line, i) => {
             ctx.fillText(line, 0, (i + 0.85) * sizes.lineHeight, sizes.width);
          });
-      }, 100);
+      }
+
+      requestAnimationFrame(animate);
 
       const ALL_LETTERS = "abcdefghijklmnopqrstuvwxyz";
 

@@ -1,0 +1,50 @@
+# key value map of id to project data
+
+[aoc]
+title = "Advent of Code"
+blurb = "Competitive Programming Competition Advent of Code"
+order = 15
+tech = ["Typescript", "Rust", "Python"]
+bullets = [
+  "Solutions for the competitive programming challenge Advent of Code, in Rust, Python and Typescript",
+  "Used Advent of Code to teach 30+ students programming as President of the Coding Club",
+]
+
+github = "rgodha24/advent-of-code"
+
+[attendance]
+title = "Brophy Attendance"
+blurb = "A realtime and localfirst attendance system in use at Brophy College Preparatory"
+order = 80
+tech = ["sst", "AWS", "shadcn/ui", "React", "Rust", "ElectroDB", "Typescript"]
+bullets = [
+  "Built an attendance system in use at Brophy College Prep based on scanning barcodes on student ids",
+  "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda based backend in Typescript, and a realtime, local-first, web dashboard in Typescript using technology like SST and React",
+]
+
+website = "https://batt.rgodha.com"
+github = "rgodha24/attendance"
+
+[cryptenv]
+title = "Cryptenv"
+blurb = "An environment variable manager that switches envs per project, built in Rust"
+order = 20
+tech = ["Rust"]
+bullets = [
+  "A Rust-based tool to store encrypted environment variables, and switch between them for different projects",
+]
+
+github = "rgodha24/cryptenv"
+
+[portfolio]
+title = "Portfolio"
+blurb = "An Astro powered portfolio website and a typst built Resume using the same data"
+order = 50
+tech = ["Astro", "Typst", "UnoCSS", "Cloudflare Pages"]
+bullets = [
+  "Utilized SolidJS and Astro to create a unique portfolio website based around animated text and canvases",
+  "Built a resume generator using typst to create a resume from a TOML file and display it on the website",
+]
+
+website = "https://rohangodha.com"
+github = "rgodha24/portfolio"

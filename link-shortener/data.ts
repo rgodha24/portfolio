@@ -1,13 +1,10 @@
 import { readdirSync } from "fs";
+import { parse } from "toml";
 
 export async function getProjects() {
-   const projects = readdirSync("site/src/content/projects").map((project) =>
-      project.replaceAll(".md", ""),
-   );
+   const projects = parse("resume/projects.toml");
 
-   console.log(projects);
-
-   return projects;
+   return Object.keys(projects);
 }
 export async function getPosts() {
    const posts = readdirSync("site/src/content/blog").map((post) => post.replaceAll(".md", ""));

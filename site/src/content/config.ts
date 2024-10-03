@@ -1,5 +1,7 @@
 import { defineCollection, z } from "astro:content";
 import { Api, Range } from "@statsfm/statsfm.js";
+import { parse as parseToml } from "toml";
+import { file } from "astro/loaders";
 
 const blog = defineCollection({
    schema: z.object({
@@ -14,13 +16,18 @@ const blog = defineCollection({
 });
 
 const projects = defineCollection({
+   loader: file("../resume/projects.toml", {
+      parser: parseToml,
+   }),
    schema: z.object({
       title: z.string(),
-      repo: z.string().url(),
-      website: z.string().url(),
       blurb: z.string(),
       order: z.number().optional().default(100),
       tech: z.string().array(),
+      // format like `rgodha24/portfolio`
+      github: z.string().regex(/[\w-]+\/[\w-]+/gi),
+      website: z.string().url().optional(),
+      bullets: z.string().array(),
    }),
 });
 
@@ -31,12 +38,11 @@ const albums = defineCollection({
       const albums = await api.users.topAlbums("rgodha", {
          range: Range.WEEKS,
       });
-      console.log(JSON.stringify(albums));
 
       return albums.slice(0, 30).map(({ album }) => ({
          ...album,
          id: album.id.toString(),
-         name: album.name.replace(/\([\w\s]+\)/gi, ""),
+         name: album.name.replaceAll(/\([\w\s]+\)/gi, ""),
       }));
    },
    schema: z.object({

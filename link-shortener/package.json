@@ -8,6 +8,7 @@
       "hono": "^4.5.11"
    },
    "devDependencies": {
-      "@types/bun": "^1.1.8"
+      "@types/bun": "^1.1.8",
+      "toml": "^3.0.0"
    }
 }

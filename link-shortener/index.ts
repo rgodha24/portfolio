@@ -12,7 +12,7 @@ app.get("/:path", (c) => {
       return c.redirect("https://www.rohangodha.com/projects/" + path);
    } else if (posts.includes(path)) {
       return c.redirect("https://www.rohangodha.com/blog/" + path);
-   } else if (/resume/gi.test(path)) {
+   } else if (/resume(.pdf)?/gi.test(path)) {
       return c.redirect("https://www.rohangodha.com/Resume.pdf");
    }
 

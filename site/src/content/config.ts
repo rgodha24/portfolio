@@ -17,6 +17,7 @@ const blog = defineCollection({
 
 const projects = defineCollection({
    loader: file("../resume/projects.toml", {
+      // I contributed this! https://github.com/withastro/astro/pull/12047
       parser: parseToml,
    }),
    schema: z.object({
@@ -24,10 +25,10 @@ const projects = defineCollection({
       blurb: z.string(),
       order: z.number().optional().default(100),
       tech: z.string().array(),
+
       // format like `rgodha24/portfolio`
       github: z.string().regex(/[\w-]+\/[\w-]+/gi),
       website: z.string().url().optional(),
-      bullets: z.string().array(),
    }),
 });
 
@@ -43,6 +44,7 @@ const albums = defineCollection({
          ...album,
          id: album.id.toString(),
          name: album.name.replaceAll(/\([\w\s]+\)/gi, ""),
+         spotifyId: album.externalIds?.spotify?.[0],
       }));
    },
    schema: z.object({
@@ -54,6 +56,7 @@ const albums = defineCollection({
             name: z.string(),
          }),
       ),
+      spotifyId: z.string().nullish(),
    }),
 });
 

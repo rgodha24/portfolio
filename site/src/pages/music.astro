@@ -2,19 +2,20 @@
 import { getCollection } from "astro:content";
 import TitledLayout from "../layouts/TitledLayout.astro";
 import { Image } from "astro:assets";
+import {} from "lucide-solid";
 
 const albums = await getCollection("albums");
 ---
 
 <TitledLayout title="Music">
-   <h2 class="px-16 pt-8 text-4xl font-semibold text-sky-400">
+   <h2 class="px-16 pt-8 text-2xl font-semibold lg:text-3xl xl:text-4xl text-sky-400">
       Here are some of my favorite albums!
    </h2>
-   <ol class="grid grid-cols-1 gap-x-8 gap-y-8 py-8 px-16 xl:grid-cols-2">
+   <ol class="grid grid-cols-1 gap-x-8 gap-y-8 py-8 px-16 lg:grid-cols-2">
       {
          albums.map(({ data }) => (
-            <div class="bg-#180849/40 backdrop-blur-4px rounded-40px flex flex-row p-4 gap-x-4">
-               <div class="ml-4 w-100px min-w-100px">
+            <li class="bg-#180849/40 backdrop-blur-4px rounded-40px flex flex-row p-4 gap-x-4">
+               <div class="place-self-center ml-4 w-100px min-w-100px">
                   <Image
                      inferSize
                      src={data.image}
@@ -23,15 +24,23 @@ const albums = await getCollection("albums");
                   />
                </div>
                {/* TODO: make this wrap around instead of this goofy multi line stuff */}
-               <div class="flex-1 font-sans text-sky-400">
-                  <h3 class="max-w-full font-bold sm:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                     {data.name}
-                  </h3>
-                  <h4 class="italic sm:text-xl lg:text-2xl xl:text-xl 2xl:text-2xl">
+               <div class="flex-1 text-sky-400">
+                  <a
+                     href={
+                        !!data.spotifyId
+                           ? `https://open.spotify.com/album${data.spotifyId}`
+                           : `https://open.spotify.com/search/${encodeURIComponent(data.name)}`
+                     }
+                  >
+                     <h3 class="max-w-full text-2xl lg:text-3xl xl:text-4xl font-heading">
+                        {data.name}
+                     </h3>
+                  </a>
+                  <h4 class="font-sans italic sm:text-xl lg:text-2xl xl:text-xl 2xl:text-2xl">
                      {data.artists.map(({ name }) => name).join(", ")}
                   </h4>
                </div>
-            </div>
+            </li>
          ))
       }
    </ol>

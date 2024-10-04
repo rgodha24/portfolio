@@ -21,7 +21,7 @@ const { title } = Astro.props;
       <div class="px-8 pt-8">
          <div class="flex flex-row justify-between items-center">
             <div class="flex flex-row gap-8 items-center md:flex-row md:gap-12">
-               <a class="w-32 h-32 rounded-full" href="/">
+               <a class="w-16 h-16 rounded-full lg:w-32 lg:h-32" href="/">
                   <Image
                      src={pfp}
                      alt="my profile picture"
@@ -32,7 +32,10 @@ const { title } = Astro.props;
                   />
                </a>
                <a class="flex justify-center items-center mt-2" href="/">
-                  <h1 class="<sm:w-min font-heading text-sky-400 text-8xl" transition:name="name">
+                  <h1
+                     class="<sm:w-min font-heading text-sky-400 lg:text-8xl text-5xl"
+                     transition:name="name"
+                  >
                      ROHAN GODHA
                   </h1>
                </a>
@@ -44,7 +47,7 @@ const { title } = Astro.props;
       <slot />
    </main>
 
-   <div class="fixed left-0 bottom-20 w-full h-min-content">
+   <div class="fixed left-0 bottom-10 w-full md:bottom-20 h-min-content">
       <Icons client:idle hideable={true} />
    </div>
 </BaseLayout>

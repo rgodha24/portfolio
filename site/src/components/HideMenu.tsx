@@ -7,10 +7,10 @@ export default function HideMenu() {
 
    return (
       <button
-         class={`border-sky-400 border-2 bg-#180849/60 hover:bg-#17005C/50 backdrop-blur-2px hover:backdrop-blur-4px hover:scale-105 text-sky-400 w-20 h-20 rounded-full flex justify-center items-center transition-transform duration-200 ${showIcon() ? "" : "rotate-180"}`}
+         class={`border-sky-400 border-2 bg-#180849/60 hover:bg-#17005C/50 backdrop-blur-2px hover:backdrop-blur-4px hover:scale-105 text-sky-400 w-16 h-16 lg:w-20 lg:h-20 rounded-full flex justify-center items-center transition-transform duration-200 ${showIcon() ? "" : "rotate-180"}`}
          onClick={() => showIconBar.set(!showIcon())}
       >
-         <ChevronDown size={50} />
+         <ChevronDown class="w-full h-full p-2" />
       </button>
    );
 }

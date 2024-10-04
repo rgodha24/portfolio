@@ -1,11 +1,11 @@
 mod compile;
 
-use schemars::{schema_for_value, JsonSchema};
+use schemars::{schema_for, JsonSchema};
 use serde::{Deserialize, Serialize};
 use tiny_http::{Header, Response};
 
 fn main() {
-    let schema = schema_for_value!(Config::default());
+    let schema = schema_for!(Config);
     let schema = serde_json::to_string(&schema).unwrap();
 
     let html = include_str!("../index.html");
@@ -15,6 +15,7 @@ fn main() {
     );
 
     let server = tiny_http::Server::http("127.0.0.1:3001").expect("failed to start server");
+    println!("listening on port 3001");
 
     loop {
         let mut req = match server.recv() {
@@ -73,6 +74,17 @@ pub struct Config {
     include_location: bool,
     /// should it include if I'm a diabetic?
     diabetic: bool,
+    /// the projects to include in the Resume
+    projects: Vec<Projects>,
+}
+
+#[derive(Debug, Serialize, Deserialize, JsonSchema)]
+#[serde(rename_all = "lowercase")]
+enum Projects {
+    Aoc,
+    Attendance,
+    Cryptenv,
+    Portfolio,
 }
 
 impl Default for Config {

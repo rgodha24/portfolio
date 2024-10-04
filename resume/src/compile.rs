@@ -103,6 +103,7 @@ const CV: &'static str = include_str!("../cv.typ");
 const RESUME: &'static str = include_str!("../resume.typ");
 const UTILS: &'static str = include_str!("../utils.typ");
 const DATA: &'static str = include_str!("../data.toml");
+const PROJECTS: &'static str = include_str!("../projects.toml");
 const EMAIL_ICON: &'static str = include_str!("../icons/email.svg");
 const GITHUB_ICON: &'static str = include_str!("../icons/github.svg");
 const LINKEDIN_ICON: &'static str = include_str!("../icons/linkedin.svg");
@@ -138,6 +139,11 @@ pub fn compile(config: Config) -> Vec<u8> {
     let data_source = Source::new(
         FileId::new(None, VirtualPath::new("/data.toml")),
         DATA.to_string(),
+    );
+
+    let projects_source = Source::new(
+        FileId::new(None, VirtualPath::new("/projects.toml")),
+        PROJECTS.to_string(),
     );
 
     let config_source = Source::new(
@@ -178,6 +184,7 @@ pub fn compile(config: Config) -> Vec<u8> {
             cv_source,
             utils_source,
             data_source,
+            projects_source,
             config_source,
             email_source,
             github_source,

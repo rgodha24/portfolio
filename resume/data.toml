@@ -80,37 +80,6 @@ highlights = [
   "Created a web-based dashboard to display telemetry data from the autonomous boat and UAV",
 ]
 
-[[projects]]
-name = "Brophy Attendance System"
-url = "rgodha.com/attendance"
-highlights = [
-  "Built an attendance system in use at Brophy College Prep based on scanning barcodes on student ids",
-  "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda based backend in Typescript, and a realtime, local-first, web dashboard in Typescript using technology like SST and React",
-]
-
-[[projects]]
-name = "Portfolio"
-url = "rgodha.com/portfolio"
-highlights = [
-  "Utilized SolidJS and Astro to create a unique portfolio website based around animated text and canvases",
-  "Built a resume generator using typst to create a resume from a TOML file and display it on the website",
-]
-
-[[projects]]
-name = "Advent of Code"
-url = "rgodha.com/aoc"
-highlights = [
-  "Solutions for the competitive programming challenge Advent of Code, in Rust, Python and Typescript",
-  "Used Advent of Code to teach 30+ students programming as President of the Coding Club",
-]
-
-[[projects]]
-name = "cryptenv"
-url = "rgodha.com/cryptenv"
-highlights = [
-  "A Rust-based tool to store encrypted environment variables, and switch between them for different projects",
-]
-
 [[skills]]
 category = "Programming Languages"
 skills = ["Javascript/Typescript", "Rust", "Python", "Java", "Go", "Nix"]

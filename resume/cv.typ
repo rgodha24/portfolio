@@ -218,23 +218,28 @@
   }
 }
 
-#let cvprojects(info, title: "Projects", isbreakable: true) = {
-  if info.projects != none {
-    let index = 0
-    block[
-      == #title
-      #for project in info.projects {
-        block(width: 100%, breakable: isbreakable)[
-          #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#text(13pt)[#link("https://"+project.url)[#project.name]]* #h(1fr) _ #link("https://"+project.url)[#project.url] _\
-          #for hi in project.highlights [
-            - #eval(hi, mode: "markup")
-          ]
+#let cvprojects(
+  info,
+  config,
+  projects,
+  title: "Projects",
+  isbreakable: true,
+) = {
+  let index = 0
+  block[
+    == #title
+    #for p in config.projects {
+      let project = projects.at(p)
+      block(width: 100%, breakable: isbreakable)[
+        #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
+        *#text(13pt)[#link("https://rgodha.com/"+p)[#project.title]]* #h(1fr) _ #link("https://rgodha.com/"+p)[rgodha.com/#p] _\
+        #for hi in project.bullets [
+          - #eval(hi, mode: "markup")
         ]
-        index += 1
-      }
-    ]
-  }
+      ]
+      index += 1
+    }
+  ]
 }
 
 #let cvcertificates(

@@ -2,3 +2,5 @@
 
 includeLocation = false
 diabetic = false
+
+projects = ["attendance", "portfolio", "cryptenv", "aoc"]

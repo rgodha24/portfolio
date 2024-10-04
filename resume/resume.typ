@@ -2,6 +2,7 @@
 
 #let cvdata = toml("data.toml")
 #let config = toml("config.toml")
+#let projects = toml("projects.toml")
 
 #let uservars = (
     headingfont: "Norwester",
@@ -127,5 +128,5 @@
 #cvwork(cvdata)
 #cveducation(cvdata)
 #cvaffiliations(cvdata)
-#cvprojects(cvdata)
+#cvprojects(cvdata, config, projects)
 #cvskills(cvdata, config)

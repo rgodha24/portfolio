@@ -19,7 +19,7 @@ position = "Intern"
 startDate = "2023-05-01"
 endDate = "2023-08-01"
 highlights = [
-  "Modernized Oracle’s SuiteCloud Extension testing framework by migrating from Jest version to Vitest",
+  "Modernized Oracle’s SuiteCloud Extension testing framework by migrating outdated Jest version to Vitest",
   "Created tests for 80% of all API endpoints in ConventionSuite, NewGen’s primary product, increasing confidence in their ongoing rewrite from Create-React-App to Vite",
   "Led effort to modernize target client database, increasing conversion rate on email marketing campaigns",
 ]

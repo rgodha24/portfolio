@@ -28,7 +28,7 @@ const albums = await getCollection("albums");
                   <a
                      href={
                         !!data.spotifyId
-                           ? `https://open.spotify.com/album${data.spotifyId}`
+                           ? `https://open.spotify.com/album/${data.spotifyId}`
                            : `https://open.spotify.com/search/${encodeURIComponent(data.name)}`
                      }
                   >

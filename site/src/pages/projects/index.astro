@@ -1,34 +1,50 @@
 ---
 import { getCollection } from "astro:content";
-import CombinedLayout from "../../layouts/CombinedLayout.astro";
-import Wrapper from "../../components/Wrapper.astro";
+import TitledLayout from "../../layouts/TitledLayout.astro";
+import { Github, Globe } from "lucide-solid";
 
 const projects = await getCollection("projects");
 ---
 
-<CombinedLayout title="projects">
-   <section class="grid grid-cols-1 auto-cols-max gap-4 sm:grid-cols-2 sm:gap-3">
+<TitledLayout title="Projects">
+   <ol class="grid grid-cols-1 gap-x-8 gap-y-8 py-8 px-16 lg:grid-cols-2">
       {
          projects
             .sort((a, b) => -a.data.order + b.data.order)
-            .map(({ data: { title, website, github, blurb, tech }, id }) => (
-               <Wrapper>
-                  <h3 class="text-3xl text-center hover:text-cyan-400 font-heading">
-                     <a class="" href={`/projects/${id}`}>
-                        {title}
+            .map(({ data: { title, website, github, tech, bullets }, id }) => (
+               <li class="bg-#180849/40 backdrop-blur-4px rounded-40px max-w-full flex flex-row justify-between p-4 gap-x-4">
+                  <div class="flex flex-col gap-y-2">
+                     <a href={`/projects/${id}`} class="">
+                        <h3 class="max-w-full text-3xl lg:text-4xl xl:text-5xl font-heading">
+                           {title}
+                        </h3>
                      </a>
-                  </h3>
-                  <a
-                     class="mx-auto -my-4 text-sm text-bluegray-200 md:text-md hover:text-slate-300"
-                     href={`/projects/${id}`}
-                  >
-                     click here for more info
-                  </a>
-                  <p class="text-sm text-center text-slate-300">{blurb}</p>
-                  <div class="flex flex-row gap-10 justify-center" />
-                  <slot />
-               </Wrapper>
+                     <ul class="flex flex-col gap-y-1">
+                        {bullets.map((b) => (
+                           <li class="text-sm text-sky-100 text-pretty lg:text-md">- {b}</li>
+                        ))}
+                     </ul>
+                     <!-- <ul class="flex flex-row gap-x-2"> -->
+                     <!--    {tech.map((t) => ( -->
+                     <!--       <li class="py-1 px-2 bg-gradient-to-r rounded-full text-sky-100 from-sky-900/30 to-blue-700/30"> -->
+                     <!--          #{t} -->
+                     <!--       </li> -->
+                     <!--    ))} -->
+                     <!-- </ul> -->
+                  </div>
+                  <div class="flex flex-col gap-y-4 justify-between p-2">
+                     <a class="" href={github}>
+                        <Github class="" size={32} />
+                     </a>
+
+                     {!!website && (
+                        <a class="" href={website}>
+                           <Globe class="" size={32} />
+                        </a>
+                     )}
+                  </div>
+               </li>
             ))
       }
-   </section>
-</CombinedLayout>
+   </ol>
+</TitledLayout>

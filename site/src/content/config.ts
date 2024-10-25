@@ -25,6 +25,7 @@ const projects = defineCollection({
       blurb: z.string(),
       order: z.number().optional().default(100),
       tech: z.string().array(),
+      bullets: z.string().array().min(1),
 
       // format like `rgodha24/portfolio`
       github: z.string().regex(/[\w-]+\/[\w-]+/gi),
@@ -40,12 +41,16 @@ const albums = defineCollection({
          range: Range.WEEKS,
       });
 
-      return albums.slice(0, 30).map(({ album }) => ({
-         ...album,
-         id: album.id.toString(),
-         name: album.name.replaceAll(/\([\w\s]+\)/gi, ""),
-         spotifyId: album.externalIds?.spotify?.[0],
-      }));
+      return albums
+         .filter(({ album }) => album.externalIds.spotify?.length !== 0)
+         .slice(0, 30)
+         .map(({ album }) => ({
+            ...album,
+            id: album.id.toString(),
+            // replace anything in parenthesis (e.g. Explicit, Extended Version, Deluxe) with nothing
+            name: album.name.replaceAll(/\([\w\s]+\)/gi, ""),
+            spotifyId: album.externalIds.spotify![0],
+         }));
    },
    schema: z.object({
       id: z.string(),
@@ -56,7 +61,7 @@ const albums = defineCollection({
             name: z.string(),
          }),
       ),
-      spotifyId: z.string().nullish(),
+      spotifyId: z.string(),
    }),
 });
 

@@ -1,5 +1,6 @@
-<canvas aria-hidden="true" id="canvas"></canvas>
-
+<div class="w-full h-full filter-blur-[0.75px]">
+   <canvas aria-hidden="true" id="canvas"></canvas>
+</div>
 <script>
    let handle: number;
    document.addEventListener("astro:after-swap", () => {
@@ -14,6 +15,7 @@
       const main = document.getElementById("main")!;
 
       let sizes = calculateSizes(main.getBoundingClientRect());
+      let dpr = window.devicePixelRatio || 1;
       let text: string[] = [];
 
       window.addEventListener("resize", onResize);
@@ -22,13 +24,20 @@
       function onResize() {
          sizes = calculateSizes(main.getBoundingClientRect());
 
-         canvas.height = sizes.height;
-         canvas.width = sizes.width;
+         dpr = window.devicePixelRatio || 1;
+         console.log(dpr);
+         canvas.height = sizes.height * dpr;
+         canvas.width = sizes.width * dpr;
+
+         canvas.style.height = `${sizes.height}px`;
+         canvas.style.width = `${sizes.width}px`;
          text = [];
 
+         ctx.setTransform(1, 0, 0, 1, 0, 0);
          ctx.font = `300 16px "Monaspace Krypton", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
          ctx.letterSpacing = `${sizes.letterSpacing}px`;
          ctx.textRendering = "optimizeLegibility";
+         ctx.scale(dpr, dpr);
       }
 
       let prevTime = 0;
@@ -52,7 +61,7 @@
          handle = requestAnimationFrame(animate);
 
          if (prevH !== window.innerHeight || prevScroll !== window.scrollY || textUpdated) {
-            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            const gradient = ctx.createLinearGradient(0, 0, 0, sizes.height);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             gradient.addColorStop(0, "#3730A3"); //indigo-800
@@ -101,8 +110,8 @@
       }
 
       function calculateSizes({ height, width }: { height: number; width: number }) {
-         const minLineHeight = 17;
-         const maxLineHeight = 21;
+         const minLineHeight = 18.5;
+         const maxLineHeight = 20.5;
          const minLetterSpacing = -0.4;
          const maxLetterSpacing = 0.4;
          const charWidth = 9.92;

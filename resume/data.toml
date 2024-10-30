@@ -14,7 +14,7 @@ location = "Scottsdale, AZ"
 
 [[work]]
 organization = "NewGen Business Solutions"
-url = "https://newgennow.com/"
+url = "newgennow.com/"
 position = "Intern"
 startDate = "2023-05-01"
 endDate = "2023-08-01"
@@ -26,7 +26,7 @@ highlights = [
 
 [[education]]
 institution = "Georgia Institute of Technology, College of Computing"
-url = "https://example.com/"
+url = "gatech.edu"
 area = "Computer Science"
 studyType = "Candidate: B.S."
 concentrations = ["Devices", "Intelligence"]
@@ -40,7 +40,7 @@ highlights = [
 
 [[education]]
 institution = "Brophy College Preparatory"
-url = "https://brophyprep.org"
+url = "brophyprep.org"
 area = ""
 studyType = ""
 concentrations = []
@@ -60,7 +60,7 @@ highlights = [
 [[affiliations]]
 organization = "Broncobotics"
 position = "Head of Technology"
-url = "https://broncobotics.org"
+url = "broncobotics.org"
 startDate = "2020-08-30"
 endDate = "2024-05-30"
 highlights = [
@@ -72,7 +72,7 @@ highlights = [
 [[affiliations]]
 organization = "Marine Robotics Group"
 position = "Member"
-url = "https://marinerobotics.gtorg.gatech.edu/"
+url = "marinerobotics.gtorg.gatech.edu/"
 startDate = "2024-08-01"
 endDate = "present"
 highlights = [

@@ -20,7 +20,7 @@
       "@fontsource/monaspace-radon": "^5.0.2",
       "@fontsource/norwester": "^5.0.11",
       "@nanostores/solid": "^0.4.2",
-      "astro": "v5.0.0-beta.3",
+      "astro": "v5.0.8",
       "lucide-solid": "^0.436.0",
       "nanostores": "^0.11.3",
       "simple-icons": "^8.15.0",

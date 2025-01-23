@@ -1,11 +1,11 @@
 [aoc]
 title = "Advent of Code"
 blurb = "Competitive Programming Competition Advent of Code"
-order = 15
+order = 25
 tech = ["Typescript", "Rust", "Python"]
 bullets = [
-  "Solutions for the competitive programming challenge Advent of Code, in Rust, Python and Typescript",
-  "Used Advent of Code to teach 30+ students programming as President of the Coding Club",
+  "Solved Advent of Code in multiple Rust, Python, and Typescript with full completion in 2024 and Rust",
+  "Taught 30+ students programming through AOC as Coding Club President at Brophy College Prep",
 ]
 
 github = "rgodha24/advent-of-code"
@@ -46,3 +46,38 @@ bullets = [
 
 website = "https://rohangodha.com"
 github = "rgodha24/portfolio"
+
+[lockinai]
+title = "LockIn AI"
+blurb = "A website and application combo to keep students focused on their laptop"
+order = 30
+tech = ["AWS", "Typescript", "Swift", "Tensorflow", "React", "Websockets"]
+bullets = [
+  "Built a serverless realtime backend on AWS using SST, Typescript, and AWS Websocket API Gateway",
+  "Integrated Tensorflow Mediapipe face tracking model into a React frontend using Zustand state manager",
+]
+
+github = "sailalithkanumuri8/LockInAI"
+website = "https://lockinai.rohangodha.com/"
+devpost = "https://devpost.com/software/lockin-ai"
+
+[teachtok]
+title = "TeachTok"
+blurb = "Upload your notes and learn using a TikTok like interface!"
+order = 25
+tech = [
+  "AWS",
+  "Typescript",
+  "React Native",
+  "Claude",
+  "OCR",
+  "MongoDB",
+  "Infrastructure as Code",
+]
+bullets = [
+  "Built an infintely scalable serverless backend using AWS Lambda, AWS SQS, AWS S3 and Claude API",
+  "Created a React Native mobile application with image uploading and scrolling capabilities",
+]
+
+github = "RayanDas06/QuizAI"
+devpost = "https://devpost.com/software/teachtok"

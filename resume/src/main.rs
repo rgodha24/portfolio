@@ -37,7 +37,7 @@ fn main() {
             }
             "/update" => {
                 eprintln!("updating resume!");
-                let config: Config = serde_json::from_reader(req.as_reader()).unwrap();
+                let config: Config = serde_json::from_reader(req.as_reader()).unwrap_or_default();
                 println!("{:?}", config);
                 let pdf = compile::compile(config);
 
@@ -53,6 +53,7 @@ fn main() {
                 eprintln!("serving resume.pdf!");
                 let pdf = std::fs::read(shellexpand::tilde("~/Documents/Resume.pdf").to_string())
                     .unwrap();
+
                 req.respond(
                     Response::from_data(pdf).with_header(
                         Header::from_bytes(b"Content-Type", b"application/pdf").unwrap(),
@@ -72,8 +73,6 @@ pub struct Config {
     #[serde(rename = "includeLocation")]
     /// should it include the location in the top left?
     include_location: bool,
-    /// should it include if I'm a diabetic?
-    diabetic: bool,
     /// the projects to include in the Resume
     projects: Vec<Projects>,
 }
@@ -85,6 +84,8 @@ enum Projects {
     Attendance,
     Cryptenv,
     Portfolio,
+    Teachtok,
+    LockinAI,
 }
 
 impl Default for Config {

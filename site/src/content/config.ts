@@ -30,6 +30,7 @@ const projects = defineCollection({
       // format like `rgodha24/portfolio`
       github: z.string().regex(/[\w-]+\/[\w-]+/gi),
       website: z.string().url().optional(),
+      devpost: z.string().url().optional(),
    }),
 });
 

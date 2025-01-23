@@ -1,11 +1,10 @@
 use chrono::{DateTime, Datelike, FixedOffset, Local, Utc};
-use comemo::Prehashed;
 use typst::{
     diag::{FileError, FileResult},
-    eval::Tracer,
-    foundations::{Bytes, Datetime, Smart},
+    foundations::{Bytes, Datetime},
     syntax::{FileId, Source, VirtualPath},
     text::{Font, FontBook},
+    utils::LazyHash,
     Library, World,
 };
 
@@ -37,24 +36,24 @@ const FONTS: [&[u8]; 11] = [
 
 #[derive(Debug, Clone)]
 struct Wrld {
-    font_book: Prehashed<FontBook>,
-    library: Prehashed<Library>,
+    font_book: LazyHash<FontBook>,
+    library: LazyHash<Library>,
     srcs: Vec<Source>,
     now: DateTime<Utc>,
     fonts: Vec<Font>,
 }
 
 impl World for Wrld {
-    fn library(&self) -> &Prehashed<Library> {
+    fn library(&self) -> &LazyHash<Library> {
         &self.library
     }
 
-    fn book(&self) -> &Prehashed<FontBook> {
+    fn book(&self) -> &LazyHash<FontBook> {
         &self.font_book
     }
 
-    fn main(&self) -> Source {
-        self.srcs[0].clone()
+    fn main(&self) -> FileId {
+        self.srcs[0].clone().id()
     }
 
     fn source(&self, id: FileId) -> FileResult<Source> {
@@ -177,8 +176,8 @@ pub fn compile(config: Config) -> Vec<u8> {
     );
 
     let world = Wrld {
-        font_book: Prehashed::new(font_book),
-        library: Prehashed::new(Library::default()),
+        font_book: LazyHash::new(font_book),
+        library: LazyHash::new(Library::default()),
         srcs: vec![
             resume_source,
             cv_source,
@@ -196,8 +195,7 @@ pub fn compile(config: Config) -> Vec<u8> {
         fonts,
     };
 
-    let mut tracer = Tracer::new();
-    let doc = typst::compile(&world, &mut tracer).unwrap();
+    let doc = typst::compile(&world).output.unwrap();
 
-    typst_pdf::pdf(&doc, Smart::Auto, None)
+    typst_pdf::pdf(&doc, &Default::default()).unwrap()
 }

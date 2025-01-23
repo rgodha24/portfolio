@@ -9,7 +9,7 @@
     bodyfont: "Raleway",
     fontsize: 11pt, // 10pt, 11pt, 12pt
     linespacing: 5pt,
-    sectionspacing: 0pt,
+    sectionspacing: -4pt,
     showAddress:  false, // true/false show address in contact info
     showNumber: false,  // true/false show phone number in contact info
     showTitle: true,   // true/false show title in heading
@@ -21,17 +21,18 @@
 #let dark = rgb("#232526");
 #let light = white;
 #let subtitle_text = "FULLSTACK ENGINEER";
-#let margin = 1.25cm;
+#let ymargin = 1cm;
+#let xmargin = 1.15cm;
 #let rect_height = 90pt;
 
 #let customrules(doc) = {
   set page(
     paper: "us-letter",
     margin: (
-      top: margin + rect_height,
-      left: margin,
-      right: margin,
-      bottom: margin,
+      top: ymargin + rect_height,
+      left: xmargin,
+      right: xmargin,
+      bottom: ymargin,
     ),
   )
 
@@ -50,11 +51,11 @@
 
 #show: doc => cvinit(doc)
 
-#place(left + top, dx: -margin, dy: -margin - rect_height)[
+#place(left + top, dx: -xmargin, dy: -ymargin - rect_height)[
   #rect(
     fill: dark,
     radius: (bottom-right: 10000pt),
-    inset: (left: margin, right: 20pt, top: margin, bottom: 23pt),
+    inset: (left: xmargin, right: 20pt, top: ymargin, bottom: 23pt),
     [
       #text(50pt, font: "Norwester", fill: accent)[ROHAN GODHA]\
       #pad(top: -5pt)[
@@ -76,7 +77,7 @@
   70pt
 };
 
-#place(top + right, dy: -margin - 55pt)[
+#place(top + right, dy: -ymargin - 55pt)[
   #box(height: link_hieght, width: 40%)[
     #place(horizon)[
       #align(left)[
@@ -127,6 +128,6 @@
 
 #cvwork(cvdata)
 #cveducation(cvdata)
-#cvaffiliations(cvdata)
 #cvprojects(cvdata, config, projects)
+#cvaffiliations(cvdata)
 #cvskills(cvdata, config)

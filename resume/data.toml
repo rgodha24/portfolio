@@ -1,8 +1,3 @@
-interests = [
-  "Overwatch (2x national champion)",
-  "Rap and Hip-Hop music (JID, Kendrick Lamar)",
-]
-
 [personal]
 name = "Rohan Godha"
 title = "FULLSTACK ENGINEER"
@@ -15,7 +10,7 @@ location = "Scottsdale, AZ"
 [[work]]
 organization = "NewGen Business Solutions"
 url = "newgennow.com/"
-position = "Intern"
+position = "Software Engineering Intern"
 startDate = "2023-05-01"
 endDate = "2023-08-01"
 highlights = [
@@ -35,27 +30,8 @@ endDate = "2027-05-01"
 honors = []
 courses = ["Data Structures & Algorithms", "Linear Algebra"]
 highlights = [
-  "*Activities*: Marine Robotics Group, dependently-typed, Competitive Programming",
+  "*Activities*: GT Bits of Good, Marine Robotics Group, dependently-typed, Competitive Programming",
 ]
-
-[[education]]
-institution = "Brophy College Preparatory"
-url = "brophyprep.org"
-area = ""
-studyType = ""
-concentrations = []
-startDate = "2020-08-01"
-endDate = "2024-05-01"
-honors = []
-courses = [
-  "Intro to Engineering",
-  "Advanced Innovative Technology",
-  "GPA: 4.519/4.0",
-]
-highlights = [
-  "*Activities*: Broncobotics, Coding Club, National Honors Society, Brophy Big Brothers",
-]
-
 
 [[affiliations]]
 organization = "Broncobotics"
@@ -79,6 +55,17 @@ highlights = [
   "Updated internal documentation in the RobotX competition repository to make onboarding simpler",
   "Created a web-based dashboard to display telemetry data from the autonomous boat and UAV",
 ]
+
+# todo once I have highlights
+# [[affiliations]]
+# organization = "GT Bits of Good"
+# position = "Developer"
+# url = "https://bitsofgood.org/"
+# startDate = "2025-01-20"
+# endDate = "present"
+# highlights = [
+#
+# ]
 
 [[skills]]
 category = "Programming Languages"

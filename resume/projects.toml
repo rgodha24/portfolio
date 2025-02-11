@@ -17,7 +17,7 @@ order = 80
 tech = ["sst", "AWS", "shadcn/ui", "React", "Rust", "ElectroDB", "Typescript"]
 bullets = [
   "Built an attendance system in use at Brophy College Prep based on scanning barcodes on student ids",
-  "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda based backend in Typescript, and a realtime, local-first, web dashboard in Typescript using technology like SST and React",
+  "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda & DynamoDB based backend in Typescript, and a realtime web dashboard in Typescript using technology like SST and React",
 ]
 
 website = "https://batt.rgodha.com"
@@ -37,7 +37,7 @@ github = "rgodha24/cryptenv"
 [portfolio]
 title = "Portfolio"
 blurb = "An Astro powered portfolio website and a typst built Resume using the same data"
-order = 50
+order = 25
 tech = ["Astro", "Typst", "UnoCSS", "Cloudflare Pages"]
 bullets = [
   "Utilized SolidJS and Astro to create a unique portfolio website based around animated text and canvases",
@@ -50,11 +50,11 @@ github = "rgodha24/portfolio"
 [lockinai]
 title = "LockIn AI"
 blurb = "A website and application combo to keep students focused on their laptop"
-order = 30
+order = 35
 tech = ["AWS", "Typescript", "Swift", "Tensorflow", "React", "Websockets"]
 bullets = [
   "Built a serverless realtime backend on AWS using SST, Typescript, and AWS Websocket API Gateway",
-  "Integrated Tensorflow Mediapipe face tracking model into a React frontend using Zustand state manager",
+  "Integrated Tensorflow Media pipe face tracking model into a React frontend using Zustand state manager",
 ]
 
 github = "sailalithkanumuri8/LockInAI"
@@ -64,7 +64,7 @@ devpost = "https://devpost.com/software/lockin-ai"
 [teachtok]
 title = "TeachTok"
 blurb = "Upload your notes and learn using a TikTok like interface!"
-order = 25
+order = 20
 tech = [
   "AWS",
   "Typescript",
@@ -75,9 +75,31 @@ tech = [
   "Infrastructure as Code",
 ]
 bullets = [
-  "Built an infintely scalable serverless backend using AWS Lambda, AWS SQS, AWS S3 and Claude API",
+  "Built an infinitely scalable serverless backend using AWS Lambda, AWS SQS, AWS S3 and Claude API",
   "Created a React Native mobile application with image uploading and scrolling capabilities",
 ]
 
 github = "RayanDas06/QuizAI"
 devpost = "https://devpost.com/software/teachtok"
+
+[ecoflare]
+title = "EcoFlare"
+blurb = "An application"
+order = 40
+tech = [
+  "AWS Lambda",
+  "AWS ECS",
+  "AWS S3",
+  "Tensorflow",
+  "Infrastructure as Code",
+  "Docker",
+  "Vue",
+  "ONNX",
+]
+bullets = [
+  "Created a frontend where users can upload drone images of forest canopies to be analyzed on AWS",
+  "Deployed a custom trained Tensorflow model to AWS ECS using Rust and Microsoft's ONNX Runtime",
+]
+
+github = "sailalithkanumuri8/EcoFlare"
+devpost = "https://devpost.com/software/ecoflare"

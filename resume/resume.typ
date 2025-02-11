@@ -21,7 +21,7 @@
 #let dark = rgb("#232526");
 #let light = white;
 #let subtitle_text = "FULLSTACK ENGINEER";
-#let ymargin = 1cm;
+#let ymargin = 1.15cm;
 #let xmargin = 1.15cm;
 #let rect_height = 90pt;
 
@@ -77,7 +77,7 @@
   70pt
 };
 
-#place(top + right, dy: -ymargin - 55pt)[
+#place(top + right, dy: -ymargin - 65pt)[
   #box(height: link_hieght, width: 40%)[
     #place(horizon)[
       #align(left)[

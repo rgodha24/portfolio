@@ -40,32 +40,21 @@ url = "broncobotics.org"
 startDate = "2020-08-30"
 endDate = "2024-05-30"
 highlights = [
-  "Created virtual courses to teach over 70 students CAD, Programming, Project Management, and Machining",
   "Led team to second place finish in the Las Vegas FRC Regional in 2022 as programmer and strategist",
   "Spearheaded 20 student team creating and coding a robot in 6 weeks for the FIRST Robotics Competition",
 ]
 
+
 [[affiliations]]
-organization = "Marine Robotics Group"
-position = "Member"
-url = "marinerobotics.gtorg.gatech.edu/"
-startDate = "2024-08-01"
+organization = "GT Bits of Good"
+position = "Developer"
+url = "https://bitsofgood.org/"
+startDate = "2025-01-20"
 endDate = "present"
 highlights = [
-  "Updated internal documentation in the RobotX competition repository to make onboarding simpler",
-  "Created a web-based dashboard to display telemetry data from the autonomous boat and UAV",
+  "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
+  "Created an internal CLI tool based on shadcn/ui for easy access to design system for all Bits of Good projects",
 ]
-
-# todo once I have highlights
-# [[affiliations]]
-# organization = "GT Bits of Good"
-# position = "Developer"
-# url = "https://bitsofgood.org/"
-# startDate = "2025-01-20"
-# endDate = "present"
-# highlights = [
-#
-# ]
 
 [[skills]]
 category = "Programming Languages"
@@ -73,16 +62,17 @@ skills = ["Javascript/Typescript", "Rust", "Python", "Java", "Go", "Nix"]
 
 
 [[skills]]
-category = "Web Development"
+category = "Frameworks & Technologies"
 skills = [
   "React",
   "Next.js",
+  "Node.js",
   "Svelte",
   "Tailwind CSS",
   "AWS",
-  "Serverless",
   "IAC",
-  "Cloudflare Pages",
+  "Docker",
+  "Pulumi",
 ]
 
 [[languages]]

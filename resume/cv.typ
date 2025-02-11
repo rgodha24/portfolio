@@ -5,6 +5,7 @@
     font: uservars.bodyfont,
     size: uservars.fontsize,
     hyphenate: false,
+    ligatures: false,
   )
 
   set list(spacing: uservars.linespacing)

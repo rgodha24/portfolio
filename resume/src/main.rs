@@ -86,6 +86,7 @@ enum Projects {
     Portfolio,
     Teachtok,
     LockinAI,
+    Ecoflare
 }
 
 impl Default for Config {

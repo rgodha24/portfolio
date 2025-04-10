@@ -8,7 +8,8 @@ export async function getRepoReadme(repo: string): Promise<string> {
    });
 
    if (!response.ok) {
-      throw new Error(`Failed to fetch README: ${response.statusText}`);
+      console.error(`Failed to fetch README: ${response.statusText}`);
+      return "# Under Construction";
    }
 
    const readme = await response.text();

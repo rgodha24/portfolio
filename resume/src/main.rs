@@ -75,6 +75,8 @@ pub struct Config {
     include_location: bool,
     /// the projects to include in the Resume
     projects: Vec<Projects>,
+    /// graduation date as May 26??
+    twentysix: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, JsonSchema)]
@@ -86,7 +88,9 @@ enum Projects {
     Portfolio,
     Teachtok,
     LockinAI,
-    Ecoflare
+    Ecoflare,
+    Brainrot,
+    AlphaSnake,
 }
 
 impl Default for Config {

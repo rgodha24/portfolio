@@ -2,11 +2,6 @@
 
 includeLocation = false
 
-projects = [
-  "attendance",
-  "portfolio",
-  "lockinai",
-  "ecoflare",
-  "aoc",
-  "cryptenv",
-]
+projects = ["brainrot", "attendance", "alphasnake", "ecoflare"]
+
+twentysix = false

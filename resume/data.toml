@@ -8,6 +8,16 @@ linkedin = "linkedin.com/in/rohan-godha"
 location = "Scottsdale, AZ"
 
 [[work]]
+organization = "Rocketlab"
+url = "rocketlabusa.com/"
+position = "Web Software Intern"
+startDate = "2025-05-12"
+endDate = "2025-08-05"
+highlights = [
+  "Incoming intern in Rocket Lab's Albuquerque office starting in May 2025!",
+]
+
+[[work]]
 organization = "NewGen Business Solutions"
 url = "newgennow.com/"
 position = "Software Engineering Intern"
@@ -24,11 +34,16 @@ institution = "Georgia Institute of Technology, College of Computing"
 url = "gatech.edu"
 area = "Computer Science"
 studyType = "Candidate: B.S."
-concentrations = ["Devices", "Intelligence"]
+concentrations = ["Devices", "System Architecture"]
 startDate = "2024-08-01"
 endDate = "2027-05-01"
 honors = []
-courses = ["Data Structures & Algorithms", "Linear Algebra"]
+courses = [
+  "Data Structures & Algorithms",
+  "Linear Algebra",
+  "Objects and Design",
+  "Computer Organization",
+]
 highlights = [
   "*Activities*: GT Bits of Good, Marine Robotics Group, dependently-typed, Competitive Programming",
 ]

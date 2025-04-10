@@ -98,8 +98,44 @@ tech = [
 ]
 bullets = [
   "Created a frontend where users can upload drone images of forest canopies to be analyzed on AWS",
-  "Deployed a custom trained Tensorflow model to AWS ECS using Rust and Microsoft's ONNX Runtime",
+  "Deployed and trained a custom Tensorflow model to AWS ECS using Docker, Rust, and ONNX Runtime",
 ]
 
 github = "sailalithkanumuri8/EcoFlare"
 devpost = "https://devpost.com/software/ecoflare"
+
+[alphasnake]
+title = "Alpha Snake"
+blurb = "A snake game engine built in Rust for the bytefight competition"
+order = 50
+tech = ["Rust", "Python", "pyo3", "torch"]
+bullets = [
+  "Trained a custom neural network using a genetic algorithm across 96 parallel CPU cores on Google Cloud",
+  "Optimized a game engine using techniques like increasing cache locality, bitmasks, and SIMD",
+]
+
+github = "TheConverseEngineer/AlphaSnake"
+
+[brainrot]
+title = "Brainrot.mov"
+blurb = "An Instagram reels generator that got me 50k+ followers"
+order = 75
+tech = [
+  "Typescript",
+  "React",
+  "AWS",
+  "SST",
+  "Infrastructure as Code",
+  "FFmpeg",
+  "shadcn/ui",
+  "Tanstack Start",
+  "Eleven Labs",
+]
+bullets = [
+  "Grew an educational developer focused account (\\@aws_peter) to 50k+ followers, 3.3M+ views, and 1.2M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
+  "Enabled 100+ users, with 5+ paying users, to generate 400+ videos with multiple reaching 100k+ views.",
+  "Created a React app for generating short form videos using AI voices and custom images, deployed to AWS",
+]
+
+github = "rgodha24/brainrot.mov"
+website = "https://brainrot.mov"

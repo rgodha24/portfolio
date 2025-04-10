@@ -148,7 +148,15 @@
   }
 }
 
-#let cveducation(info, title: "Education", isbreakable: true) = {
+#let educationdates(config) = {
+  if config.twentysix {
+    utils.daterange(none, utils.strpdate("2026-05-01"))
+  } else {
+    utils.daterange(utils.strpdate("2024-08-01"), utils.strpdate("2027-05-01"))
+  }
+}
+
+#let cveducation(info, config, title: "Education", isbreakable: true) = {
   if info.education != none {
 
     let index = 0
@@ -177,7 +185,7 @@
         // Create a block layout for each education entry
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#link("https://"+edu.url)[#text(13pt)[#edu.institution]]* #h(1fr) _#utils.daterange(start, end)_ \
+          *#link("https://"+edu.url)[#text(13pt)[#edu.institution]]* #h(1fr) _#educationdates(config)_ \
           #if edu.area != "" [
             #text(style: "italic")[#edu.studyType in #edu.area with concentrations in #edu.concentrations.at(0) and #edu.concentrations.at(1)] #h(1fr)\
           ]

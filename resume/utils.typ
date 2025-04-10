@@ -42,7 +42,9 @@
 
 #let strpdate(isodate) = {
   let date = ""
-  if lower(isodate) != "present" {
+  if isodate == "" {
+    return none
+  } else if lower(isodate) != "present" {
     let year = int(isodate.slice(0, 4))
     let month = int(isodate.slice(5, 7))
     let day = int(isodate.slice(8, 10))

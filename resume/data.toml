@@ -5,6 +5,7 @@ website = "rohangodha.com"
 github = "github.com/rgodha24"
 email = "rgodha3@gatech.edu"
 linkedin = "linkedin.com/in/rohan-godha"
+instagram = "instagram.com/aws_peter"
 location = "Scottsdale, AZ"
 
 [[work]]
@@ -45,7 +46,18 @@ courses = [
   "Computer Organization",
 ]
 highlights = [
-  "*Activities*: GT Bits of Good, Marine Robotics Group, dependently-typed, Competitive Programming",
+  "*Activities*: GT Bits of Good, dependently-typed, Competitive Programming",
+]
+
+[[affiliations]]
+organization = "Georgia Tech Bits of Good"
+position = "Developer"
+url = "https://bitsofgood.org/"
+startDate = "2025-01-20"
+endDate = "present"
+highlights = [
+  "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
+  "Created an internal CLI tool based on shadcn/ui for easy access to design system for all Bits of Good projects",
 ]
 
 [[affiliations]]
@@ -59,17 +71,6 @@ highlights = [
   "Spearheaded 20 student team creating and coding a robot in 6 weeks for the FIRST Robotics Competition",
 ]
 
-
-[[affiliations]]
-organization = "GT Bits of Good"
-position = "Developer"
-url = "https://bitsofgood.org/"
-startDate = "2025-01-20"
-endDate = "present"
-highlights = [
-  "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
-  "Created an internal CLI tool based on shadcn/ui for easy access to design system for all Bits of Good projects",
-]
 
 [[skills]]
 category = "Programming Languages"

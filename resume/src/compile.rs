@@ -108,6 +108,7 @@ const GITHUB_ICON: &'static str = include_str!("../icons/github.svg");
 const LINKEDIN_ICON: &'static str = include_str!("../icons/linkedin.svg");
 const LOCATION_ICON: &'static str = include_str!("../icons/location.svg");
 const WEBSITE_ICON: &'static str = include_str!("../icons/website.svg");
+const INSTAGRAM_ICON: &'static str = include_str!("../icons/instagram.svg");
 
 use crate::Config;
 
@@ -175,6 +176,11 @@ pub fn compile(config: Config) -> Vec<u8> {
         WEBSITE_ICON.to_string(),
     );
 
+    let instgram_source = Source::new(
+        FileId::new(None, VirtualPath::new("/icons/instagram.svg")),
+        INSTAGRAM_ICON.to_string(),
+    );
+
     let world = Wrld {
         font_book: LazyHash::new(font_book),
         library: LazyHash::new(Library::default()),
@@ -190,6 +196,7 @@ pub fn compile(config: Config) -> Vec<u8> {
             linkedin_source,
             location_source,
             website_source,
+            instgram_source,
         ],
         now: Utc::now(),
         fonts,

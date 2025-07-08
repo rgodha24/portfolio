@@ -105,13 +105,14 @@ github = "sailalithkanumuri8/EcoFlare"
 devpost = "https://devpost.com/software/ecoflare"
 
 [alphasnake]
-title = "Alpha Snake"
+title = "AlphaSnake"
 blurb = "A snake game engine built in Rust for the bytefight competition"
 order = 50
 tech = ["Rust", "Python", "pyo3", "torch"]
 bullets = [
   "Trained a custom neural network using a genetic algorithm across 96 parallel CPU cores on Google Cloud",
   "Optimized a game engine using techniques like increasing cache locality, bitmasks, and SIMD",
+  "Achieved 5th place by ELO in the Georgia Tech Bytefight competition, sponsored by Google",
 ]
 
 github = "TheConverseEngineer/AlphaSnake"
@@ -133,7 +134,7 @@ tech = [
 ]
 bullets = [
   "Grew an educational developer focused account (\\@aws_peter) to 50k+ followers, 3.3M+ views, and 1.2M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
-  "Enabled 100+ users, with 5+ paying users, to generate 400+ videos with multiple reaching 100k+ views.",
+  "Enabled 100+ users, with 5+ paying users, to generate 400+ videos with multiple reaching 500k+ views.",
   "Created a React app for generating short form videos using AI voices and custom images, deployed to AWS",
 ]
 

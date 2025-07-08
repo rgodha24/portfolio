@@ -5,36 +5,32 @@
 #let projects = toml("projects.toml")
 
 #let uservars = (
-    headingfont: "Norwester",
-    bodyfont: "Raleway",
-    fontsize: 11pt, // 10pt, 11pt, 12pt
-    linespacing: 5pt,
-    sectionspacing: -4pt,
-    showAddress:  false, // true/false show address in contact info
-    showNumber: false,  // true/false show phone number in contact info
-    showTitle: true,   // true/false show title in heading
-    headingsmallcaps: false, // true/false use small caps for headings
-    sendnote: false, // set to false to have sideways endnote
+  headingfont: "Norwester",
+  bodyfont: "Raleway",
+  fontsize: 11pt, // 10pt, 11pt, 12pt
+  linespacing: 5pt,
+  sectionspacing: -4pt,
+  showAddress: false, // true/false show address in contact info
+  showNumber: false, // true/false show phone number in contact info
+  showTitle: true, // true/false show title in heading
+  headingsmallcaps: false, // true/false use small caps for headings
+  sendnote: false, // set to false to have sideways endnote
 )
 
 #let accent = rgb("#38BDF9");
 #let dark = rgb("#232526");
 #let light = white;
-#let subtitle_text = "FULLSTACK ENGINEER";
-#let ymargin = 1.15cm;
+#let ymargin = 1cm;
 #let xmargin = 1.15cm;
 #let rect_height = 90pt;
 
 #let customrules(doc) = {
-  set page(
-    paper: "us-letter",
-    margin: (
-      top: ymargin + rect_height,
-      left: xmargin,
-      right: xmargin,
-      bottom: ymargin,
-    ),
-  )
+  set page(paper: "us-letter", margin: (
+    top: ymargin + rect_height,
+    left: xmargin,
+    right: xmargin,
+    bottom: ymargin,
+  ))
 
   doc
 }
@@ -55,12 +51,12 @@
   #rect(
     fill: dark,
     radius: (bottom-right: 10000pt),
-    inset: (left: xmargin, right: 20pt, top: ymargin, bottom: 23pt),
+    inset: (left: xmargin, right: 20pt, top: ymargin, bottom: 15pt),
     [
-      #text(50pt, font: "Norwester", fill: accent)[ROHAN GODHA]\
+      #text(45pt, font: "Norwester", fill: accent)[ROHAN GODHA]\
       #pad(top: -5pt)[
         #text(
-          16pt,
+          12pt,
           font: "Raleway",
           fill: accent,
           weight: "bold",
@@ -70,15 +66,11 @@
   )
 ]
 
-#let icon_size = 1.2em;
-#let link_hieght = if config.includeLocation {
-  80pt
-} else {
-  70pt
-};
+#let icon_size = 1em;
+#let link_height = 72pt;
 
-#place(top + right, dy: -ymargin - 65pt)[
-  #box(height: link_hieght, width: 40%)[
+#place(right + top, dy: -ymargin - 70pt)[
+  #box(height: link_height, width: 32%)[
     #place(horizon)[
       #align(left)[
         #stack(
@@ -96,7 +88,9 @@
             spacing: 1em,
             image("./icons/website.svg", height: icon_size),
             h(1fr),
-            link("https://" + cvdata.personal.website)[#text(icon_size)[#cvdata.personal.website]],
+            link("https://" + cvdata.personal.website)[#text(
+                icon_size,
+              )[#cvdata.personal.website]],
           ),
           spacing: 1fr,
           stack(
@@ -104,27 +98,44 @@
             spacing: 1em,
             image("./icons/email.svg", height: icon_size),
             h(1fr),
-            link("mailto:" + cvdata.personal.email)[#text(icon_size)[#cvdata.personal.email]],
+            link("mailto:" + cvdata.personal.email)[#text(
+                icon_size,
+              )[#cvdata.personal.email]],
           ),
           stack(
             dir: ltr,
             spacing: 1em,
             image("./icons/github.svg", height: icon_size),
             h(1fr),
-            link("https://" + cvdata.personal.github)[#text(icon_size)[#cvdata.personal.github]],
+            link("https://" + cvdata.personal.github)[#text(
+                icon_size,
+              )[#cvdata.personal.github]],
+          ),
+          stack(
+            dir: ltr,
+            spacing: 1em,
+            image("./icons/instagram.svg", height: icon_size),
+            h(1fr),
+            link("https://" + cvdata.personal.instagram)[#text(
+                icon_size,
+              )[#cvdata.personal.instagram]],
           ),
           stack(
             dir: ltr,
             spacing: 1em,
             image("./icons/linkedin.svg", height: icon_size),
             h(1fr),
-            link("https://" + cvdata.personal.linkedin)[#text(icon_size)[#cvdata.personal.linkedin]],
+            link("https://" + cvdata.personal.linkedin)[#text(
+                icon_size,
+              )[#cvdata.personal.linkedin]],
           ),
         )
       ]
     ]
   ]
 ]
+
+#v(-15pt)
 
 #cvwork(cvdata)
 #cveducation(cvdata, config)

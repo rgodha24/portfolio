@@ -10,10 +10,7 @@
 
   set list(spacing: uservars.linespacing)
 
-  set par(
-    leading: uservars.linespacing,
-    justify: true,
-  )
+  set par(leading: uservars.linespacing, justify: true)
 
   doc
 }
@@ -71,9 +68,13 @@
 #let addresstext(info, uservars) = {
   if uservars.showAddress {
     // Filter out empty address fields
-    let address = info.personal.location.pairs().filter(it => (
-      it.at(1) != none and str(it.at(1)) != ""
-    ))
+    let address = info
+      .personal
+      .location
+      .pairs()
+      .filter(it => (
+        it.at(1) != none and str(it.at(1)) != ""
+      ))
     // Join non-empty address fields with commas
     let location = address.map(it => str(it.at(1))).join(", ")
 
@@ -101,9 +102,7 @@
 
   #if info.personal.profiles.len() > 0 {
     for profile in info.personal.profiles {
-      profiles.push(
-        box(link(profile.url)[#profile.url.split("//").at(1)]),
-      )
+      profiles.push(box(link(profile.url)[#profile.url.split("//").at(1)]))
     }
   }
 
@@ -136,7 +135,7 @@
         let index = 0
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#link("https://"+w.url)[#text(13pt)[#w.organization]]*, #w.position #h(1fr) #text(style:"italic")[#utils.daterange(start,end)] \
+          *#link("https://" + w.url)[#text(13pt)[#w.organization]]*, #w.position #h(1fr) #text(style: "italic")[#utils.daterange(start, end)] \
         ]
         v(-0.7em)
         for hi in w.highlights [
@@ -158,7 +157,6 @@
 
 #let cveducation(info, config, title: "Education", isbreakable: true) = {
   if info.education != none {
-
     let index = 0
     block[
       == #title
@@ -171,9 +169,9 @@
           edu-items = edu-items + "- *Honors*: " + edu.honors.join(", ") + "\n"
         }
         if edu.courses != none and edu.courses.len() != 0 {
-          edu-items = edu-items + "- *Courses*: " + edu
-            .courses
-            .join(", ") + "\n"
+          edu-items = (
+            edu-items + "- *Courses*: " + edu.courses.join(", ") + "\n"
+          )
         }
         if edu.highlights != none {
           for hi in edu.highlights {
@@ -185,9 +183,13 @@
         // Create a block layout for each education entry
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#link("https://"+edu.url)[#text(13pt)[#edu.institution]]* #h(1fr) _#educationdates(config)_ \
+          *#link("https://" + edu.url)[#text(13pt)[#edu.institution]]* #h(1fr) _#educationdates(config)_ \
           #if edu.area != "" [
-            #text(style: "italic")[#edu.studyType in #edu.area with concentrations in #edu.concentrations.at(0) and #edu.concentrations.at(1)] #h(1fr)\
+            #text(
+              style: "italic",
+            )[#edu.studyType in #edu.area with concentrations in #edu.concentrations.at(0) and #edu.concentrations.at(1)] #h(
+              1fr,
+            )\
           ]
           #eval(edu-items, mode: "markup")
         ]
@@ -213,7 +215,7 @@
 
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#link("https://"+org.url)[#text(13pt)[#org.organization]]*, #org.position #h(1fr) _#utils.daterange(start, end)_
+          *#link("https://" + org.url)[#text(13pt)[#org.organization]]*, #org.position #h(1fr) _#utils.daterange(start, end)_
           #if org.highlights != none {
             for hi in org.highlights [
               - #eval(hi, mode: "markup")
@@ -240,7 +242,7 @@
       let project = projects.at(p)
       block(width: 100%, breakable: isbreakable)[
         #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-        *#text(13pt)[#link("https://rgodha.com/"+p)[#project.title]]* #h(1fr) _ #link("https://rgodha.com/"+p)[rgodha.com/#p] _\
+        *#text(13pt)[#link("https://rgodha.com/" + p)[#project.title]]* #h(1fr) _ #link("https://rgodha.com/" + p)[rgodha.com/#p] _\
         #for hi in project.bullets [
           - #eval(hi, mode: "markup")
         ]

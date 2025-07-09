@@ -9,13 +9,28 @@ instagram = "instagram.com/aws_peter"
 location = "Scottsdale, AZ"
 
 [[work]]
+organization = "Brainrot.mov"
+url = "https://brainrot.mov"
+position = "Founder"
+startDate = "2025-02-17"
+endDate = "present"
+highlights = [
+  "Grew an educational developer focused account #link(\"https://instagram.com/aws_peter\")[(\\@aws_peter)] to 70k+ followers, 4.5M+ views, and 1.6M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
+  "Created a Fullstack React app for generating short form videos using AI voices, with over 300 unique AWS Resources, 10s of gigabytes of user data stored on S3, deployed and managed using Infrastructure as Code.",
+  "Enabled 1500+ users to generate over 25 million views and 200 thousand followers with over \\$1k in revenue.",
+]
+
+[[work]]
 organization = "Rocketlab"
 url = "rocketlabusa.com/"
-position = "Web Software Intern"
+position = "Web Software Engineering Intern"
 startDate = "2025-05-12"
-endDate = "2025-08-05"
+endDate = "present"
 highlights = [
-  "Incoming intern in Rocket Lab's Albuquerque office starting in May 2025!",
+  "Integrated realtime factory visualization with 'HotLots', delivering observability on critical production areas",
+  "Optimized speed of semiconductor calibration through predictive modeling of positions and temperatures",
+  "Reduced hotpath query latency from 10s to 20ms by optimizing PostgreSQL on Kubernetes infrastructure",
+  "Developed terminal-based Jira interface, increasing ticket throughput and improving managerial visibility",
 ]
 
 [[work]]
@@ -25,9 +40,7 @@ position = "Software Engineering Intern"
 startDate = "2023-05-01"
 endDate = "2023-08-01"
 highlights = [
-  "Modernized Oracle’s SuiteCloud Extension testing framework by migrating outdated Jest version to Vitest",
   "Created tests for 80% of all API endpoints in ConventionSuite, NewGen’s primary product, increasing confidence in their ongoing rewrite from Create-React-App to Vite",
-  "Led effort to modernize target client database, increasing conversion rate on email marketing campaigns",
 ]
 
 [[education]]
@@ -51,7 +64,7 @@ highlights = [
 
 [[affiliations]]
 organization = "Georgia Tech Bits of Good"
-position = "Developer"
+position = "Engineering Manager"
 url = "https://bitsofgood.org/"
 startDate = "2025-01-20"
 endDate = "present"
@@ -74,7 +87,7 @@ highlights = [
 
 [[skills]]
 category = "Programming Languages"
-skills = ["Javascript/Typescript", "Rust", "Python", "Java", "Go", "Nix"]
+skills = ["Typescript", "Rust", "Go", "Nix"]
 
 
 [[skills]]
@@ -82,13 +95,11 @@ category = "Frameworks & Technologies"
 skills = [
   "React",
   "Next.js",
-  "Node.js",
   "Svelte",
   "Tailwind CSS",
   "AWS",
-  "IAC",
+  "Infrastructure as Code",
   "Docker",
-  "Pulumi",
 ]
 
 [[languages]]

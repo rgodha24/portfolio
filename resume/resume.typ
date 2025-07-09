@@ -139,6 +139,6 @@
 
 #cvwork(cvdata)
 #cveducation(cvdata, config)
-#cvprojects(cvdata, config, projects)
 #cvaffiliations(cvdata)
+#cvprojects(cvdata, config, projects)
 #cvskills(cvdata, config)

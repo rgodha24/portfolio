@@ -2,6 +2,6 @@
 
 includeLocation = false
 
-projects = ["brainrot", "attendance", "alphasnake", "ecoflare"]
+projects = ["attendance", "alphasnake", "ecoflare"]
 
 twentysix = false

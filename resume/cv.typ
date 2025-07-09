@@ -324,17 +324,17 @@
   if (info.languages != none) or (info.skills != none) {
     block(breakable: isbreakable)[
       == #title
+      #if (info.skills != none) [
+        #for group in info.skills [
+          - *#group.category*: #group.skills.join(", ")
+        ]
+      ]
       #if (info.languages != none) [
         #let langs = ()
         #for lang in info.languages {
           langs.push([#lang.language (#lang.fluency)])
         }
         - *Languages*: #langs.join(", ")
-      ]
-      #if (info.skills != none) [
-        #for group in info.skills [
-          - *#group.category*: #group.skills.join(", ")
-        ]
       ]
     ]
   }

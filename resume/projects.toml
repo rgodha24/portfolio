@@ -133,7 +133,7 @@ tech = [
   "Eleven Labs",
 ]
 bullets = [
-  "Grew an educational developer focused account (\\@aws_peter) to 50k+ followers, 3.3M+ views, and 1.2M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
+  "Grew an educational developer focused account (\\@aws_peter) to 70k+ followers, 4.5M+ views, and 1.6M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
   "Enabled 100+ users, with 5+ paying users, to generate 400+ videos with multiple reaching 500k+ views.",
   "Created a React app for generating short form videos using AI voices and custom images, deployed to AWS",
 ]

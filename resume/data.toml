@@ -9,18 +9,6 @@ instagram = "instagram.com/aws_peter"
 location = "Scottsdale, AZ"
 
 [[work]]
-organization = "Brainrot.mov"
-url = "https://brainrot.mov"
-position = "Founder"
-startDate = "2025-02-17"
-endDate = "present"
-highlights = [
-  "Grew an educational developer focused account #link(\"https://instagram.com/aws_peter\")[(\\@aws_peter)] to 70k+ followers, 4.5M+ views, and 1.6M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
-  "Created a Fullstack React app for generating short form videos using AI voices, with over 300 unique AWS Resources, 10s of gigabytes of user data stored on S3, deployed and managed using Infrastructure as Code.",
-  "Enabled 1500+ users to generate over 25 million views and 200 thousand followers with over \\$1k in revenue.",
-]
-
-[[work]]
 organization = "Rocketlab"
 url = "rocketlabusa.com/"
 position = "Web Software Engineering Intern"
@@ -31,6 +19,18 @@ highlights = [
   "Optimized speed of semiconductor calibration through predictive modeling of positions and temperatures",
   "Reduced hotpath query latency from 10s to 20ms by optimizing PostgreSQL on Kubernetes infrastructure",
   "Developed terminal-based Jira interface, increasing ticket throughput and improving managerial visibility",
+]
+
+[[work]]
+organization = "Brainrot.mov"
+url = "https://brainrot.mov"
+position = "Founder"
+startDate = "2025-02-17"
+endDate = "present"
+highlights = [
+  "Grew an educational developer focused account #link(\"https://instagram.com/aws_peter\")[(\\@aws_peter)] to 70k+ followers, 4.5M+ views, and 1.6M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
+  "Created a Fullstack React app for generating short form videos using AI voices, with over 300 unique AWS Resources, 10s of gigabytes of user data stored on S3, deployed and managed using Infrastructure as Code.",
+  "Enabled 1500+ users to generate over 25 million views and 200 thousand followers with over \\$1k in revenue.",
 ]
 
 [[work]]

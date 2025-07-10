@@ -27,7 +27,7 @@
     } else {
       upper(it.body)
     }
-    #v(-0.75em) #line(length: 100%, stroke: 1pt + black) // draw a line
+    #v(-0.9em) #line(length: 100%, stroke: 1pt + black) // draw a line
   ]
 
   // Name title/heading
@@ -141,8 +141,10 @@
         for hi in w.highlights [
           - #eval(hi, mode: "markup")
         ]
+        v(-0.25em)
         index += 1
       }
+      #v(0.25em)
     ]
   }
 }
@@ -321,20 +323,13 @@
   title: "Skills",
   isbreakable: true,
 ) = {
-  if (info.languages != none) or (info.skills != none) {
+  if info.skills != none {
     block(breakable: isbreakable)[
       == #title
       #if (info.skills != none) [
         #for group in info.skills [
           - *#group.category*: #group.skills.join(", ")
         ]
-      ]
-      #if (info.languages != none) [
-        #let langs = ()
-        #for lang in info.languages {
-          langs.push([#lang.language (#lang.fluency)])
-        }
-        - *Languages*: #langs.join(", ")
       ]
     ]
   }

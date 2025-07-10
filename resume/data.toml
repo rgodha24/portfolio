@@ -28,19 +28,29 @@ position = "Founder"
 startDate = "2025-02-17"
 endDate = "present"
 highlights = [
-  "Grew an educational developer focused account #link(\"https://instagram.com/aws_peter\")[(\\@aws_peter)] to 70k+ followers, 4.5M+ views, and 1.6M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
-  "Created a Fullstack React app for generating short form videos using AI voices, with over 300 unique AWS Resources, 10s of gigabytes of user data stored on S3, deployed and managed using Infrastructure as Code.",
-  "Enabled 1500+ users to generate over 25 million views and 200 thousand followers with over \\$1k in revenue.",
+  "Developed distributed video generation platform using React, TypeScript and AWS Lambda, enabling users to create viral short-form content with AI Voices",
+  "Proved product-market fit by growing my #link(\"https://instagram.com/aws_peter\")[\\@aws_peter] accounts to 70k+ followers and 4.7M+ views across Instagram, TikTok and YouTube, producing technical tutorials on Docker, AWS, MCP and AI Agents",
+  "Launched SaaS product serving 1500+ creators who have generated 25M+ views and 200k+ followers, with the platform creating more than 16k AI Voice generations and \\$1k+ in revenue",
+]
+
+[[work]]
+organization = "Unstoppable Asset"
+url = "https://unstoppableasset.com"
+position = "Co-Founder"
+startDate = "2023-07-01"
+endDate = "present"
+highlights = [
+  "Spearheading product development for a mission driven fintech startup selected for Create-X S'25 Batch",
 ]
 
 [[work]]
 organization = "NewGen Business Solutions"
 url = "newgennow.com/"
-position = "Software Engineering Intern"
+position = "Intern"
 startDate = "2023-05-01"
 endDate = "2023-08-01"
 highlights = [
-  "Created tests for 80% of all API endpoints in ConventionSuite, NewGen’s primary product, increasing confidence in their ongoing rewrite from Create-React-App to Vite",
+  "Wrote tests for NewGen’s primary product, increasing confidence in rewrite from Create-React-App to Vite",
 ]
 
 [[education]]
@@ -54,13 +64,11 @@ endDate = "2027-05-01"
 honors = []
 courses = [
   "Data Structures & Algorithms",
-  "Linear Algebra",
+  "Discrete Mathematics",
   "Objects and Design",
   "Computer Organization",
 ]
-highlights = [
-  "*Activities*: GT Bits of Good, dependently-typed, Competitive Programming",
-]
+highlights = []
 
 [[affiliations]]
 organization = "Georgia Tech Bits of Good"
@@ -72,18 +80,6 @@ highlights = [
   "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
   "Created an internal CLI tool based on shadcn/ui for easy access to design system for all Bits of Good projects",
 ]
-
-[[affiliations]]
-organization = "Broncobotics"
-position = "Head of Technology"
-url = "broncobotics.org"
-startDate = "2020-08-30"
-endDate = "2024-05-30"
-highlights = [
-  "Led team to second place finish in the Las Vegas FRC Regional in 2022 as programmer and strategist",
-  "Spearheaded 20 student team creating and coding a robot in 6 weeks for the FIRST Robotics Competition",
-]
-
 
 [[skills]]
 category = "Programming Languages"
@@ -101,15 +97,3 @@ skills = [
   "Infrastructure as Code",
   "Docker",
 ]
-
-[[languages]]
-language = "English"
-fluency = "Native speaker"
-
-[[languages]]
-language = "Hindi"
-fluency = "Conversational"
-
-[[languages]]
-language = "Spanish"
-fluency = "Basic proficiency"

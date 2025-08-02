@@ -16,8 +16,8 @@ blurb = "A realtime and localfirst attendance system in use at Brophy College Pr
 order = 80
 tech = ["sst", "AWS", "shadcn/ui", "React", "Rust", "ElectroDB", "Typescript"]
 bullets = [
-  "Built an attendance system in use at Brophy College Prep based on scanning barcodes on student ids",
   "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda & DynamoDB based backend in Typescript, and a realtime web dashboard in Typescript using technology like SST and React",
+  "Built an attendance system in use at Brophy College Prep based on scanning barcodes on student ids",
 ]
 
 website = "https://batt.rgodha.com"
@@ -110,7 +110,7 @@ blurb = "A snake game engine built in Rust for the bytefight competition"
 order = 50
 tech = ["Rust", "Python", "pyo3", "torch"]
 bullets = [
-  "Trained a custom neural network using a genetic algorithm across 96 parallel CPU cores on Google Cloud",
+  "Trained a custom neural network using a genetic algorithm across 96 CPU cores on Google Cloud",
   "Optimized a game engine using techniques like increasing cache locality, bitmasks, and SIMD",
   "Achieved 5th place by ELO in the Georgia Tech Bytefight competition, sponsored by Google",
 ]
@@ -119,7 +119,7 @@ github = "TheConverseEngineer/AlphaSnake"
 
 [brainrot]
 title = "Brainrot.mov"
-blurb = "An Instagram reels generator that got me 50k+ followers"
+blurb = "An Instagram reels generator that got me 70k+ followers"
 order = 75
 tech = [
   "Typescript",
@@ -134,7 +134,7 @@ tech = [
 ]
 bullets = [
   "Grew an educational developer focused account (\\@aws_peter) to 70k+ followers, 4.5M+ views, and 1.6M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
-  "Enabled 100+ users, with 5+ paying users, to generate 400+ videos with multiple reaching 500k+ views.",
+  "Enabled 1500+ users to generate 25M+ views and 200k+ followers, with thousands in revenue",
   "Created a React app for generating short form videos using AI voices and custom images, deployed to AWS",
 ]
 

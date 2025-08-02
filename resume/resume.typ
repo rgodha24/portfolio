@@ -7,7 +7,7 @@
 #let uservars = (
   headingfont: "Norwester",
   bodyfont: "Raleway",
-  fontsize: 11pt, // 10pt, 11pt, 12pt
+  fontsize: 11.5pt, // 10pt, 11pt, 12pt
   linespacing: 5pt,
   sectionspacing: -4pt,
   showAddress: false, // true/false show address in contact info
@@ -138,6 +138,7 @@
 #v(-15pt)
 
 #cvwork(cvdata)
+#v(8pt)
 #cveducation(cvdata, config)
 #cvaffiliations(cvdata)
 #cvprojects(cvdata, config, projects)

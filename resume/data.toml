@@ -11,14 +11,14 @@ location = "Scottsdale, AZ"
 [[work]]
 organization = "Rocketlab"
 url = "rocketlabusa.com/"
-position = "Web Software Engineering Intern"
+position = "Software Engineering Intern"
 startDate = "2025-05-12"
-endDate = "present"
+endDate = "2025-08-01"
 highlights = [
-  "Integrated realtime factory visualization with 'HotLots', delivering observability on critical production areas",
-  "Optimized speed of semiconductor calibration through predictive modeling of positions and temperatures",
-  "Reduced hotpath query latency from 10s to 20ms by optimizing PostgreSQL on Kubernetes infrastructure",
-  "Developed terminal-based Jira interface, increasing ticket throughput and improving managerial visibility",
+  "Replaced manual solar panel validation process with Python based simulation, achieving large speedup through 16-way parallel processing on Kubernetes with RabbitMQ/KEDA auto-scaling",
+  "Improved loadtime of critical factory visualizations by 192x through optimizing PostgreSQL queries",
+  "Unified priority lot tracking with factory visualization, improving visibility of high-value products",
+  "Built terminal-based Jira interface, increasing ticket throughput and improving managerial visibility",
 ]
 
 [[work]]
@@ -29,8 +29,8 @@ startDate = "2025-02-17"
 endDate = "present"
 highlights = [
   "Developed distributed video generation platform using React, TypeScript and AWS Lambda, enabling users to create viral short-form content with AI Voices",
-  "Proved product-market fit by growing my #link(\"https://instagram.com/aws_peter\")[\\@aws_peter] accounts to 70k+ followers and 4.7M+ views across Instagram, TikTok and YouTube, producing technical tutorials on Docker, AWS, MCP and AI Agents",
-  "Launched SaaS product serving 1500+ creators who have generated 25M+ views and 200k+ followers, with the platform creating more than 16k AI Voice generations and \\$1k+ in revenue",
+  "Proved product-market fit by growing my #link(\"https://instagram.com/aws_peter\")[\\@aws_peter] account to 70k+ followers and 4.7M+ views across Instagram, TikTok and YouTube, producing technical tutorials on Docker, AWS, MCP and AI Agents",
+  "Launched as SaaS product enabling 1500+ creators to generate 25M+ views and 200k+ followers, with thousands in revenue",
 ]
 
 [[work]]
@@ -40,7 +40,7 @@ position = "Co-Founder"
 startDate = "2023-07-01"
 endDate = "present"
 highlights = [
-  "Spearheading product development for a mission driven fintech startup selected for Create-X S'25 Batch",
+  "Leading product development for a mission driven fintech startup selected for Create-X S'25 Batch",
 ]
 
 [[work]]
@@ -49,23 +49,21 @@ url = "newgennow.com/"
 position = "Intern"
 startDate = "2023-05-01"
 endDate = "2023-08-01"
-highlights = [
-  "Wrote tests for NewGen’s primary product, increasing confidence in rewrite from Create-React-App to Vite",
-]
+highlights = []
 
 [[education]]
 institution = "Georgia Institute of Technology, College of Computing"
 url = "gatech.edu"
 area = "Computer Science"
 studyType = "Candidate: B.S."
-concentrations = ["Devices", "System Architecture"]
+concentrations = ["Information Networks", "System Architecture"]
 startDate = "2024-08-01"
 endDate = "2027-05-01"
 honors = []
 courses = [
   "Data Structures & Algorithms",
   "Discrete Mathematics",
-  "Objects and Design",
+  "Objects & Design",
   "Computer Organization",
 ]
 highlights = []
@@ -78,7 +76,7 @@ startDate = "2025-01-20"
 endDate = "present"
 highlights = [
   "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
-  "Created an internal CLI tool based on shadcn/ui for easy access to design system for all Bits of Good projects",
+  "Created internal CLI based on shadcn/ui for easy access to design system for all Bits of Good projects",
 ]
 
 [[skills]]

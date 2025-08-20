@@ -9,6 +9,14 @@ instagram = "instagram.com/aws_peter"
 location = "Scottsdale, AZ"
 
 [[work]]
+organization = "Pump (YC S22)"
+url = "pump.co/"
+position = "Incoming Growth & Social Media"
+startDate = "2025-08-25"
+endDate = "present"
+highlights = []
+
+[[work]]
 organization = "Rocketlab"
 url = "rocketlabusa.com/"
 position = "Software Engineering Intern"
@@ -62,7 +70,6 @@ endDate = "2027-05-01"
 honors = []
 courses = [
   "Data Structures & Algorithms",
-  "Discrete Mathematics",
   "Objects & Design",
   "Computer Organization",
 ]

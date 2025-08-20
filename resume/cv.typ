@@ -138,10 +138,12 @@
           *#link("https://" + w.url)[#text(13pt)[#w.organization]]*, #w.position #h(1fr) #text(style: "italic")[#utils.daterange(start, end)] \
         ]
         v(-0.7em)
-        for hi in w.highlights [
-          - #eval(hi, mode: "markup")
-        ]
-        v(-0.25em)
+        if w.highlights.len() > 0 {
+          for hi in w.highlights [
+            - #eval(hi, mode: "markup")
+          ]
+          v(-0.25em)
+        } else { v(0.25em) }
         index += 1
       }
       #v(0.25em)

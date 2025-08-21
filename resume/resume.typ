@@ -138,7 +138,6 @@
 #v(-15pt)
 
 #cvwork(cvdata)
-#v(8pt)
 #cveducation(cvdata, config)
 #cvaffiliations(cvdata)
 #cvprojects(cvdata, config, projects)

@@ -11,7 +11,7 @@ location = "Scottsdale, AZ"
 [[work]]
 organization = "Pump (YC S22)"
 url = "pump.co/"
-position = "Incoming Growth & Social Media"
+position = "Incoming Technical Marketing Intern"
 startDate = "2025-08-25"
 endDate = "present"
 highlights = []
@@ -57,7 +57,9 @@ url = "newgennow.com/"
 position = "Intern"
 startDate = "2023-05-01"
 endDate = "2023-08-01"
-highlights = []
+highlights = [
+  "Developed a testing framework for critical application during migration from Create-React-App to Vite",
+]
 
 [[education]]
 institution = "Georgia Institute of Technology, College of Computing"
@@ -69,9 +71,9 @@ startDate = "2024-08-01"
 endDate = "2027-05-01"
 honors = []
 courses = [
-  "Data Structures & Algorithms",
-  "Objects & Design",
+  "Database Systems",
   "Computer Organization",
+  "Design & Analysis of Algorithms",
 ]
 highlights = []
 
@@ -82,23 +84,25 @@ url = "https://bitsofgood.org/"
 startDate = "2025-01-20"
 endDate = "present"
 highlights = [
+  "Leading team of 5 developers to create application to encourage children to take their medicine",
   "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
   "Created internal CLI based on shadcn/ui for easy access to design system for all Bits of Good projects",
 ]
 
 [[skills]]
 category = "Programming Languages"
-skills = ["Typescript", "Rust", "Go", "Nix"]
+skills = ["Typescript", "Rust", "Go", "Nix", "Python", "HTML/CSS/Javascript"]
 
 
 [[skills]]
 category = "Frameworks & Technologies"
 skills = [
+  "Svelte/Sveltekit",
   "React",
   "Next.js",
-  "Svelte",
+  "Tanstack Start",
   "Tailwind CSS",
   "AWS",
-  "Infrastructure as Code",
+  "Infrastructure as Code (IaC)",
   "Docker",
 ]

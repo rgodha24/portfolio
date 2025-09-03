@@ -16,7 +16,7 @@ blurb = "A realtime and localfirst attendance system in use at Brophy College Pr
 order = 80
 tech = ["sst", "AWS", "shadcn/ui", "React", "Rust", "ElectroDB", "Typescript"]
 bullets = [
-  "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda & DynamoDB based backend in Typescript, and a realtime web dashboard in Typescript using technology like SST and React",
+  "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda & DynamoDB based backend in Typescript, and a realtime web dashboard using technology like SST and React",
   "Built an attendance system in use at Brophy College Prep based on scanning barcodes on student ids",
 ]
 

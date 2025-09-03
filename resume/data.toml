@@ -12,6 +12,7 @@ location = "Scottsdale, AZ"
 organization = "Pump (YC S22)"
 url = "pump.co/"
 position = "Incoming Technical Marketing Intern"
+location = "Atlanta, GA"
 startDate = "2025-08-25"
 endDate = "present"
 highlights = []
@@ -20,6 +21,7 @@ highlights = []
 organization = "Rocketlab"
 url = "rocketlabusa.com/"
 position = "Software Engineering Intern"
+location = "Albuquerque, NM"
 startDate = "2025-05-12"
 endDate = "2025-08-01"
 highlights = [
@@ -31,8 +33,9 @@ highlights = [
 
 [[work]]
 organization = "Brainrot.mov"
-url = "https://brainrot.mov"
+url = "brainrot.mov"
 position = "Founder"
+location = "Atlanta, GA"
 startDate = "2025-02-17"
 endDate = "present"
 highlights = [
@@ -42,9 +45,23 @@ highlights = [
 ]
 
 [[work]]
+organization = "Georgia Tech Bits of Good"
+position = "Engineering Manager"
+url = "https://bitsofgood.org/"
+location = "Atlanta, GA"
+startDate = "2025-01-20"
+endDate = "present"
+highlights = [
+  "Leading team of 5 developers to create application to encourage children to take their medicine",
+  "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
+  "Created internal CLI based on shadcn/ui for easy access to design system for all Bits of Good projects",
+]
+
+[[work]]
 organization = "Unstoppable Asset"
 url = "https://unstoppableasset.com"
 position = "Co-Founder"
+location = "Atlanta, GA"
 startDate = "2023-07-01"
 endDate = "present"
 highlights = [
@@ -55,6 +72,7 @@ highlights = [
 organization = "NewGen Business Solutions"
 url = "newgennow.com/"
 position = "Intern"
+location = "Scottsdale, AZ"
 startDate = "2023-05-01"
 endDate = "2023-08-01"
 highlights = [
@@ -62,7 +80,7 @@ highlights = [
 ]
 
 [[education]]
-institution = "Georgia Institute of Technology, College of Computing"
+institution = "Georgia Institute of Technology"
 url = "gatech.edu"
 area = "Computer Science"
 studyType = "Candidate: B.S."
@@ -73,26 +91,15 @@ honors = []
 courses = [
   "Database Systems",
   "Computer Organization",
+  "Systems and Networks",
+  "Data Structures & Algorithms",
   "Design & Analysis of Algorithms",
 ]
 highlights = []
 
-[[affiliations]]
-organization = "Georgia Tech Bits of Good"
-position = "Engineering Manager"
-url = "https://bitsofgood.org/"
-startDate = "2025-01-20"
-endDate = "present"
-highlights = [
-  "Leading team of 5 developers to create application to encourage children to take their medicine",
-  "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
-  "Created internal CLI based on shadcn/ui for easy access to design system for all Bits of Good projects",
-]
-
 [[skills]]
 category = "Programming Languages"
 skills = ["Typescript", "Rust", "Go", "Nix", "Python", "HTML/CSS/Javascript"]
-
 
 [[skills]]
 category = "Frameworks & Technologies"

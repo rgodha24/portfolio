@@ -135,14 +135,14 @@
         let index = 0
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          *#link("https://" + w.url)[#text(13pt)[#w.organization]]*, #w.position #h(1fr) #text(style: "italic")[#utils.daterange(start, end)] \
+          #text(size: 13pt)[*#w.position*], _#link("https://" + w.url)[#w.organization]_ #h(1fr) #text(style: "italic")[#utils.daterange(start, end)] \
         ]
         v(-0.7em)
         if w.highlights.len() > 0 {
           for hi in w.highlights [
             - #eval(hi, mode: "markup")
           ]
-          v(-0.25em)
+          v(-0.5em)
         } else { v(0.25em) }
         index += 1
       }

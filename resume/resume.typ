@@ -13,7 +13,7 @@
   showAddress: false, // true/false show address in contact info
   showNumber: false, // true/false show phone number in contact info
   showTitle: true, // true/false show title in heading
-  headingsmallcaps: false, // true/false use small caps for headings
+  headingsmallcaps: true, // true/false use small caps for headings
   sendnote: false, // set to false to have sideways endnote
 )
 
@@ -139,6 +139,5 @@
 
 #cvwork(cvdata)
 #cveducation(cvdata, config)
-#cvaffiliations(cvdata)
 #cvprojects(cvdata, config, projects)
 #cvskills(cvdata, config)

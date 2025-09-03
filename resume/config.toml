@@ -5,5 +5,3 @@ includeLocation = false
 projects = ["attendance", "alphasnake", "ecoflare"]
 
 twentysix = false
-
-ats = true

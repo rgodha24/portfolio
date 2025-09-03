@@ -11,11 +11,13 @@ location = "Scottsdale, AZ"
 [[work]]
 organization = "Pump (YC S22)"
 url = "pump.co/"
-position = "Incoming Technical Marketing Intern"
+position = "Technical Marketing Intern"
 location = "Atlanta, GA"
 startDate = "2025-08-25"
 endDate = "present"
-highlights = []
+highlights = [
+  "Leading marketing team to grow Pump's inbound sales for their AWS cost optimization program",
+]
 
 [[work]]
 organization = "Rocketlab"
@@ -32,7 +34,7 @@ highlights = [
 ]
 
 [[work]]
-organization = "Brainrot.mov"
+organization = "Brainrot dot mov"
 url = "brainrot.mov"
 position = "Founder"
 location = "Atlanta, GA"
@@ -53,7 +55,6 @@ startDate = "2025-01-20"
 endDate = "present"
 highlights = [
   "Leading team of 5 developers to create application to encourage children to take their medicine",
-  "Implemented a new design system directly from Figma using React, Radix UI, TailwindCSS and Next.js",
   "Created internal CLI based on shadcn/ui for easy access to design system for all Bits of Good projects",
 ]
 

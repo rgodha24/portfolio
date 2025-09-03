@@ -5,8 +5,8 @@
 #let projects = toml("projects.toml")
 
 #let uservars = (
-  headingfont: "Norwester",
-  bodyfont: "Raleway",
+  headingfont: if config.ats { "Arial" } else { "Norwester" },
+  bodyfont: if config.ats { "Arial" } else { "Raleway" },
   fontsize: 11.5pt, // 10pt, 11pt, 12pt
   linespacing: 5pt,
   sectionspacing: -4pt,
@@ -38,8 +38,8 @@
 #set text(fill: dark)
 
 #let cvinit(doc) = {
-  doc = setrules(uservars, doc)
-  doc = showrules(uservars, doc)
+  doc = setrules(uservars, doc, config)
+  doc = showrules(uservars, doc, config)
   doc = customrules(doc)
 
   doc
@@ -53,11 +53,15 @@
     radius: (bottom-right: 10000pt),
     inset: (left: xmargin, right: 20pt, top: ymargin, bottom: 15pt),
     [
-      #text(45pt, font: "Norwester", fill: accent)[ROHAN GODHA]\
+      #text(
+        45pt,
+        font: if config.ats { "Arial" } else { "Norwester" },
+        fill: accent,
+      )[ROHAN GODHA]\
       #pad(top: -5pt)[
         #text(
           12pt,
-          font: "Raleway",
+          font: if config.ats { "Arial" } else { "Raleway" },
           fill: accent,
           weight: "bold",
         )[#cvdata.personal.title]
@@ -137,7 +141,7 @@
 
 #v(-15pt)
 
-#cvwork(cvdata)
+#cvwork(cvdata, config)
 #cveducation(cvdata, config)
 #cvprojects(cvdata, config, projects)
 #cvskills(cvdata, config)

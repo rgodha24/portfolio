@@ -1,6 +1,6 @@
 #import "utils.typ"
 
-#let setrules(uservars, doc) = {
+#let setrules(uservars, doc, config) = {
   set text(
     font: uservars.bodyfont,
     size: uservars.fontsize,
@@ -8,7 +8,7 @@
     ligatures: false,
   )
 
-  set list(spacing: uservars.linespacing)
+  set list(spacing: uservars.linespacing, marker: [-])
 
   set par(leading: uservars.linespacing, justify: true)
 
@@ -16,7 +16,7 @@
 }
 
 // show rules
-#let showrules(uservars, doc) = {
+#let showrules(uservars, doc, config) = {
   // Uppercase section headings
   show heading.where(level: 2): it => block(width: 100%)[
     #v(uservars.sectionspacing)
@@ -39,6 +39,10 @@
       upper(it.body)
     }
     #v(2pt)
+  ]
+
+  show link: it => [
+    #if config.ats { it.body } else { it }
   ]
 
   doc
@@ -125,7 +129,7 @@
   ]
 }
 
-#let cvwork(info, title: "Experience", isbreakable: true) = {
+#let cvwork(info, config, title: "Experience", isbreakable: true) = {
   if info.work != none {
     block[
       == #title
@@ -133,10 +137,17 @@
         let start = utils.strpdate(w.startDate)
         let end = utils.strpdate(w.endDate)
         let index = 0
-        block(width: 100%, breakable: isbreakable)[
-          #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-          #text(size: 13pt)[*#w.position*], _#link("https://" + w.url)[#w.organization]_ #h(1fr) #text(style: "italic")[#utils.daterange(start, end)] \
-        ]
+        if config.ats {
+          block(width: 100%, breakable: isbreakable)[
+            #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
+            *#w.position*, #emph[#w.organization] #sym.dash.en #text(style: "italic")[#utils.daterange(start, end)]
+          ]
+        } else {
+          block(width: 100%, breakable: isbreakable)[
+            #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
+            #text(size: 13pt)[*#w.position*], _#link("https://" + w.url)[#w.organization]_ #h(1fr) #text(style: "italic")[#utils.daterange(start, end)] \
+          ]
+        }
         v(-0.7em)
         if w.highlights.len() > 0 {
           for hi in w.highlights [
@@ -144,6 +155,7 @@
           ]
           v(-0.5em)
         } else { v(0.25em) }
+        if config.ats { v(0.45em) }
         index += 1
       }
       #v(0.25em)

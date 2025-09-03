@@ -77,6 +77,8 @@ pub struct Config {
     projects: Vec<Projects>,
     /// graduation date as May 26??
     twentysix: bool,
+    /// optimize for ATS?
+    ats: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, JsonSchema)]

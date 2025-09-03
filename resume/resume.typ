@@ -7,7 +7,7 @@
 #let uservars = (
   headingfont: if config.ats { "Arial" } else { "Norwester" },
   bodyfont: if config.ats { "Arial" } else { "Raleway" },
-  fontsize: 11.5pt, // 10pt, 11pt, 12pt
+  fontsize: if config.ats { 11pt } else { 11.5pt }, // 10pt, 11pt, 12pt
   linespacing: 5pt,
   sectionspacing: -4pt,
   showAddress: false, // true/false show address in contact info

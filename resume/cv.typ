@@ -140,7 +140,7 @@
         if config.ats {
           block(width: 100%, breakable: isbreakable)[
             #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
-            *#w.position*, #emph[#w.organization] #sym.dash.en #text(style: "italic")[#utils.daterange(start, end)]
+            *#w.position* #sym.dash.en #emph[#w.organization] #sym.dash.en #text(style: "italic")[#utils.daterange(start, end)]
           ]
         } else {
           block(width: 100%, breakable: isbreakable)[

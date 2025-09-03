@@ -8,7 +8,7 @@
     ligatures: false,
   )
 
-  set list(spacing: uservars.linespacing)
+  set list(spacing: uservars.linespacing, marker: [-])
 
   set par(leading: uservars.linespacing, justify: true)
 
@@ -40,6 +40,8 @@
     }
     #v(2pt)
   ]
+
+
 
   doc
 }

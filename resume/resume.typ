@@ -55,12 +55,7 @@
     [
       #text(45pt, font: "Norwester", fill: accent)[ROHAN GODHA]\
       #pad(top: -5pt)[
-        #text(
-          12pt,
-          font: "Raleway",
-          fill: accent,
-          weight: "bold",
-        )[#cvdata.personal.title]
+        #text(12pt, font: "Raleway", fill: accent, weight: "bold")[#cvdata.personal.title]
       ]
     ],
   )

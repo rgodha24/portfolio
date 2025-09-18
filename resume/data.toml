@@ -11,11 +11,12 @@ location = "Scottsdale, AZ"
 [[work]]
 organization = "Pump (YC S22)"
 url = "pump.co/"
-position = "Technical Marketing Intern"
+position = "Technical Content & Social Media Lead"
 location = "Atlanta, GA"
 startDate = "2025-08-25"
 endDate = "present"
 highlights = [
+  "Generated 150k+ views per week on TikTok and Instagram through technical tutorials on AWS",
   "Leading marketing team to grow Pump's inbound sales for their AWS cost optimization program",
 ]
 
@@ -43,7 +44,7 @@ endDate = "present"
 highlights = [
   "Developed distributed video generation platform using React, TypeScript and AWS Lambda, enabling users to create viral short-form content with AI Voices",
   "Proved product-market fit by growing my #link(\"https://instagram.com/aws_peter\")[\\@aws_peter] account to 70k+ followers and 4.7M+ views across Instagram, TikTok and YouTube, producing technical tutorials on Docker, AWS, MCP and AI Agents",
-  "Launched as SaaS product enabling 1500+ creators to generate 25M+ views and 200k+ followers, with thousands in revenue",
+  "Grew SaaS to >\\$1k MRR by enabling 1500+ creators to generate 25M+ views and 200k+ followers",
 ]
 
 [[work]]

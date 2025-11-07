@@ -11,13 +11,13 @@ location = "Scottsdale, AZ"
 [[work]]
 organization = "Pump (YC S22)"
 url = "pump.co/"
-position = "Technical Content & Social Media Lead"
+position = "Technical Content Intern"
 location = "Atlanta, GA"
 startDate = "2025-08-25"
-endDate = "present"
+endDate = "2025-10-01"
 highlights = [
   "Generated 150k+ views per week on TikTok and Instagram through technical tutorials on AWS",
-  "Leading marketing team to grow Pump's inbound sales for their AWS cost optimization program",
+  "Drove 20% growth in inbound sales through long-form and short-form developer focused content",
 ]
 
 [[work]]

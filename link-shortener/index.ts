@@ -1,8 +1,7 @@
-import { getProjects, getPosts } from "./data.ts" with { type: "macro" };
+import { getProjects } from "./data.ts" with { type: "macro" };
 import { Hono } from "hono";
 
 const projects = await getProjects();
-const posts = await getPosts();
 const app = new Hono();
 
 app.get("/:path", (c) => {
@@ -10,8 +9,6 @@ app.get("/:path", (c) => {
 
    if (projects.includes(path)) {
       return c.redirect("https://www.rohangodha.com/projects/" + path);
-   } else if (posts.includes(path)) {
-      return c.redirect("https://www.rohangodha.com/blog/" + path);
    } else if (/resume(.pdf)?/gi.test(path)) {
       return c.redirect("https://www.rohangodha.com/Resume.pdf");
    }

@@ -6,10 +6,3 @@ export async function getProjects() {
 
    return Object.keys(projects);
 }
-export async function getPosts() {
-   const posts = readdirSync("site/src/content/blog").map((post) => post.replaceAll(".md", ""));
-
-   console.log(posts);
-
-   return posts;
-}

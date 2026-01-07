@@ -17,7 +17,7 @@ export default defineConfig({
       markdownIntegration(),
    ],
    output: "static",
-   adapter: cloudflare(),
+   adapter: cloudflare({ imageService: "compile" }),
    image: {
       remotePatterns: [{ hostname: "**.scdn.co" }, { hostname: "**.mzstatic.com" }],
    },

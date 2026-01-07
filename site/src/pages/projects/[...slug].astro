@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import Github from "../../icons/Github.astro";
-import Icon from "../../icons/Icon.astro";
-import Link from "../../icons/Link.astro";
-import CombinedLayout from "../../layouts/CombinedLayout.astro";
+import { Github, Globe } from "lucide-solid";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TextBackground from "../../components/TextBackground.astro";
 import { Markdown } from "@astropub/md";
 import { getRepoReadme } from "../../github";
+import pfp from "../../pfp.png";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
    const projects = await getCollection("projects");
@@ -20,55 +21,78 @@ const props = Astro.props;
 const readme = await getRepoReadme(props.data.github);
 ---
 
-<CombinedLayout title={`projects: ${props.data.title}`} description={props.data.blurb}>
-   <div
-      class="p-5 m-4 border border-1 rounded-4 gradient from-coolgray-900 to-coolgray-800 border-sky-300 hover:from-slate-900 hover:to-slate-800"
-   >
-      <Markdown of={readme} />
-      <div class="flex flex-row justify-center gap-35">
-         {
-            !!props.data.website && (
-               <Icon href={props.data.website} title={props.data.title + " website link"} stroke>
-                  <Link />
-               </Icon>
-            )
-         }
-         <Icon
-            href={`https://github.com/${props.data.github}`}
-            title={props.data.title + "github repo"}
-         >
-            <Github />
-         </Icon>
+<BaseLayout title={`projects: ${props.data.title}`} description={props.data.blurb}>
+   <main class="min-h-screen text-sky-400" id="main">
+      <!-- Text background -->
+      <div class="absolute z--1">
+         <TextBackground />
       </div>
-   </div>
-</CombinedLayout>
+
+      <!-- Light frosted overlay -->
+      <div class="fixed inset-0 z-0 bg-#001135/50 backdrop-blur-1.5px pointer-events-none"></div>
+
+      <!-- Header -->
+      <div class="relative z-10 px-8 pt-8">
+         <div class="flex flex-row gap-8 items-center md:gap-12">
+            <a class="w-12 h-12 rounded-full md:w-16 md:h-16 lg:w-20 lg:h-20" href="/">
+               <Image
+                  src={pfp}
+                  alt="my profile picture"
+                  class="w-full h-full rounded-full"
+                  loading="eager"
+               />
+            </a>
+            <a href="/">
+               <h1 class="font-heading text-sky-400 text-4xl md:text-5xl lg:text-7xl">
+                  ROHAN GODHA
+               </h1>
+            </a>
+         </div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 mx-auto max-w-4xl px-6 py-8">
+         <!-- Frosted glass for content -->
+         <div class="bg-#180849/50 backdrop-blur-2.5px rounded-2xl p-6 lg:p-10">
+            <div class="flex items-center gap-4 mb-6">
+               <h2 class="font-heading text-sky-400 text-2xl lg:text-4xl">{props.data.title}</h2>
+               <div class="flex gap-3">
+                  <a
+                     href={`https://github.com/${props.data.github}`}
+                     title="GitHub"
+                     class="text-sky-400 hover:text-sky-300"
+                  >
+                     <Github size={24} />
+                  </a>
+                  {
+                     !!props.data.website && (
+                        <a
+                           href={props.data.website}
+                           title="Website"
+                           class="text-sky-400 hover:text-sky-300"
+                        >
+                           <Globe size={24} />
+                        </a>
+                     )
+                  }
+               </div>
+            </div>
+
+            <div class="prose prose-sky-light max-w-none">
+               <Markdown of={readme} />
+            </div>
+         </div>
+      </div>
+   </main>
+</BaseLayout>
 
 <style>
-   .gradient {
-      --un-gradient-stops: var(--un-gradient-from), var(--un-gradient-to);
-      --un-gradient: var(--un-gradient-shape), var(--un-gradient-stops);
-      background: linear-gradient(var(--un-gradient));
-      background-size: 400% 400%;
+   .prose :global(h1:first-child) {
+      @apply hidden;
    }
-   .gradient:hover {
-      animation: gradient-animation 3s ease infinite;
-   }
-
-   @keyframes gradient-animation {
-      0% {
-         background-position: 0% 50%;
-      }
-      50% {
-         background-position: 100% 50%;
-      }
-      100% {
-         background-position: 0% 50%;
-      }
-   }
-
-   h1,
-   h2,
-   h3 {
+   .prose :global(h1),
+   .prose :global(h2),
+   .prose :global(h3) {
       @apply font-heading;
    }
 </style>

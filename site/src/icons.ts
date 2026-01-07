@@ -10,7 +10,8 @@ export const icons = [
    { name: "books", link: "/", Icon: BookMarked },
 ] as const;
 
-export const hoveredIcon = atom<(typeof icons)[number]["name"] | null>(null);
+export type IconName = (typeof icons)[number]["name"];
+export const hoveredIcon = atom<IconName | null>(null);
 export const names = icons.map((icon) => icon.name);
 
 export const showIconBar = atom(true);

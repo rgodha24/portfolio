@@ -7,26 +7,22 @@
 #let uservars = (
   headingfont: "Norwester",
   bodyfont: "Raleway",
-  fontsize: 11.5pt, // 10pt, 11pt, 12pt
+  fontsize: 11.5pt,
   linespacing: 5pt,
   sectionspacing: -4pt,
-  showAddress: false, // true/false show address in contact info
-  showNumber: false, // true/false show phone number in contact info
-  showTitle: true, // true/false show title in heading
-  headingsmallcaps: true, // true/false use small caps for headings
-  sendnote: false, // set to false to have sideways endnote
+  showAddress: false,
+  showNumber: false,
+  showTitle: true,
+  headingsmallcaps: true,
+  sendnote: false,
 )
 
-#let accent = rgb("#38BDF9");
-#let dark = rgb("#232526");
-#let light = white;
-#let ymargin = 1cm;
+#let ymargin = 0.5cm;
 #let xmargin = 1.15cm;
-#let rect_height = 90pt;
 
 #let customrules(doc) = {
   set page(paper: "us-letter", margin: (
-    top: ymargin + rect_height,
+    top: ymargin,
     left: xmargin,
     right: xmargin,
     bottom: ymargin,
@@ -34,8 +30,6 @@
 
   doc
 }
-
-#set text(fill: dark)
 
 #let cvinit(doc) = {
   doc = setrules(uservars, doc)
@@ -47,90 +41,31 @@
 
 #show: doc => cvinit(doc)
 
-#place(left + top, dx: -xmargin, dy: -ymargin - rect_height)[
-  #rect(
-    fill: dark,
-    radius: (bottom-right: 10000pt),
-    inset: (left: xmargin, right: 20pt, top: ymargin, bottom: 15pt),
-    [
-      #text(45pt, font: "Norwester", fill: accent)[ROHAN GODHA]\
-      #pad(top: -5pt)[
-        #text(12pt, font: "Raleway", fill: accent, weight: "bold")[#cvdata.personal.title]
-      ]
-    ],
-  )
-]
+#let icon_size = 0.9em;
+#let contact-item(icon, content, baseline: 25%) = box[#box(baseline: baseline, width: 1.1em, image(icon, height: icon_size)) #h(3pt) #content]
 
-#let icon_size = 1em;
-#let link_height = 72pt;
-
-#place(right + top, dy: -ymargin - 70pt)[
-  #box(height: link_height, width: 32%)[
-    #place(horizon)[
-      #align(left)[
-        #stack(
-          if config.includeLocation [
-            #stack(
-              dir: ltr,
-              spacing: 1em,
-              image("./icons/location.svg", height: icon_size),
-              h(1fr),
-              text(icon_size)[#cvdata.personal.location],
-            )
-          ] else [],
-          stack(
-            dir: ltr,
-            spacing: 1em,
-            image("./icons/website.svg", height: icon_size),
-            h(1fr),
-            link("https://" + cvdata.personal.website)[#text(
-                icon_size,
-              )[#cvdata.personal.website]],
-          ),
-          spacing: 1fr,
-          stack(
-            dir: ltr,
-            spacing: 1em,
-            image("./icons/email.svg", height: icon_size),
-            h(1fr),
-            link("mailto:" + cvdata.personal.email)[#text(
-                icon_size,
-              )[#cvdata.personal.email]],
-          ),
-          stack(
-            dir: ltr,
-            spacing: 1em,
-            image("./icons/github.svg", height: icon_size),
-            h(1fr),
-            link("https://" + cvdata.personal.github)[#text(
-                icon_size,
-              )[#cvdata.personal.github]],
-          ),
-          stack(
-            dir: ltr,
-            spacing: 1em,
-            image("./icons/instagram.svg", height: icon_size),
-            h(1fr),
-            link("https://" + cvdata.personal.instagram)[#text(
-                icon_size,
-              )[#cvdata.personal.instagram]],
-          ),
-          stack(
-            dir: ltr,
-            spacing: 1em,
-            image("./icons/linkedin.svg", height: icon_size),
-            h(1fr),
-            link("https://" + cvdata.personal.linkedin)[#text(
-                icon_size,
-              )[#cvdata.personal.linkedin]],
-          ),
-        )
-      ]
-    ]
-  ]
-]
-
-#v(-15pt)
+// Header with name on left, links on right in 2x2 grid
+#grid(
+  columns: (1fr, auto),
+  align: (left + horizon, right + horizon),
+  [
+    #text(36pt, font: "Norwester")[ROHAN GODHA]
+  ],
+  [
+    #set text(9.5pt, font: "Raleway")
+    #table(
+      columns: (auto, auto),
+      stroke: none,
+      inset: (x: 8pt, y: 3pt),
+      align: (left, left),
+      contact-item("./icons/website.svg", link("https://" + cvdata.personal.website)[#cvdata.personal.website]),
+      contact-item("./icons/email.svg", link("mailto:" + cvdata.personal.email)[#cvdata.personal.email]),
+      contact-item("./icons/linkedin.svg", link("https://" + cvdata.personal.linkedin)[#cvdata.personal.linkedin.replace("linkedin.com", "")]),
+      contact-item("./icons/github.svg", link("https://" + cvdata.personal.github)[#cvdata.personal.github]),
+    )
+  ],
+)
+#v(2pt)
 
 #cvwork(cvdata)
 #cveducation(cvdata, config)

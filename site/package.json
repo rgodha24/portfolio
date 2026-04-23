@@ -23,6 +23,7 @@
       "astro": "^5.1.0",
       "lucide-solid": "^0.436.0",
       "nanostores": "^0.11.3",
+      "sharp": "^0.34.5",
       "simple-icons": "^8.15.0",
       "solid-js": "^1.7.11",
       "toml": "^3.0.0",

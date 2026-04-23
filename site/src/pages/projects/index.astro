@@ -4,6 +4,8 @@ import TitledLayout from "../../layouts/TitledLayout.astro";
 import { Github, Globe } from "lucide-solid";
 
 const projects = await getCollection("projects");
+const parseLinks = (s: string) =>
+   s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="underline text-sky-300 hover:text-sky-100" target="_blank" rel="noopener">$1</a>');
 ---
 
 <TitledLayout title="Projects">
@@ -22,7 +24,7 @@ const projects = await getCollection("projects");
                      </a>
                      <ul class="flex flex-col gap-y-1 list-disc">
                         {bullets.map((b) => (
-                           <li class="ml-4 text-sm text-sky-100 text-pretty lg:text-md">{b}</li>
+                           <li class="ml-4 text-sm text-sky-100 text-pretty lg:text-md" set:html={parseLinks(b)} />
                         ))}
                      </ul>
                   </div>

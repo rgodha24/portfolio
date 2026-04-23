@@ -77,3 +77,63 @@
     #start
   ]
 }
+
+// Parse a string with markdown-style [text](url) links and *bold* into Typst content.
+#let parse-rich(s) = {
+  let parts = ()
+  let remaining = s
+
+  while remaining.len() > 0 {
+    let link-pos = remaining.position("[")
+    let bold-pos = remaining.position("*")
+
+    let next-pos = if link-pos == none and bold-pos == none {
+      none
+    } else if link-pos == none {
+      bold-pos
+    } else if bold-pos == none {
+      link-pos
+    } else {
+      calc.min(link-pos, bold-pos)
+    }
+
+    if next-pos == none {
+      parts.push(remaining)
+      break
+    }
+
+    if next-pos > 0 {
+      parts.push(remaining.slice(0, next-pos))
+    }
+
+    if next-pos == link-pos {
+      let after-open = remaining.slice(next-pos + 1)
+      let sep = after-open.position("](")
+      if sep != none {
+        let text = after-open.slice(0, sep)
+        let after-sep = after-open.slice(sep + 2)
+        let close = after-sep.position(")")
+        if close != none {
+          let url = after-sep.slice(0, close)
+          parts.push(link(url, text))
+          remaining = after-sep.slice(close + 1)
+          continue
+        }
+      }
+      parts.push("[")
+      remaining = remaining.slice(next-pos + 1)
+    } else {
+      let after-star = remaining.slice(next-pos + 1)
+      let end-star = after-star.position("*")
+      if end-star != none {
+        parts.push(strong(after-star.slice(0, end-star)))
+        remaining = after-star.slice(end-star + 1)
+      } else {
+        parts.push("*")
+        remaining = remaining.slice(next-pos + 1)
+      }
+    }
+  }
+
+  parts.join()
+}

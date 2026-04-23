@@ -142,7 +142,7 @@
         v(-0.7em)
         if w.highlights.len() > 0 {
           for hi in w.highlights [
-            - #eval(hi, mode: "markup")
+            - #utils.parse-rich(hi)
           ]
           v(-0.5em)
         } else { v(0.25em) }
@@ -170,22 +170,6 @@
         let start = utils.strpdate(edu.startDate)
         let end = utils.strpdate(edu.endDate)
 
-        let edu-items = ""
-        if edu.honors != none and edu.honors.len() != 0 {
-          edu-items = edu-items + "- *Honors*: " + edu.honors.join(", ") + "\n"
-        }
-        if edu.courses != none and edu.courses.len() != 0 {
-          edu-items = (
-            edu-items + "- *Courses*: " + edu.courses.join(", ") + "\n"
-          )
-        }
-        if edu.highlights != none {
-          for hi in edu.highlights {
-            edu-items = edu-items + "- " + hi + "\n"
-          }
-          edu-items = edu-items.trim("\n")
-        }
-
         // Create a block layout for each education entry
         block(width: 100%, breakable: isbreakable)[
           #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
@@ -197,7 +181,17 @@
               1fr,
             )\
           ]
-          #eval(edu-items, mode: "markup")
+          #if edu.honors != none and edu.honors.len() != 0 [
+            - *Honors*: #edu.honors.join(", ")
+          ]
+          #if edu.courses != none and edu.courses.len() != 0 [
+            - *Courses*: #edu.courses.join(", ")
+          ]
+          #if edu.highlights != none {
+            for hi in edu.highlights [
+              - #utils.parse-rich(hi)
+            ]
+          }
         ]
 
         index += 1
@@ -224,7 +218,7 @@
           *#link("https://" + org.url)[#text(13pt)[#org.organization]]*, #org.position #h(1fr) _#utils.daterange(start, end)_
           #if org.highlights != none {
             for hi in org.highlights [
-              - #eval(hi, mode: "markup")
+              - #utils.parse-rich(hi)
             ]
           } else { }
         ]
@@ -250,7 +244,7 @@
         #if index == 0 [#v(-0.2em)] else [#v(-0.5em)]
         *#text(13pt)[#link("https://rgodha.com/" + p)[#project.title]]* #h(1fr) _ #link("https://rgodha.com/" + p)[rgodha.com/#p] _\
         #for hi in project.bullets [
-          - #eval(hi, mode: "markup")
+          - #utils.parse-rich(hi)
         ]
       ]
       index += 1

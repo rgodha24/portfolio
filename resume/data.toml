@@ -9,16 +9,13 @@ instagram = "instagram.com/aws_peter"
 location = "Scottsdale, AZ"
 
 [[work]]
-organization = "Pump (YC S22)"
-url = "pump.co/"
-position = "Technical Content Intern"
-location = "Atlanta, GA"
-startDate = "2025-08-25"
-endDate = "2025-10-01"
-highlights = [
-  "Generated 150k+ views per week on TikTok and Instagram through technical tutorials on AWS",
-  "Drove 20% growth in inbound sales through long-form and short-form developer focused content",
-]
+organization = "Mintlify"
+url = "mintlify.com/"
+position = "Incoming Software Engineering Intern"
+location = "San Francisco, CA"
+startDate = "2026-05-12"
+endDate = "2026-08-01"
+highlights = []
 
 [[work]]
 organization = "Rocketlab"
@@ -35,37 +32,25 @@ highlights = [
 ]
 
 [[work]]
-organization = "Brainrot dot mov"
+organization = "AI UGC Startup"
 url = "brainrot.mov"
-position = "Founder"
+position = "Founder (acquired)"
 location = "Atlanta, GA"
 startDate = "2025-02-17"
-endDate = "present"
+endDate = "2025-12-01"
 highlights = [
   "Developed distributed video generation platform using React, TypeScript and AWS Lambda, enabling users to create viral short-form content with AI Voices",
-  "Proved product-market fit by growing my #link(\"https://instagram.com/aws_peter\")[\\@aws_peter] account to 70k+ followers and 4.7M+ views across Instagram, TikTok and YouTube, producing technical tutorials on Docker, AWS, MCP and AI Agents",
-  "Grew SaaS to >\\$1k MRR by enabling 1500+ creators to generate 25M+ views and 200k+ followers",
-]
-
-[[work]]
-organization = "Georgia Tech Bits of Good"
-position = "Engineering Manager"
-url = "https://bitsofgood.org/"
-location = "Atlanta, GA"
-startDate = "2025-01-20"
-endDate = "present"
-highlights = [
-  "Leading team of 5 developers to create application to encourage children to take their medicine",
-  "Created internal CLI based on shadcn/ui for easy access to design system for all Bits of Good projects",
+  "Proved product-market fit by growing my [@aws_peter](https://instagram.com/aws_peter) account to 70k+ followers and 4.7M+ views across Instagram, TikTok and YouTube, producing technical tutorials on Docker, AWS, MCP and AI Agents",
+  "Grew SaaS to >$1k MRR by enabling 1500+ creators to generate 25M+ views and 200k+ followers",
 ]
 
 [[work]]
 organization = "Unstoppable Asset"
-url = "https://unstoppableasset.com"
+url = "unstoppableasset.com"
 position = "Co-Founder"
 location = "Atlanta, GA"
 startDate = "2023-07-01"
-endDate = "present"
+endDate = "2025-08-01"
 highlights = [
   "Leading product development for a mission driven fintech startup selected for Create-X S'25 Batch",
 ]
@@ -97,7 +82,9 @@ courses = [
   "Data Structures & Algorithms",
   "Design & Analysis of Algorithms",
 ]
-highlights = []
+highlights = [
+  "*Leadership*: Engineering Manager, GT Bits of Good: managing 10+ developers on nonprofit websites",
+]
 
 [[skills]]
 category = "Programming Languages"
@@ -114,4 +101,8 @@ skills = [
   "AWS",
   "Infrastructure as Code (IaC)",
   "Docker",
+  "ray",
+  "pytorch",
+  "CUDA",
+  "SLURM",
 ]

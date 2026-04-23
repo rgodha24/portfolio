@@ -13,7 +13,7 @@ github = "rgodha24/advent-of-code"
 [attendance]
 title = "Brophy Attendance"
 blurb = "A realtime and localfirst attendance system in use at Brophy College Preparatory"
-order = 80
+order = 50
 tech = ["sst", "AWS", "shadcn/ui", "React", "Rust", "ElectroDB", "Typescript"]
 bullets = [
   "Created and integrated a Raspberry Pi-based barcode scanner in Rust, an AWS Lambda & DynamoDB based backend in Typescript, and a realtime web dashboard using technology like SST and React",
@@ -104,23 +104,11 @@ bullets = [
 github = "sailalithkanumuri8/EcoFlare"
 devpost = "https://devpost.com/software/ecoflare"
 
-[alphasnake]
-title = "AlphaSnake"
-blurb = "A snake game engine built in Rust for the bytefight competition"
-order = 50
-tech = ["Rust", "Python", "pyo3", "torch"]
-bullets = [
-  "Trained a custom neural network using a genetic algorithm across 96 CPU cores on Google Cloud",
-  "Optimized a game engine using techniques like increasing cache locality, bitmasks, and SIMD",
-  "Achieved 5th place by ELO in the Georgia Tech Bytefight competition, sponsored by Google",
-]
-
-github = "TheConverseEngineer/AlphaSnake"
 
 [brainrot]
 title = "Brainrot.mov"
 blurb = "An Instagram reels generator that got me 70k+ followers"
-order = 75
+order = 81
 tech = [
   "Typescript",
   "React",
@@ -133,10 +121,64 @@ tech = [
   "Eleven Labs",
 ]
 bullets = [
-  "Grew an educational developer focused account (\\@aws_peter) to 70k+ followers, 4.5M+ views, and 1.6M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
+  "Grew an educational developer focused account ([@aws_peter](https://instagram.com/aws_peter)) to 70k+ followers, 4.5M+ views, and 1.6M unique viewers by teaching concepts like Docker, Kubernetes, AWS Lambda, and Infrastructure as Code",
   "Enabled 1500+ users to generate 25M+ views and 200k+ followers, with thousands in revenue",
   "Created a React app for generating short form videos using AI voices and custom images, deployed to AWS",
 ]
 
 github = "rgodha24/brainrot.mov"
 website = "https://brainrot.mov"
+
+[alphapaint]
+title = "AlphaPaint"
+blurb = "A game engine built in Rust for the Bytefight 2026 competition"
+order = 75
+tech = ["Rust", "Python", "torch", "CUDA"]
+bullets = [
+  "Implemented a best first minimax agent in Rust and placed 3rd out of 100+ teams in Bytefight 2026",
+  "Built a custom AlphaZero style training system using Rust, custom lockfree datastructures, CUDA Graphs, PyTorch, and CUDA kernels via TileLang to achieve 100x speedup over naive implementation",
+  "Ran selfplay across 300 parallel CPU cores on SLURM cluster to generate data for a genetic tuner",
+]
+
+github = "TheConverseEngineer/AlphaPaint"
+
+[alphasnake]
+title = "AlphaSnake"
+blurb = "A snake game engine built in Rust for the bytefight 2025 competition"
+order = 50
+tech = ["Rust", "Python", "pyo3", "torch"]
+bullets = [
+  "Trained a custom neural network using a genetic algorithm across 96 CPU cores on Google Cloud",
+  "Optimized a game engine using techniques like increasing cache locality, bitmasks, and SIMD",
+  "Achieved 5th place by ELO in the Georgia Tech Bytefight 2025 competition, sponsored by Google",
+]
+
+github = "TheConverseEngineer/AlphaSnake"
+
+[oss]
+title = "Open Source Contributions"
+blurb = "Merged PRs across major open source projects"
+order = 80
+tech = ["Rust", "Typescript", "Go", "Nix"]
+bullets = [
+  "[opencode](https://github.com/sst/opencode): 6th earliest contributor; authored the [TUI theming system](https://github.com/sst/opencode/pull/3234) (#3234), [headless auth for ChatGPT/Codex](https://github.com/sst/opencode/pull/10890) (#10890), [subagent TUI navigation](https://github.com/sst/opencode/pull/5761) (#5761), with [9+ total merged PRs](https://github.com/anomalyco/opencode/issues?q=is:merged%20is:pr%20author:rgodha24)",
+  "[openai/codex](https://github.com/openai/codex): Bugfixes around [bundling](https://github.com/openai/codex/pull/12415) (#12415), terminal UX, and [API key auth](https://github.com/openai/codex/pull/4903) (#4903) in multiple PRs",
+  "[SST](https://github.com/sst/sst): Contributed [Rust Lambda support](https://github.com/sst/sst/pull/5432) (#5432) and [sst_sdk crate](https://github.com/sst/sst/pull/5562) (#5562) for the SST IaC framework",
+]
+link = "https://github.com/rgodha24"
+display = "github.com/rgodha24"
+github = "anomalyco/opencode/issues?q=is:merged%20is:pr%20author:rgodha24"
+
+[stockfish]
+title = "Stockfish Trainer"
+blurb = "Faster, Distributed, MultiGPU training for Stockfish Chess Models"
+order = 85
+tech = ["Ray", "torch", "CUDA", "Python", "SLURM"]
+bullets = [
+  "Doubled GPU throughput by porting Mixture of Experts CUDA kernels from LLMs, writing custom sparse forward and backward TileLang kernels, overlapping H2D transfers, and fusing optimizer steps",
+  "Enabled multi-GPU and multi-node training on SLURM clusters using Ray, PyTorch Lightning, and NCCL",
+  "Increased CPU dataloading & input encoding throughput by 10x through lockfree rust rewrite",
+  "Ran experiments on application of SOTA ideas like Mixture of Experts to Stockfish & Chess NNUEs",
+]
+
+github = "rgodha24/stockfish-trainer"

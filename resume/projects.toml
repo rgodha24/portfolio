@@ -178,7 +178,7 @@ bullets = [
   "Doubled GPU throughput by porting Mixture of Experts CUDA kernels from LLMs, writing custom sparse forward and backward TileLang kernels, overlapping H2D transfers, and fusing optimizer steps",
   "Enabled multi-GPU and multi-node training on SLURM clusters using Ray, PyTorch Lightning, and NCCL",
   "Increased CPU dataloading & input encoding throughput by 10x through lockfree rust rewrite",
-  "Ran experiments on application of SOTA ideas like Mixture of Experts to Stockfish & Chess NNUEs",
+  "Experimented with applying the Bitter lesson of ML to Stockfish & Chess NNUEs with a MoE architecture",
 ]
 
 github = "rgodha24/stockfish-trainer"

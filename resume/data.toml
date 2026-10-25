@@ -9,13 +9,25 @@ instagram = "instagram.com/aws_peter"
 location = "Scottsdale, AZ"
 
 [[work]]
+organization = "Tesser (YC W27)"
+url = "tesser.sh/"
+position = "Cofounder & CTO"
+location = "San Francisco, CA"
+startDate = "2026-11-01"
+endDate = "present"
+highlights = ["Cofounder & CTO of Tesser in Y Combinator's W27 batch"]
+
+[[work]]
 organization = "Mintlify"
 url = "mintlify.com/"
-position = "Incoming Software Engineering Intern"
+position = "Software Engineer"
 location = "San Francisco, CA"
 startDate = "2026-05-12"
-endDate = "2026-08-01"
-highlights = []
+endDate = "2026-10-30"
+highlights = [
+  "Led redesign & rearchitecture of the Mintlify Editor, including 100x p99 speedups, performance improvements to support 250k+ pages, & caching/localfirst architecture for instant navigation",
+  "Closed the 3 largest deals in Mintlify history through UX feedback, support, and closing incidents",
+]
 
 [[work]]
 organization = "Rocketlab"
@@ -27,8 +39,6 @@ endDate = "2025-08-01"
 highlights = [
   "Replaced manual solar panel validation process with Python based simulation, achieving large speedup through 16-way parallel processing on Kubernetes with RabbitMQ/KEDA auto-scaling",
   "Improved loadtime of critical factory visualizations by 192x through optimizing PostgreSQL queries",
-  "Unified priority lot tracking with factory visualization, improving visibility of high-value products",
-  "Built terminal-based Jira interface, increasing ticket throughput and improving managerial visibility",
 ]
 
 [[work]]
@@ -42,28 +52,6 @@ highlights = [
   "Developed distributed video generation platform using React, TypeScript and AWS Lambda, enabling users to create viral short-form content with AI Voices",
   "Proved product-market fit by growing my [@aws_peter](https://instagram.com/aws_peter) account to 70k+ followers and 4.7M+ views across Instagram, TikTok and YouTube, producing technical tutorials on Docker, AWS, MCP and AI Agents",
   "Grew SaaS to >$1k MRR by enabling 1500+ creators to generate 25M+ views and 200k+ followers",
-]
-
-[[work]]
-organization = "Unstoppable Asset"
-url = "unstoppableasset.com"
-position = "Co-Founder"
-location = "Atlanta, GA"
-startDate = "2023-07-01"
-endDate = "2025-08-01"
-highlights = [
-  "Leading product development for a mission driven fintech startup selected for Create-X S'25 Batch",
-]
-
-[[work]]
-organization = "NewGen Business Solutions"
-url = "newgennow.com/"
-position = "Intern"
-location = "Scottsdale, AZ"
-startDate = "2023-05-01"
-endDate = "2023-08-01"
-highlights = [
-  "Developed a testing framework for critical application during migration from Create-React-App to Vite",
 ]
 
 [[education]]

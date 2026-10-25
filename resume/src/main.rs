@@ -91,6 +91,9 @@ enum Projects {
     Ecoflare,
     Brainrot,
     AlphaSnake,
+    Stockfish,
+    AlphaPaint,
+    Oss,
 }
 
 impl Default for Config {

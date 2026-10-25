@@ -2,11 +2,11 @@
 import { ViewTransitions } from "astro:transitions";
 import { getOgURL } from "../og.ts";
 
-import "@fontsource/norwester";
-import norwesterWoff2 from "@fontsource/norwester/files/norwester-latin-400-normal.woff2";
-import "@fontsource/monaspace-radon/500.css";
+import "@fontsource-variable/inter";
+import interWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
 import "@fontsource/monaspace-krypton/300.css";
-import "@fontsource-variable/raleway";
 
 export interface Props {
    title: string;
@@ -50,4 +50,4 @@ const fullTitle = `Rohan's ${title}`;
 <meta property="twitter:image" content={ogURL} />
 
 <ViewTransitions />
-<link rel="preload" as="font" type="font/woff2" href={norwesterWoff2} crossorigin="anonymous" />
+<link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin="anonymous" />

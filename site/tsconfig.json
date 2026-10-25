@@ -1,11 +1,5 @@
 {
    "extends": "astro/tsconfigs/strict",
-   "compilerOptions": {
-      "importsNotUsedAsValues": "error",
-      "esModuleInterop": true,
-      "strict": true,
-      "strictNullChecks": true
-   },
    "include": [".astro/types.d.ts", "**/*"],
    "exclude": ["dist"]
 }

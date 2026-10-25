@@ -13,7 +13,6 @@ export function startAscii(canvas: HTMLCanvasElement, opts: Opts) {
    let grid: string[][] = [];
    let mouse = { x: -9999, y: -9999 };
    let dirty = true;
-   let raf = 0;
 
    const rand = () => LETTERS[Math.floor(Math.random() * LETTERS.length)];
 
@@ -65,7 +64,7 @@ export function startAscii(canvas: HTMLCanvasElement, opts: Opts) {
 
    let prev = 0;
    function loop(t: number) {
-      raf = requestAnimationFrame(loop);
+      requestAnimationFrame(loop);
       if (t - prev >= opts.tick) {
          prev = t;
          grid.push(grid.shift()!);
@@ -77,21 +76,13 @@ export function startAscii(canvas: HTMLCanvasElement, opts: Opts) {
       }
    }
 
-   const ro = new ResizeObserver(resize);
-   ro.observe(canvas.parentElement!);
-   const onMove = (e: PointerEvent) => {
+   new ResizeObserver(resize).observe(canvas.parentElement!);
+   window.addEventListener("pointermove", (e) => {
       const rect = canvas.getBoundingClientRect();
       mouse = { x: e.clientX - rect.left, y: e.clientY - rect.top };
       dirty = true;
-   };
-   window.addEventListener("pointermove", onMove);
+   });
    document.fonts.ready.then(resize);
    resize();
-   raf = requestAnimationFrame(loop);
-
-   return () => {
-      cancelAnimationFrame(raf);
-      ro.disconnect();
-      window.removeEventListener("pointermove", onMove);
-   };
+   requestAnimationFrame(loop);
 }

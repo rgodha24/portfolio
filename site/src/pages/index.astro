@@ -1,43 +1,62 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { links } from "../data";
+import "@fontsource-variable/inter";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/monaspace-krypton/300.css";
+
+const title = "Rohan Godha";
+const description = "building tesser (yc w27). previously mintlify, rocketlab, cs @ georgia tech.";
+const og = "https://og.rohangodha.com/api/og/bTI5cmhib2QybnF1MWo1OnN1bDZsNjg3bQ==?pageTitle=homepage";
 ---
 
-<BaseLayout title="homepage">
-   <section class="hero">
-      <header>
-         <a class="brand" href="/">rohan godha</a>
-         <nav>{links.slice(0, 3).map((l) => <a href={l.href}>{l.name}</a>)}</nav>
-      </header>
-      <canvas id="ascii" aria-hidden="true"></canvas>
-      <div class="hero-inner">
-         <h1>Rohan Godha</h1>
-         <p class="sub">
-            building <a href="https://tesser.sh">tesser</a> (yc w27). previously mintlify, rocketlab, cs @ georgia tech, and 70k ig followers <a href="https://instagram.com/aws_peter">@aws_peter</a>
-         </p>
-         <div class="cta">
-            <a href="https://x.com/rohandevs">@rohandevs</a>
-            <a href="/Resume.pdf">resume</a>
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="canonical" href={Astro.site} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={og} />
+      <meta name="twitter:card" content="summary_large_image" />
+      {import.meta.env.PROD && <script is:inline data-collect-dnt="true" async defer src="https://api.rohangodha.com/latest.js" />}
+   </head>
+   <body>
+      <section class="hero">
+         <header>
+            <a class="brand" href="/">rohan godha</a>
+            <nav>
+               <a href="https://x.com/rohandevs">twitter</a>
+               <a href="https://github.com/rgodha24">github</a>
+               <a href="https://www.linkedin.com/in/rohan-godha/">linkedin</a>
+            </nav>
+         </header>
+         <canvas id="ascii" aria-hidden="true"></canvas>
+         <div class="hero-inner">
+            <h1>Rohan Godha</h1>
+            <p class="sub">
+               building <a href="https://tesser.sh">tesser</a> (yc w27). previously mintlify, rocketlab, cs @ georgia tech, and 70k ig followers <a href="https://instagram.com/aws_peter">@aws_peter</a>
+            </p>
+            <div class="cta">
+               <a href="https://x.com/rohandevs">@rohandevs</a>
+               <a href="/Resume.pdf">resume</a>
+            </div>
          </div>
-      </div>
-   </section>
-</BaseLayout>
+      </section>
+      <script>
+         import { startAscii } from "../ascii";
 
-<script>
-   import { startAscii } from "../ascii";
-
-   let stop = () => {};
-   document.addEventListener("astro:page-load", () => {
-      stop();
-      const canvas = document.getElementById("ascii") as HTMLCanvasElement | null;
-      if (!canvas) return;
-      stop = startAscii(canvas, {
-         tick: 160,
-         paint: "#1e1e1f",
-         cursor: { radius: 110, paint: "#7fa6ff" },
-      });
-   });
-</script>
+         startAscii(document.getElementById("ascii") as HTMLCanvasElement, {
+            tick: 160,
+            paint: "#1e1e1f",
+            cursor: { radius: 110, paint: "#7fa6ff" },
+         });
+      </script>
+   </body>
+</html>
 
 <style>
    :global(:root) {
@@ -49,9 +68,8 @@ import { links } from "../data";
       --sans: "Inter Variable";
       --mono: "IBM Plex Mono";
    }
-   :global(body) { overflow: hidden; background: var(--bg); color: var(--fg); font-family: var(--sans), ui-sans-serif, system-ui, sans-serif; }
+   :global(body) { margin: 0; overflow: hidden; background: var(--bg); color: var(--fg); font-family: var(--sans), ui-sans-serif, system-ui, sans-serif; }
    a { text-decoration: none; color: inherit; }
-
 
    header {
       position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
@@ -79,7 +97,6 @@ import { links } from "../data";
    .cta { display: flex; gap: 10px; justify-content: center; }
    .cta a { padding: 10px 0; width: 150px; border: 1px solid var(--line); color: var(--muted); font: 500 14px var(--mono), monospace; background: var(--bg); }
    .cta a:hover { color: var(--fg); border-color: var(--faint); }
-
 
    @media (max-width: 720px) { nav { display: none; } }
 </style>

@@ -1,5 +1,6 @@
 ---
-import "@fontsource-variable/inter";
+import "@fontsource-variable/raleway";
+import "@fontsource/norwester";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
 import "@fontsource/monaspace-krypton/300.css";
@@ -42,14 +43,17 @@ const og = "https://og.rohangodha.com/api/og/bTI5cmhib2QybnF1MWo1OnN1bDZsNjg3bQ=
                building <a href="https://tesser.sh">tesser</a> (yc w27). previously mintlify, rocketlab, cs @ georgia tech, and 70k ig followers <a href="https://instagram.com/aws_peter">@aws_peter</a>
             </p>
          </div>
+         <canvas id="guy" aria-hidden="true"></canvas>
       </section>
       <script>
          import { startAscii } from "../ascii";
 
          startAscii(document.getElementById("ascii") as HTMLCanvasElement, {
+            overlay: document.getElementById("guy") as HTMLCanvasElement,
             tick: 160,
+            bg: "#0c0c0d",
             paint: "#1e1e1f",
-            cursor: { radius: 110, paint: "#7fa6ff" },
+            platforms: () => [...document.querySelectorAll("h1"), ...document.querySelectorAll(".brand, nav a")],
          });
       </script>
    </body>
@@ -61,7 +65,8 @@ const og = "https://og.rohangodha.com/api/og/bTI5cmhib2QybnF1MWo1OnN1bDZsNjg3bQ=
       --fg: #e4e4e2;
       --muted: #85857f;
       --faint: #55554f;
-      --sans: "Inter Variable";
+      --sans: "Raleway Variable";
+      --display: "Norwester";
       --mono: "IBM Plex Mono";
    }
    :global(body) { margin: 0; overflow: hidden; background: var(--bg); color: var(--fg); font-family: var(--sans), ui-sans-serif, system-ui, sans-serif; }
@@ -69,7 +74,7 @@ const og = "https://og.rohangodha.com/api/og/bTI5cmhib2QybnF1MWo1OnN1bDZsNjg3bQ=
 
    header {
       position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
-      padding: 20px max(24px, calc((100vw - 1040px) / 2));
+      padding: 42px max(24px, calc((100vw - 1040px) / 2)) 20px;
    }
    .brand, nav, .hero-inner {
       background: rgb(12 12 13 / 0.55);
@@ -81,12 +86,13 @@ const og = "https://og.rohangodha.com/api/og/bTI5cmhib2QybnF1MWo1OnN1bDZsNjg3bQ=
    nav a:hover { color: var(--fg); }
 
    .hero { position: relative; height: 100vh; height: 100dvh; display: grid; place-items: center; overflow: hidden; }
-   #ascii { position: absolute; inset: 0; }
+   #ascii, #guy { position: absolute; inset: 0; }
+   #guy { z-index: 20; pointer-events: none; }
    .hero-inner {
       position: relative; text-align: center; padding: 20px 28px; max-width: min(760px, 100% - 32px); box-sizing: border-box; pointer-events: none; border-radius: 12px;
    }
    .hero-inner a { pointer-events: auto; }
-   h1 { font-size: clamp(48px, 8vw, 96px); font-weight: 300; letter-spacing: -0.04em; line-height: 1; margin: 0; white-space: nowrap; }
+   h1 { font: 400 clamp(56px, 9vw, 112px) var(--display), sans-serif; letter-spacing: 0.02em; line-height: 1; margin: 0; white-space: nowrap; }
    .sub { color: var(--muted); font-size: 18px; line-height: 1.6; margin: 20px auto 0; max-width: 48ch; }
    .sub a { color: var(--fg); border-bottom: 1px solid var(--faint); }
    .sub a:hover { border-color: var(--fg); }

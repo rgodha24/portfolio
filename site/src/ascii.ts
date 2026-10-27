@@ -35,12 +35,15 @@ export function look(kind: Kind, t: number, seq = FX[kind].seq) {
    return { glyph: g === "?" ? null : g, color: k.pal[Math.min(k.pal.length - 1, Math.floor(t * k.pal.length))], alpha: Math.min(1, k.a) * (1 - t * t) };
 }
 
-// knock out the letter in a cell, then draw the effect glyph over it
-export function paintCell(g: CanvasRenderingContext2D, x: number, y: number, w: number, bg: string, letter: string, kind: Kind, t: number, seq?: string) {
+// knock out the letter in a cell and draw the effect glyph over it, fading the letter back in as the effect dies
+export function paintCell(g: CanvasRenderingContext2D, x: number, y: number, w: number, bg: string, paint: string, letter: string, kind: Kind, t: number, seq?: string) {
    const { glyph, color, alpha } = look(kind, t, seq);
    g.globalAlpha = 1;
    g.fillStyle = bg;
    g.fillRect(x, y, w, LINE_HEIGHT);
+   g.fillStyle = paint;
+   g.globalAlpha = 1 - alpha;
+   g.fillText(letter, x, y + 0.8 * LINE_HEIGHT);
    g.fillStyle = color;
    g.globalAlpha = alpha;
    g.fillText(glyph ?? letter, x, y + 0.8 * LINE_HEIGHT);
@@ -565,7 +568,7 @@ export function startAscii(canvas: HTMLCanvasElement, opts: Opts) {
          }
          const r = Math.floor(i / cols), c = i % cols;
          // a little flicker keeps it alive
-         paintCell(ctx, c * charW, r * LINE_HEIGHT, charW, opts.bg, grid[r]?.[c] ?? "", e.kind, Math.min(0.99, t + (Math.random() < 0.04 ? 0.15 : 0)), e.seq);
+         paintCell(ctx, c * charW, r * LINE_HEIGHT, charW, opts.bg, opts.paint, grid[r]?.[c] ?? "", e.kind, Math.min(0.99, t + (Math.random() < 0.04 ? 0.15 : 0)), e.seq);
       }
       ctx.globalAlpha = 1;
       drawGuy(now);

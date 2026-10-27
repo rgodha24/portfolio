@@ -1,9 +1,12 @@
 ---
-import "@fontsource-variable/raleway";
-import "@fontsource/norwester";
-import "@fontsource/ibm-plex-mono/400.css";
-import "@fontsource/ibm-plex-mono/500.css";
-import "@fontsource/monaspace-krypton/300.css";
+// fonts are subset to what the page uses (fonttools pyftsubset) and inlined so first paint is right
+import norwester from "../fonts/norwester.woff2?inline";
+import raleway from "../fonts/raleway.woff2?inline";
+import krypton from "../fonts/krypton.woff2?inline";
+
+const faces = [["Norwester", norwester], ["Raleway", raleway], ["Monaspace Krypton", krypton]]
+   .map(([family, src]) => `@font-face{font-family:"${family}";src:url(${src}) format("woff2");font-display:block}`)
+   .join("");
 
 const title = "Rohan Godha";
 const description = "building tesser (yc w27). previously mintlify, rocketlab, cs @ georgia tech.";
@@ -23,6 +26,7 @@ const og = "https://og.rohangodha.com/api/og/bTI5cmhib2QybnF1MWo1OnN1bDZsNjg3bQ=
       <meta property="og:description" content={description} />
       <meta property="og:image" content={og} />
       <meta name="twitter:card" content="summary_large_image" />
+      <style is:inline set:html={faces} />
       {import.meta.env.PROD && <script is:inline data-collect-dnt="true" async defer src="https://api.rohangodha.com/latest.js" />}
    </head>
    <body>
@@ -65,9 +69,9 @@ const og = "https://og.rohangodha.com/api/og/bTI5cmhib2QybnF1MWo1OnN1bDZsNjg3bQ=
       --fg: #e4e4e2;
       --muted: #85857f;
       --faint: #55554f;
-      --sans: "Raleway Variable";
+      --sans: "Raleway";
       --display: "Norwester";
-      --mono: "IBM Plex Mono";
+      --mono: "Monaspace Krypton";
    }
    :global(body) { margin: 0; overflow: hidden; background: var(--bg); color: var(--fg); font-family: var(--sans), ui-sans-serif, system-ui, sans-serif; }
    a { text-decoration: none; color: inherit; }
@@ -81,7 +85,7 @@ const og = "https://og.rohangodha.com/api/og/bTI5cmhib2QybnF1MWo1OnN1bDZsNjg3bQ=
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
    }
-   .brand { font: 500 15px var(--mono), monospace; color: var(--fg); padding: 4px 10px; border-radius: 8px; }
+   .brand { font: 15px var(--mono), monospace; color: var(--fg); padding: 4px 10px; border-radius: 8px; }
    nav { display: flex; gap: 22px; font-size: 15px; color: var(--muted); padding: 4px 12px; border-radius: 8px; }
    nav a:hover { color: var(--fg); }
 
